@@ -1,99 +1,129 @@
-:root {
-    --bg: #000;
-    --accent: #0066ff;
-    --text-main: #ffffff;
-    --text-dim: #888888;
-    --glass: rgba(255, 255, 255, 0.03);
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-* { margin: 0; padding: 0; box-sizing: border-box; }
-
 body {
-    background-color: var(--bg);
-    color: var(--text-main);
     font-family: 'Inter', sans-serif;
+    background: #050507;
+    color: #e6e6eb;
     overflow-x: hidden;
 }
 
-#hero-canvas {
+canvas {
     position: fixed;
-    top: 0;
-    left: 0;
+    inset: 0;
     z-index: -1;
-    pointer-events: none;
 }
 
+/* Navigation */
 nav {
-    padding: 30px 5%;
     display: flex;
     justify-content: space-between;
-    align-items: center;
-    position: fixed;
-    width: 100%;
-    z-index: 100;
+    padding: 1.5rem 3rem;
 }
 
-.logo { font-weight: 600; letter-spacing: 2px; font-size: 1.2rem; }
-.nav-links a { color: var(--text-dim); text-decoration: none; margin-left: 30px; font-size: 0.9rem; transition: 0.3s; }
-.nav-links a:hover { color: #fff; }
+.logo {
+    font-weight: 600;
+    letter-spacing: 0.15em;
+}
 
+.logo span {
+    color: #7f9cff;
+}
+
+.nav-links a {
+    margin-left: 2rem;
+    text-decoration: none;
+    color: #aaa;
+    font-size: 0.9rem;
+}
+
+.nav-links a:hover {
+    color: #fff;
+}
+
+/* Hero */
 .hero {
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding: 0 10%;
+    min-height: 90vh;
+    padding: 6rem 3rem;
+    max-width: 1100px;
 }
 
 .mono-label {
     font-family: 'JetBrains Mono', monospace;
-    color: var(--accent);
-    font-size: 0.8rem;
-    margin-bottom: 20px;
-    letter-spacing: 3px;
-    text-transform: uppercase;
+    font-size: 0.75rem;
+    color: #7f9cff;
+    margin-bottom: 1rem;
 }
 
-h1 {
-    font-size: clamp(3rem, 10vw, 6rem);
-    font-weight: 300;
-    line-height: 1.1;
-    margin-bottom: 30px;
+.hero h1 {
+    font-size: 3.2rem;
+    font-weight: 600;
 }
 
 .accent-text {
-    background: linear-gradient(to right, #0066ff, #00c2ff);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    color: #7f9cff;
 }
 
-p { color: var(--text-dim); max-width: 500px; font-size: 1.1rem; }
+.hero p {
+    max-width: 520px;
+    margin-top: 1.5rem;
+    color: #b5b5c2;
+}
 
+.btn {
+    display: inline-block;
+    margin-top: 2rem;
+    padding: 0.9rem 1.6rem;
+    border: 1px solid #7f9cff;
+    color: #7f9cff;
+    text-decoration: none;
+    border-radius: 6px;
+}
+
+.btn:hover {
+    background: #7f9cff;
+    color: #000;
+}
+
+/* Services */
 .services-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
-    padding: 100px 10%;
-    background: #000;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 2rem;
+    padding: 4rem 3rem;
 }
 
 .card {
-    background: var(--glass);
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    padding: 50px 40px;
-    border-radius: 4px;
     position: relative;
-    overflow: hidden;
-    cursor: default;
+    background: rgba(255,255,255,0.03);
+    padding: 2rem;
+    border-radius: 14px;
 }
 
-.card h3 { margin: 20px 0 10px; font-weight: 400; }
-.card-glow {
-    position: absolute;
-    top: 0; left: 0; width: 100%; height: 100%;
-    background: radial-gradient(circle at var(--x) var(--y), rgba(0, 102, 255, 0.15), transparent 50%);
-    pointer-events: none;
-    opacity: 0;
-    transition: opacity 0.4s;
+.card h3 {
+    margin: 1rem 0;
 }
-.card:hover .card-glow { opacity: 1; }
+
+/* About / Contact */
+.about, .contact {
+    padding: 4rem 3rem;
+    max-width: 800px;
+}
+
+.about h2, .contact h2 {
+    margin-bottom: 1rem;
+}
+
+.contact a {
+    color: #7f9cff;
+}
+
+/* Fallback */
+.noscript {
+    padding: 2rem;
+    text-align: center;
+    color: #888;
+}
