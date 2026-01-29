@@ -1,0 +1,27 @@
+-- Create a schema for ObsidianAI Managed Services
+CREATE TABLE clients (
+    client_id SERIAL PRIMARY KEY,
+    company_name TEXT NOT NULL,
+    contact_email TEXT UNIQUE,
+    service_tier TEXT CHECK (service_tier IN ('Foundation', 'Obsidian Core', 'Enterprise')),
+    location TEXT DEFAULT 'Orlando, FL',
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE TABLE network_assets (
+    asset_id SERIAL PRIMARY KEY,
+    client_id INTEGER REFERENCES clients(client_id),
+    device_type TEXT, -- e.g., 'Cisco Meraki', 'Palo Alto PA-440'
+    serial_number TEXT UNIQUE,
+    ip_address INET,
+    status TEXT DEFAULT 'active'
+);
+
+CREATE TABLE ai_logs (
+    log_id SERIAL PRIMARY KEY,
+    client_id INTEGER REFERENCES clients(client_id),
+    prompt_token_count INTEGER,
+    response_token_count INTEGER,
+    model_used TEXT DEFAULT 'xAI-Grok',
+    interaction_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
