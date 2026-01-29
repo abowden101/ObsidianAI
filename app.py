@@ -47,5 +47,11 @@ Be helpful, concise, and always tie answers back to business value or security."
         return {"reply": response.choices[0].message.content}
     except Exception as e:
         raise HTTPException(500, str(e))
+from dotenv import load_dotenv
+load_dotenv()  # loads from .env
 
+client = OpenAI(
+    api_key=os.getenv("XAI_API_KEY"),        # ← Secure
+    base_url="https://api.x.ai/v1"
+)
 # Keep your existing /generate-business-report endpoint here...
