@@ -45,3 +45,10 @@ document.addEventListener("DOMContentLoaded", () => {
         renderer.setSize(window.innerWidth, window.innerHeight);
     });
 });
+// Add after animate() function
+const ctaButtons = document.querySelectorAll('.primary-link, button');
+ctaButtons.forEach(btn => {
+    btn.style.transition = 'transform 0.3s';
+    btn.addEventListener('mouseenter', () => btn.style.transform = 'scale(1.05)');
+    btn.addEventListener('mouseleave', () => btn.style.transform = 'scale(1)');
+});
