@@ -11,7 +11,7 @@ app = FastAPI(title="ObsidianAI Backend")
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["https://abowden101.github.io", "*"],  # Tighten to your domain in prod
+    allow_origins=["https://abowden101.github.io", "http://localhost:3000", "*"],
     allow_methods=["*"],
     allow_headers=["*"],
 )
@@ -20,7 +20,7 @@ class ChatRequest(BaseModel):
     message: str
 
 client = OpenAI(
-    api_key=os.getenv("XAI_API_KEY"),  # Your NEW key goes in Render env vars, NOT here
+    api_key=os.getenv("XAI_API_KEY"),          # ← Must come from Render env var
     base_url="https://api.x.ai/v1"
 )
 
@@ -30,17 +30,16 @@ async def chat(req: ChatRequest):
         response = client.chat.completions.create(
             model="grok-4-latest",
             messages=[
-                {"role": "system", "content": "You are ObsidianAI's expert cybersecurity and automation assistant."},
+                {"role": "system", "content": "You are ObsidianAI's expert zero-trust security and xAI automation assistant."},
                 {"role": "user", "content": req.message}
             ],
             temperature=0.7,
-            max_tokens=900
+            max_tokens=1000
         )
         return {"reply": response.choices[0].message.content}
     except Exception as e:
-        raise HTTPException(500, detail=str(e))
+        raise HTTPException(status_code=500, detail=str(e))
 
-# Test endpoint
 @app.get("/")
-def root():
-    return {"message": "ObsidianAI Backend Running"}
+async def root():
+    return {"status": "ObsidianAI Backend is running", "model": "grok-4-latest"}
