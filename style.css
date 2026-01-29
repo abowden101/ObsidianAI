@@ -1,129 +1,166 @@
+/* Base Reset */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+:root {
+    --bg-dark: #050507;
+    --accent: #7f9cff;
+    --text-main: #e6e6eb;
+    --text-dim: #9494a3;
+    --glass: rgba(255, 255, 255, 0.03);
+}
+
 body {
     font-family: 'Inter', sans-serif;
-    background: #050507;
-    color: #e6e6eb;
+    background: var(--bg-dark);
+    color: var(--text-main);
+    line-height: 1.6;
     overflow-x: hidden;
 }
 
+/* 3D Canvas Background */
 canvas {
     position: fixed;
     inset: 0;
     z-index: -1;
+    pointer-events: none;
 }
 
 /* Navigation */
 nav {
     display: flex;
     justify-content: space-between;
-    padding: 1.5rem 3rem;
+    align-items: center;
+    padding: 2rem 5%;
+    position: absolute;
+    width: 100%;
+    z-index: 10;
 }
 
 .logo {
     font-weight: 600;
-    letter-spacing: 0.15em;
+    font-size: 1.2rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
 }
 
 .logo span {
-    color: #7f9cff;
+    color: var(--accent);
 }
 
 .nav-links a {
-    margin-left: 2rem;
+    color: var(--text-dim);
     text-decoration: none;
-    color: #aaa;
+    margin-left: 2rem;
     font-size: 0.9rem;
+    transition: color 0.3s ease;
 }
 
 .nav-links a:hover {
-    color: #fff;
+    color: var(--accent);
 }
 
-/* Hero */
+/* Hero Section */
 .hero {
-    min-height: 90vh;
-    padding: 6rem 3rem;
-    max-width: 1100px;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0 10%;
+    max-width: 1200px;
 }
 
 .mono-label {
     font-family: 'JetBrains Mono', monospace;
-    font-size: 0.75rem;
-    color: #7f9cff;
-    margin-bottom: 1rem;
+    font-size: 0.8rem;
+    color: var(--accent);
+    letter-spacing: 0.3em;
+    margin-bottom: 1.5rem;
 }
 
-.hero h1 {
-    font-size: 3.2rem;
+h1 {
+    font-size: clamp(2.5rem, 6vw, 4.5rem);
+    line-height: 1.1;
+    margin-bottom: 2rem;
     font-weight: 600;
 }
 
 .accent-text {
-    color: #7f9cff;
+    color: var(--accent);
 }
 
 .hero p {
-    max-width: 520px;
-    margin-top: 1.5rem;
-    color: #b5b5c2;
+    max-width: 600px;
+    color: var(--text-dim);
+    font-size: 1.1rem;
+    margin-bottom: 2.5rem;
 }
 
-.btn {
-    display: inline-block;
-    margin-top: 2rem;
-    padding: 0.9rem 1.6rem;
-    border: 1px solid #7f9cff;
-    color: #7f9cff;
-    text-decoration: none;
-    border-radius: 6px;
-}
-
-.btn:hover {
-    background: #7f9cff;
-    color: #000;
-}
-
-/* Services */
+/* Services Grid */
 .services-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 2rem;
-    padding: 4rem 3rem;
+    padding: 5rem 10%;
+    background: linear-gradient(to bottom, transparent, #0a0a0c);
 }
 
 .card {
+    background: var(--glass);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    padding: 3rem 2rem;
+    border-radius: 4px;
+    transition: transform 0.3s ease, border-color 0.3s ease;
     position: relative;
-    background: rgba(255,255,255,0.03);
-    padding: 2rem;
-    border-radius: 14px;
+    overflow: hidden;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    border-color: var(--accent);
 }
 
 .card h3 {
-    margin: 1rem 0;
+    margin: 1.5rem 0 1rem;
+    font-weight: 600;
 }
 
-/* About / Contact */
+.card p {
+    color: var(--text-dim);
+    font-size: 0.95rem;
+}
+
+/* Buttons */
+.btn {
+    display: inline-block;
+    padding: 1rem 2.5rem;
+    background: var(--accent);
+    color: #000;
+    text-decoration: none;
+    font-weight: 600;
+    border-radius: 2px;
+    transition: opacity 0.3s ease;
+}
+
+.btn:hover {
+    opacity: 0.9;
+}
+
+/* Contact/About Sections */
 .about, .contact {
-    padding: 4rem 3rem;
+    padding: 5rem 10%;
     max-width: 800px;
 }
 
-.about h2, .contact h2 {
-    margin-bottom: 1rem;
+h2 {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
 }
 
-.contact a {
-    color: #7f9cff;
-}
-
-/* Fallback */
-.noscript {
-    padding: 2rem;
-    text-align: center;
-    color: #888;
+a {
+    color: var(--accent);
+    text-decoration: none;
 }
