@@ -7,11 +7,11 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-app = FastAPI(title="ObsidianAI Secure Backend")
+app = FastAPI(title="ObsidianAI Backend")
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["https://abowden101.github.io", "http://localhost:8000"],
+    allow_origins=["https://abowden101.github.io", "*"],  # Tighten to your domain in prod
     allow_methods=["*"],
     allow_headers=["*"],
 )
@@ -20,7 +20,7 @@ class ChatRequest(BaseModel):
     message: str
 
 client = OpenAI(
-    api_key=os.getenv("XAI_API_KEY"),  # xai-4XzRrcdMhcSaLHHQhKJmIsGh94uBZnnhb2qcwgcQ1NZGygiv129dO8And5rSly3lPo3DgdGd36qLDgcc.env
+    api_key=os.getenv("XAI_API_KEY"),  # Your NEW key goes in Render env vars, NOT here
     base_url="https://api.x.ai/v1"
 )
 
@@ -40,4 +40,7 @@ async def chat(req: ChatRequest):
     except Exception as e:
         raise HTTPException(500, detail=str(e))
 
-# Add your /generate-business-report and hospitality endpoints here
+# Test endpoint
+@app.get("/")
+def root():
+    return {"message": "ObsidianAI Backend Running"}
