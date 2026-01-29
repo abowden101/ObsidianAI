@@ -55,3 +55,15 @@ client = OpenAI(
     base_url="https://api.x.ai/v1"
 )
 # Keep your existing /generate-business-report endpoint here...
+from apscheduler.schedulers.background import BackgroundScheduler
+from datetime import datetime
+
+scheduler = BackgroundScheduler()
+scheduler.start()
+
+def daily_inventory_report():
+    # Example: call Grok for hotel client #1
+    print(f"[{datetime.now()}] Running daily hotel inventory report...")
+    # Add your generate_reorder_plan logic here or call /chat internally
+
+scheduler.add_job(daily_inventory_report, 'cron', hour=6, minute=0)  # 6:00 AM daily
