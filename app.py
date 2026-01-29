@@ -3,8 +3,20 @@ from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel
 from openai import OpenAI
 import sqlite3
+from fastapi.middleware.cors import CORSMiddleware
 
 app = FastAPI(title="ObsidianAI Backend")
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],  # Change to your domain in production
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
+
+class ChatRequest(BaseModel):
+    message: str
+    client_id: int = None  # optional for context
 
 class ReportRequest(BaseModel):
     client_id: int
@@ -15,31 +27,25 @@ client = OpenAI(
     base_url="https://api.x.ai/v1"
 )
 
-@app.post("/generate-business-report")
-async def generate_report(req: ReportRequest):
-    conn = sqlite3.connect("clients.db")
-    cursor = conn.cursor()
-    cursor.execute("SELECT * FROM clients WHERE id = ?", (req.client_id,))
-    data = cursor.fetchone()
-    conn.close()
+@app.post("/chat")
+async def chat_with_grok(req: ChatRequest):
+    system_prompt = """You are ObsidianAI Assistant — an expert in secure AI infrastructure, xAI Grok automation, Palo Alto zero-trust, and Orlando hospitality IT.
+Be helpful, concise, and always tie answers back to business value or security."""
 
-    prompt = f"""You are an expert MSP consultant. Generate a professional report for an Orlando SMB.
-Client: {data}
-Summary: {req.data_summary}
-Focus on: zero-trust recommendations, xAI Grok automation opportunities (hospitality workflows, inventory, reports), cost savings."""
+    messages = [
+        {"role": "system", "content": system_prompt},
+        {"role": "user", "content": req.message}
+    ]
 
     try:
         response = client.chat.completions.create(
-            model="grok-beta",   # or "grok-4-1-fast-reasoning" — check console.x.ai for latest
-            messages=[
-                {"role": "system", "content": "Expert AI infrastructure consultant."},
-                {"role": "user", "content": prompt}
-            ],
-            temperature=0.6,
-            max_tokens=1200
+            model="grok-beta",
+            messages=messages,
+            temperature=0.7,
+            max_tokens=800
         )
-        return {"report": response.choices[0].message.content, "used_model": "xAI Grok"}
+        return {"reply": response.choices[0].message.content}
     except Exception as e:
         raise HTTPException(500, str(e))
 
-# Run with: uvicorn app:app --reload
+# Keep your existing /generate-business-report endpoint here...
