@@ -1,6 +1,3 @@
-fastapi
-uvicorn
-openai
-pydantic
-sqlite3  # built-in
-python-dotenv
+git add .gitignore requirements.txt app.py
+git commit -m "Add secure FastAPI backend with xAI integration"
+git push origin main
