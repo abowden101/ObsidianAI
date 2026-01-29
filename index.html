@@ -108,5 +108,77 @@
     </footer>
 
     <script src="script.js"></script>
+    <!-- Floating Chat Widget -->
+<div id="chat-widget" style="position:fixed;bottom:20px;right:20px;z-index:1000;">
+    <button onclick="toggleChat()" style="background:#000;color:white;border:none;padding:15px 20px;border-radius:50px;box-shadow:0 4px 20px rgba(0,0,0,0.3);cursor:pointer;">
+        💬 Chat with ObsidianAI
+    </button>
+    
+    <div id="chat-window" style="display:none;background:white;width:340px;height:480px;border-radius:16px;box-shadow:0 10px 40px rgba(0,0,0,0.25);position:absolute;bottom:70px;right:0;overflow:hidden;">
+        <div style="background:#000;color:white;padding:15px;font-weight:bold;">ObsidianAI Assistant (xAI Grok)</div>
+        <div id="chat-messages" style="height:360px;padding:15px;overflow-y:auto;background:#f8f8f8;"></div>
+        
+        <div style="padding:10px;border-top:1px solid #ddd;display:flex;">
+            <input type="text" id="chat-input" placeholder="Ask about xAI agents, Orlando support..." style="flex:1;padding:10px;border:1px solid #ccc;border-radius:8px;">
+            <button onclick="sendChatMessage()" style="margin-left:8px;padding:10px 16px;background:#000;color:white;border:none;border-radius:8px;">Send</button>
+        </div>
+    </div>
+</div>
+
+<script>
+let chatHistory = [];
+
+function toggleChat() {
+    const win = document.getElementById('chat-window');
+    win.style.display = win.style.display === 'none' ? 'block' : 'none';
+}
+
+async function sendChatMessage() {
+    const input = document.getElementById('chat-input');
+    const msg = input.value.trim();
+    if (!msg) return;
+
+    addMessage(msg, 'user');
+    input.value = '';
+
+    try {
+        const res = await fetch('https://your-backend-url.onrender.com/chat', {  // ← change to your deployed URL
+            method: 'POST',
+            headers: {'Content-Type': 'application/json'},
+            body: JSON.stringify({message: msg})
+        });
+        const data = await res.json();
+        addMessage(data.reply, 'bot');
+    } catch (err) {
+        addMessage("Sorry, connection issue. Please try again.", 'bot');
+    }
+}
+
+function addMessage(text, sender) {
+    const container = document.getElementById('chat-messages');
+    const div = document.createElement('div');
+    div.style.marginBottom = '12px';
+    div.style.padding = '10px';
+    div.style.borderRadius = '12px';
+    div.style.maxWidth = '80%';
+    
+    if (sender === 'user') {
+        div.style.marginLeft = 'auto';
+        div.style.background = '#000';
+        div.style.color = 'white';
+    } else {
+        div.style.marginRight = 'auto';
+        div.style.background = '#e0e0e0';
+    }
+    div.textContent = text;
+    container.appendChild(div);
+    container.scrollTop = container.scrollHeight;
+}
+
+// Press Enter to send
+document.getElementById('chat-input').addEventListener('keypress', function(e) {
+    if (e.key === 'Enter') sendChatMessage();
+});
+</script>
 </body>
 </html>
