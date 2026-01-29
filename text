@@ -1,0 +1,6 @@
+fastapi
+uvicorn
+openai
+pydantic
+sqlite3  # built-in
+python-dotenv
