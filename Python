@@ -1,16 +1,44 @@
-import openai # xAI uses OpenAI-compatible SDK
+import os
+from openai import OpenAI  # Compatible with xAI
+from fastapi import FastAPI, HTTPException
+from pydantic import BaseModel
+import sqlite3  # Or PostgreSQL; integrate init.sql tables
 
-client = openai.OpenAI(
-    api_key="YOUR_XAI_API_KEY",
-    base_url="https://api.xai.ai/v1",
+app = FastAPI()
+
+class ReportRequest(BaseModel):
+    client_id: int
+    data_summary: str  # e.g., sales, inventory from DB
+
+client = OpenAI(
+    api_key=os.getenv("XAI_API_KEY"),  # From https://console.x.ai/
+    base_url="https://api.x.ai/v1",
 )
 
-def generate_business_report(client_data):
-    response = client.chat.completions.create(
-        model="grok-beta",
-        messages=[
-            {"role": "system", "content": "You are an ObsidianAI infrastructure assistant."},
-            {"role": "user", "content": f"Analyze these network logs: {client_data}"}
-        ]
-    )
-    return response.choices[0].message.content
+@app.post("/generate-business-report")
+async def generate_report(req: ReportRequest):
+    # Fetch client/inventory data (example with SQLite from init.sql)
+    conn = sqlite3.connect("clients.db")
+    cursor = conn.cursor()
+    cursor.execute("SELECT * FROM clients WHERE id = ?", (req.client_id,))
+    client_data = cursor.fetchone()
+    conn.close()
+
+    prompt = f"""Generate a professional business infrastructure report for an Orlando SMB.
+    Client data: {client_data}
+    Summary: {req.data_summary}
+    Include: security recommendations (zero-trust/Palo Alto), AI automation ideas (Grok-powered workflows for local hospitality), cost savings, next steps."""
+
+    try:
+        response = client.chat.completions.create(
+            model="grok-beta",  # Or "grok-4-1-fast-reasoning" / latest from https://docs.x.ai/docs/models
+            messages=[{"role": "system", "content": "You are an expert AI infrastructure consultant."},
+                      {"role": "user", "content": prompt}],
+            temperature=0.7,
+            max_tokens=1500
+        )
+        report = response.choices[0].message.content
+        # Save to DB or email/PDF
+        return {"report": report, "model_used": "xAI Grok"}
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=str(e))
