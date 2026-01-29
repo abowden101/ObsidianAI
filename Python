@@ -1,0 +1,16 @@
+import openai # xAI uses OpenAI-compatible SDK
+
+client = openai.OpenAI(
+    api_key="YOUR_XAI_API_KEY",
+    base_url="https://api.xai.ai/v1",
+)
+
+def generate_business_report(client_data):
+    response = client.chat.completions.create(
+        model="grok-beta",
+        messages=[
+            {"role": "system", "content": "You are an ObsidianAI infrastructure assistant."},
+            {"role": "user", "content": f"Analyze these network logs: {client_data}"}
+        ]
+    )
+    return response.choices[0].message.content
