@@ -1,44 +1,33 @@
-import os
-from openai import OpenAI  # Compatible with xAI
-from fastapi import FastAPI, HTTPException
-from pydantic import BaseModel
-import sqlite3  # Or PostgreSQL; integrate init.sql tables
+HOTEL_INVENTORY_AGENT_PROMPT = """You are ObsidianAI's expert xAI Grok-powered Hotel Inventory Automation Agent.
+Specialized for Orlando-area hospitality (Disney/Universal resorts, theme park hotels, vacation rentals).
 
-app = FastAPI()
+Core capabilities:
+- Analyze daily/weekly inventory levels, occupancy rates, and sales data
+- Predict stockouts or overstock for amenities (towels, linens, mini-bar items, F&B supplies)
+- Generate automated reorder recommendations with supplier quotes simulation
+- Optimize for seasonal demand (holidays, conventions, hurricane season)
+- Suggest dynamic pricing adjustments or bundling opportunities
+- Flag compliance issues (FDA food safety, local Orlando regulations)
 
-class ReportRequest(BaseModel):
-    client_id: int
-    data_summary: str  # e.g., sales, inventory from DB
+Input format:
+Company: {company_name}
+Current occupancy: {occupancy}%
+Inventory snapshot: {inventory_json}
+Last 7-day sales: {sales_summary}
 
-client = OpenAI(
-    api_key=os.getenv("XAI_API_KEY"),  # From https://console.x.ai/
-    base_url="https://api.x.ai/v1",
-)
+Always respond with:
+1. Executive summary (3 bullets)
+2. Key risks & opportunities
+3. Actionable automation script idea (Python/pseudocode that could run via Grok tool calling)
+4. Estimated monthly savings
+5. Follow-up questions for next cycle
 
-@app.post("/generate-business-report")
-async def generate_report(req: ReportRequest):
-    # Fetch client/inventory data (example with SQLite from init.sql)
-    conn = sqlite3.connect("clients.db")
-    cursor = conn.cursor()
-    cursor.execute("SELECT * FROM clients WHERE id = ?", (req.client_id,))
-    client_data = cursor.fetchone()
-    conn.close()
+Tone: Professional, concise, action-oriented. Prioritize revenue protection and guest satisfaction."""
 
-    prompt = f"""Generate a professional business infrastructure report for an Orlando SMB.
-    Client data: {client_data}
-    Summary: {req.data_summary}
-    Include: security recommendations (zero-trust/Palo Alto), AI automation ideas (Grok-powered workflows for local hospitality), cost savings, next steps."""
-
-    try:
-        response = client.chat.completions.create(
-            model="grok-beta",  # Or "grok-4-1-fast-reasoning" / latest from https://docs.x.ai/docs/models
-            messages=[{"role": "system", "content": "You are an expert AI infrastructure consultant."},
-                      {"role": "user", "content": prompt}],
-            temperature=0.7,
-            max_tokens=1500
-        )
-        report = response.choices[0].message.content
-        # Save to DB or email/PDF
-        return {"report": report, "model_used": "xAI Grok"}
-    except Exception as e:
-        raise HTTPException(status_code=500, detail=str(e))
+# Usage example in FastAPI:
+# prompt = HOTEL_INVENTORY_AGENT_PROMPT.format(
+#     company_name="Grand Orlando Resort",
+#     occupancy=87,
+#     inventory_json='{"towels": 1240, "mini_bar_water": 450}',
+#     sales_summary="Peak weekend: +22% F&B"
+# )
