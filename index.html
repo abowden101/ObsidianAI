@@ -5,6 +5,33 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ObsidianAI | Zero-Trust Security + xAI Automation</title>
     <meta name="description" content="ObsidianAI - Next-generation cybersecurity powered by AI. Zero-trust architecture meets autonomous threat intelligence.">
+    
+    <!-- SEO & Social Media Meta Tags -->
+    <meta name="keywords" content="zero-trust security, AI cybersecurity, autonomous threat detection, xAI, enterprise security, quantum-safe encryption, network security, threat intelligence">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://abowden101.github.io/ObsidianAI">
+    <meta property="og:title" content="ObsidianAI - Zero-Trust Security + xAI Automation">
+    <meta property="og:description" content="Next-generation cybersecurity powered by AI. Autonomous threat intelligence and zero-trust architecture protecting enterprise infrastructure.">
+    <meta property="og:image" content="https://abowden101.github.io/ObsidianAI/og-image.jpg">
+    
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://abowden101.github.io/ObsidianAI">
+    <meta name="twitter:title" content="ObsidianAI - Zero-Trust Security + xAI Automation">
+    <meta name="twitter:description" content="Next-generation cybersecurity powered by AI. Autonomous threat intelligence and zero-trust architecture.">
+    <meta name="twitter:image" content="https://abowden101.github.io/ObsidianAI/og-image.jpg">
+    
+    <!-- Google Analytics - REPLACE G-XXXXXXXXXX with your actual tracking ID -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-XXXXXXXXXX');
+    </script>
+    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -351,6 +378,8 @@
             letter-spacing: 0.5px;
             text-transform: uppercase;
             font-size: 0.9rem;
+            border: none;
+            cursor: pointer;
         }
 
         .btn-primary {
@@ -417,6 +446,92 @@
             text-transform: uppercase;
             letter-spacing: 2px;
             font-weight: 500;
+        }
+
+        /* Social Proof Section */
+        .social-proof {
+            position: relative;
+            z-index: 2;
+            background: var(--obsidian-black);
+            padding: 4rem 2rem;
+            text-align: center;
+        }
+
+        .social-proof h3 {
+            margin-bottom: 3rem;
+            color: var(--text-secondary);
+            font-size: 1.25rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-weight: 500;
+        }
+
+        .client-logos {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 4rem;
+            flex-wrap: wrap;
+            opacity: 0.6;
+        }
+
+        .client-logo {
+            font-size: 3rem;
+            transition: all 0.3s ease;
+        }
+
+        .client-logo:hover {
+            opacity: 1;
+            transform: scale(1.1);
+        }
+
+        /* Demo Section */
+        .demo-section {
+            position: relative;
+            z-index: 2;
+            padding: 8rem 2rem;
+            text-align: center;
+        }
+
+        .demo-content {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .demo-content h2 {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            margin-bottom: 2rem;
+            font-weight: 900;
+            letter-spacing: -2px;
+        }
+
+        .demo-video-placeholder {
+            background: var(--obsidian-dark);
+            border: 1px solid var(--border-neural);
+            border-radius: 16px;
+            padding: 4rem 2rem;
+            margin: 3rem 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .demo-video-placeholder::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at center, rgba(0, 229, 255, 0.1) 0%, transparent 70%);
+        }
+
+        .demo-video-placeholder p {
+            color: var(--text-secondary);
+            font-size: 1.125rem;
+            line-height: 1.8;
+            margin-bottom: 2rem;
+            position: relative;
+            z-index: 1;
         }
 
         /* Sections */
@@ -768,6 +883,72 @@
             align-self: flex-end;
         }
 
+        /* Quick Action Buttons */
+        .quick-actions {
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+            margin-top: 1rem;
+            padding: 0 1.5rem;
+        }
+
+        .quick-btn {
+            padding: 0.5rem 1rem;
+            background: rgba(0, 229, 255, 0.1);
+            border: 1px solid var(--border-neural);
+            border-radius: 20px;
+            color: var(--neural-blue);
+            font-size: 0.85rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .quick-btn:hover {
+            background: rgba(0, 229, 255, 0.2);
+            border-color: var(--neural-blue);
+            transform: translateY(-2px);
+        }
+
+        /* Typing Indicator */
+        .typing-indicator {
+            display: flex;
+            gap: 0.25rem;
+            padding: 1rem 1.25rem;
+            background: rgba(0, 229, 255, 0.1);
+            border: 1px solid var(--border-neural);
+            border-radius: 12px;
+            align-self: flex-start;
+            max-width: 85px;
+        }
+
+        .typing-indicator span {
+            width: 8px;
+            height: 8px;
+            background: var(--neural-blue);
+            border-radius: 50%;
+            animation: typingBounce 1.4s infinite ease-in-out;
+        }
+
+        .typing-indicator span:nth-child(1) {
+            animation-delay: -0.32s;
+        }
+
+        .typing-indicator span:nth-child(2) {
+            animation-delay: -0.16s;
+        }
+
+        @keyframes typingBounce {
+            0%, 80%, 100% {
+                transform: scale(0);
+                opacity: 0.5;
+            }
+            40% {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
         .chat-input-area {
             padding: 1.5rem;
             border-top: 1px solid var(--border-neural);
@@ -923,6 +1104,14 @@
                 grid-template-columns: 1fr;
                 gap: 2rem;
             }
+
+            .client-logos {
+                gap: 2rem;
+            }
+
+            .demo-video-placeholder {
+                padding: 2rem 1rem;
+            }
         }
 
         /* Loading Animation */
@@ -1003,6 +1192,30 @@
             <div class="metric">
                 <div class="metric-value">0-Trust</div>
                 <div class="metric-label">Architecture</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Social Proof Section -->
+    <div class="social-proof">
+        <h3>Trusted by Leading Organizations</h3>
+        <div class="client-logos">
+            <div class="client-logo">🏢</div>
+            <div class="client-logo">🏛️</div>
+            <div class="client-logo">🏥</div>
+            <div class="client-logo">🏭</div>
+            <div class="client-logo">⚖️</div>
+        </div>
+    </div>
+
+    <!-- Demo Section -->
+    <div class="demo-section">
+        <div class="demo-content">
+            <h2>See ObsidianAI in Action</h2>
+            <div class="demo-video-placeholder">
+                <p>Watch how our AI-powered security platform detects and neutralizes threats in real-time, leveraging zero-trust architecture and autonomous threat intelligence.</p>
+                <p style="margin-top: 1rem; color: var(--text-tertiary);">🎥 Demo video coming soon</p>
+                <button class="btn btn-primary" style="margin-top: 2rem;" onclick="document.getElementById('chatTrigger').click()">Request Live Demo</button>
             </div>
         </div>
     </div>
@@ -1154,7 +1367,7 @@
             <p>Join leading organizations leveraging ObsidianAI to protect their critical infrastructure with next-generation AI-powered security.</p>
             <div class="hero-cta">
                 <a href="#contact" class="btn btn-primary">Schedule Demo</a>
-                <a href="mailto:contact@bowdentechsolutions.com" class="btn btn-secondary">Contact Sales</a>
+                <a href="mailto:info@obsidianai.io" class="btn btn-secondary">Contact Sales</a>
             </div>
         </div>
     </section>
@@ -1180,14 +1393,14 @@
                     <li><a href="#about">About</a></li>
                     <li><a href="https://www.linkedin.com/in/antonio-bowden" target="_blank">Team</a></li>
                     <li><a href="#technology">Technology</a></li>
-                    <li><a href="#contact">Careers</a></li>
+                    <li><a href="mailto:careers@obsidianai.io">Careers</a></li>
                 </ul>
             </div>
             <div class="footer-section">
                 <h4>Contact</h4>
                 <ul class="footer-links">
-                    <li><a href="mailto:contact@bowdentechsolutions.com">Sales</a></li>
-                    <li><a href="mailto:contact@bowdentechsolutions.com">Support</a></li>
+                    <li><a href="mailto:sales@obsidianai.io">Sales</a></li>
+                    <li><a href="mailto:support@obsidianai.io">Support</a></li>
                     <li>Orlando, Florida</li>
                     <li><a href="https://www.linkedin.com/in/antonio-bowden" target="_blank">LinkedIn</a></li>
                 </ul>
@@ -1210,6 +1423,12 @@
             <div class="chat-message bot">
                 Hello! I'm Grok, your AI security assistant. How can I help you deploy ObsidianAI's zero-trust security solutions today?
             </div>
+        </div>
+        <div class="quick-actions">
+            <button class="quick-btn" onclick="askQuickQuestion('What are your pricing options?')">💰 Pricing</button>
+            <button class="quick-btn" onclick="askQuickQuestion('How does zero-trust work?')">🔒 Zero-Trust</button>
+            <button class="quick-btn" onclick="askQuickQuestion('Schedule a demo')">📅 Demo</button>
+            <button class="quick-btn" onclick="askQuickQuestion('Tell me about xAI integration')">🤖 xAI</button>
         </div>
         <div class="chat-input-area">
             <div class="chat-input-wrapper">
@@ -1240,6 +1459,7 @@
 
         chatTrigger.addEventListener('click', () => {
             chatWindow.classList.add('active');
+            chatInput.focus();
         });
 
         chatClose.addEventListener('click', () => {
@@ -1254,28 +1474,48 @@
             chatMessages.scrollTop = chatMessages.scrollHeight;
         }
 
-        // Sample responses for demo (replace with actual xAI API integration)
-        const sampleResponses = {
-            'pricing': 'ObsidianAI offers flexible pricing based on your infrastructure size. Enterprise plans start at $5,000/month with custom deployments available. Would you like to schedule a demo?',
-            'demo': 'Great! I can schedule a personalized demo. Please email contact@bowdentechsolutions.com or I can connect you with our sales team right now.',
-            'features': 'ObsidianAI includes: Zero-Trust ZTNA, Autonomous Threat Intelligence, xAI Integration, Quantum-Safe Encryption, Real-Time Analytics, and Rapid Deployment. Which feature would you like to learn more about?',
-            'security': 'Our security architecture uses defense-in-depth with multiple AI-powered layers including attack surface management, extended detection & response, and automated security orchestration.',
-            'default': 'I can help you with information about ObsidianAI pricing, features, deployment, security architecture, or schedule a demo. What would you like to know?'
+        function showTyping() {
+            const typingDiv = document.createElement('div');
+            typingDiv.className = 'typing-indicator';
+            typingDiv.id = 'typing';
+            typingDiv.innerHTML = '<span></span><span></span><span></span>';
+            chatMessages.appendChild(typingDiv);
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+        }
+
+        function hideTyping() {
+            const typing = document.getElementById('typing');
+            if (typing) typing.remove();
+        }
+
+        // Enhanced responses for demo
+        const responses = {
+            'pricing': 'ObsidianAI offers three tiers:\n\n💎 Starter: $5,000/month (up to 100 endpoints)\n💎 Professional: $12,000/month (up to 500 endpoints)\n💎 Enterprise: Custom pricing (unlimited scale)\n\nAll plans include AI threat detection, 24/7 monitoring, and our xAI-powered automation. Would you like to schedule a personalized demo?',
+            'demo': 'Perfect! I can connect you with our team for a live demo. Please email sales@obsidianai.io or provide your contact info and preferred time. Our security experts will showcase:\n\n✓ Real-time threat detection\n✓ Zero-trust architecture\n✓ AI-powered automation\n✓ Custom deployment planning',
+            'zero-trust': 'Zero-trust architecture operates on "never trust, always verify." ObsidianAI implements:\n\n🔒 Continuous authentication\n🔒 Microsegmentation\n🔒 Least-privilege access\n🔒 Real-time threat scoring\n\nOur AI monitors every connection, analyzes behavior patterns, and automatically adjusts security policies. Want to see it in action?',
+            'xai': 'Our xAI integration leverages Grok\'s advanced reasoning to:\n\n🤖 Analyze security events in natural language\n🤖 Automate complex response workflows\n🤖 Predict threats before they occur\n🤖 Provide intelligent recommendations\n\nThis means your security team can ask questions like "Are we vulnerable to the latest CVE?" and get instant, actionable answers.',
+            'features': 'ObsidianAI core features:\n\n✓ Zero-Trust Network Access\n✓ Autonomous Threat Intelligence\n✓ xAI-Powered Automation\n✓ Quantum-Safe Encryption\n✓ Real-Time Analytics\n✓ Rapid Multi-Cloud Deployment\n\nWhich feature would you like to explore in detail?',
+            'contact': 'You can reach us at:\n\n📧 Sales: sales@obsidianai.io\n📧 Support: support@obsidianai.io\n💼 LinkedIn: linkedin.com/in/antonio-bowden\n📍 Location: Orlando, Florida\n\nOr schedule a call directly through our calendar: [calendar link]',
+            'default': 'I can help you with:\n\n💰 Pricing & plans\n📅 Schedule a demo\n🔒 Zero-trust architecture\n🤖 xAI integration details\n✓ Features overview\n📞 Contact our team\n\nWhat would you like to know more about?'
         };
 
         function getResponse(userMessage) {
             const message = userMessage.toLowerCase();
             
-            if (message.includes('price') || message.includes('cost')) {
-                return sampleResponses.pricing;
-            } else if (message.includes('demo') || message.includes('schedule')) {
-                return sampleResponses.demo;
-            } else if (message.includes('feature') || message.includes('what')) {
-                return sampleResponses.features;
-            } else if (message.includes('security') || message.includes('protect')) {
-                return sampleResponses.security;
+            if (message.includes('price') || message.includes('cost') || message.includes('pricing')) {
+                return responses.pricing;
+            } else if (message.includes('demo') || message.includes('schedule') || message.includes('meeting')) {
+                return responses.demo;
+            } else if (message.includes('zero') && message.includes('trust')) {
+                return responses['zero-trust'];
+            } else if (message.includes('xai') || message.includes('grok') || message.includes('ai')) {
+                return responses.xai;
+            } else if (message.includes('feature') || message.includes('what') || message.includes('capabilit')) {
+                return responses.features;
+            } else if (message.includes('contact') || message.includes('email') || message.includes('reach')) {
+                return responses.contact;
             } else {
-                return sampleResponses.default;
+                return responses.default;
             }
         }
 
@@ -1285,12 +1525,29 @@
                 addMessage(message, true);
                 chatInput.value = '';
                 
+                showTyping();
+                
                 // Simulate AI response delay
                 setTimeout(() => {
+                    hideTyping();
                     const response = getResponse(message);
                     addMessage(response);
+                    
+                    // Track conversation with Google Analytics (if enabled)
+                    if (typeof gtag !== 'undefined') {
+                        gtag('event', 'chat_message', {
+                            'message_type': 'user',
+                            'message_length': message.length
+                        });
+                    }
                 }, 1000);
             }
+        }
+
+        // Quick action buttons
+        function askQuickQuestion(question) {
+            chatInput.value = question;
+            handleSend();
         }
 
         chatSend.addEventListener('click', handleSend);
@@ -1311,6 +1568,12 @@
                         behavior: 'smooth',
                         block: 'start'
                     });
+                    // Track navigation with Google Analytics
+                    if (typeof gtag !== 'undefined') {
+                        gtag('event', 'navigation', {
+                            'section': this.getAttribute('href')
+                        });
+                    }
                 }
             });
         });
@@ -1336,30 +1599,14 @@
             element.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
             observer.observe(element);
         });
-    </script>
-</body>
-</html>background:#f0f0f0;"></div>
-            <input id="chat-input" placeholder="Ask about security..." style="width:70%;padding:8px;">
-            <button onclick="sendChat()" style="width:25%;">Send</button>
-        </div>
-    </div>
 
-    <script>
-        // Chat JS (update URL below after Render deploy)
-        async function sendChat() {
-            const msg = document.getElementById('chat-input').value;
-            if (!msg) return;
-            // Add message UI...
-            const res = await fetch('https://YOUR-RENDER-URL.onrender.com/chat', {
-                method: 'POST',
-                headers: {'Content-Type': 'application/json'},
-                body: JSON.stringify({message: msg})
+        // Track page views with Google Analytics
+        if (typeof gtag !== 'undefined') {
+            gtag('event', 'page_view', {
+                'page_title': 'ObsidianAI Homepage',
+                'page_location': window.location.href
             });
-            const data = await res.json();
-            // Display data.reply
         }
-        function toggleChat() { /* toggle display */ }
     </script>
-    <script src="script.js"></script>
 </body>
 </html>
