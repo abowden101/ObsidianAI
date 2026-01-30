@@ -1,0 +1,23 @@
+# Python / env
+.env
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+venv/
+.venv/
+pip-log.txt
+
+# Databases / temp
+*.db
+*.sqlite
+clients.db
+
+# macOS / Windows junk
+.DS_Store
+Thumbs.db
+
+# Editor / IDE
+.vscode/
+.idea/
