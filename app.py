@@ -1,4 +1,4 @@
-import os
+importimport os
 from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel
 from openai import OpenAI
@@ -11,7 +11,7 @@ app = FastAPI(title="ObsidianAI Backend")
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["https://abowden101.github.io", "http://localhost:3000", "*"],
+    allow_origins=["https://abowden101.github.io", "http://localhost:8000", "*"],
     allow_methods=["*"],
     allow_headers=["*"],
 )
@@ -20,7 +20,7 @@ class ChatRequest(BaseModel):
     message: str
 
 client = OpenAI(
-    api_key=os.getenv("XAI_API_KEY"),          # ← Must come from Render env var
+    api_key=os.getenv("XAI_API_KEY"),
     base_url="https://api.x.ai/v1"
 )
 
@@ -30,7 +30,7 @@ async def chat(req: ChatRequest):
         response = client.chat.completions.create(
             model="grok-4-latest",
             messages=[
-                {"role": "system", "content": "You are ObsidianAI's expert zero-trust security and xAI automation assistant."},
+                {"role": "system", "content": "You are ObsidianAI's expert zero-trust security and xAI Grok automation assistant for Orlando businesses and nationwide clients."},
                 {"role": "user", "content": req.message}
             ],
             temperature=0.7,
@@ -42,4 +42,4 @@ async def chat(req: ChatRequest):
 
 @app.get("/")
 async def root():
-    return {"status": "ObsidianAI Backend is running", "model": "grok-4-latest"}
+    return {"status": "ObsidianAI Backend running", "model": "grok-4-latest"}
