@@ -1,6 +1,7 @@
 import os
 print("DEBUG: XAI_API_KEY present?", "XAI_API_KEY" in os.environ)
 print("DEBUG: All env keys:", list(os.environ.keys()))
+
 from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel
 from openai import OpenAI
@@ -26,13 +27,17 @@ client = OpenAI(
     base_url="https://api.x.ai/v1"
 )
 
+@app.get("/")
+async def root():
+    return {"status": "ObsidianAI Backend running", "model": "grok-beta"}
+
 @app.post("/chat")
 async def chat(req: ChatRequest):
     print(f"DEBUG: Received /chat request - message: {req.message}")
     try:
         print("DEBUG: Calling xAI API with model 'grok-beta'...")
         response = client.chat.completions.create(
-            model="grok-beta",  # ← Safer fallback model (grok-4-latest may not be available)
+            model="grok-beta",  # Changed to grok-beta for reliability
             messages=[
                 {"role": "system", "content": "You are ObsidianAI's expert zero-trust security and xAI Grok automation assistant for Orlando businesses and nationwide clients."},
                 {"role": "user", "content": req.message}
@@ -47,5 +52,10 @@ async def chat(req: ChatRequest):
         error_msg = f"ERROR in /chat endpoint: {str(e)}"
         print(error_msg)
         import traceback
-        traceback.print_exc()  # Prints full stack trace to logs
-        raise HTTPException(status_code=500, detail=error_msg))
+        traceback.print_exc()  # Full stack trace goes to Render logs
+        raise HTTPException(status_code=500, detail=error_msg)
+
+# Optional: Add a simple health check endpoint
+@app.get("/health")
+async def health():
+    return {"status": "healthy", "api_key_loaded": "XAI_API_KEY" in os.environ}
