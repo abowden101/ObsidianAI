@@ -1,0 +1,50 @@
+import os
+from xai_sdk import Client
+from xai_sdk.chat import user, file
+
+client = Client(api_key=os.getenv("XAI_API_KEY"))
+
+# Upload an employee record
+document_content = b"""Employee Information:
+Name: Alice Johnson
+Department: Engineering
+Years of Service: 5
+Performance Rating: Excellent
+Skills: Python, Machine Learning, Cloud Architecture
+Current Project: AI Platform Redesign
+"""
+
+uploaded_file = client.files.upload(document_content, filename="employee.txt")
+
+# Create a multi-turn conversation with encrypted content
+chat = client.chat.create(
+    model="grok-4-fast",
+    use_encrypted_content=True,  # Enable encrypted content for efficient multi-turn
+)
+
+# First turn: Ask about the employee name
+chat.append(user("What is the employee's name?", file(uploaded_file.id)))
+response1 = chat.sample()
+print("Q1: What is the employee's name?")
+print(f"A1: {response1.content}\n")
+
+# Add the response to conversation history
+chat.append(response1)
+
+# Second turn: Ask about department (agentic context is retained via encrypted content)
+chat.append(user("What department does this employee work in?"))
+response2 = chat.sample()
+print("Q2: What department does this employee work in?")
+print(f"A2: {response2.content}\n")
+
+# Add the response to conversation history
+chat.append(response2)
+
+# Third turn: Ask about skills
+chat.append(user("What skills does this employee have?"))
+response3 = chat.sample()
+print("Q3: What skills does this employee have?")
+print(f"A3: {response3.content}\n")
+
+# Clean up
+client.files.delete(uploaded_file.id)
