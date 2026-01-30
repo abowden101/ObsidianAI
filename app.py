@@ -31,13 +31,17 @@ client = OpenAI(
 async def root():
     return {"status": "ObsidianAI Backend running", "model": "grok-beta"}
 
+@app.get("/health")
+async def health():
+    return {"status": "healthy", "api_key_loaded": "XAI_API_KEY" in os.environ}
+
 @app.post("/chat")
 async def chat(req: ChatRequest):
     print(f"DEBUG: Received /chat request - message: {req.message}")
     try:
         print("DEBUG: Calling xAI API with model 'grok-beta'...")
         response = client.chat.completions.create(
-            model="grok-beta",  # Changed to grok-beta for reliability
+            model="grok-beta",  # Safer/current model
             messages=[
                 {"role": "system", "content": "You are ObsidianAI's expert zero-trust security and xAI Grok automation assistant for Orlando businesses and nationwide clients."},
                 {"role": "user", "content": req.message}
@@ -52,10 +56,5 @@ async def chat(req: ChatRequest):
         error_msg = f"ERROR in /chat endpoint: {str(e)}"
         print(error_msg)
         import traceback
-        traceback.print_exc()  # Full stack trace goes to Render logs
+        traceback.print_exc()  # Full stack trace in Render logs
         raise HTTPException(status_code=500, detail=error_msg)
-
-# Optional: Add a simple health check endpoint
-@app.get("/health")
-async def health():
-    return {"status": "healthy", "api_key_loaded": "XAI_API_KEY" in os.environ}
