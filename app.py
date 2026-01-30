@@ -28,9 +28,11 @@ client = OpenAI(
 
 @app.post("/chat")
 async def chat(req: ChatRequest):
+    print(f"DEBUG: Received /chat request - message: {req.message}")
     try:
+        print("DEBUG: Attempting Grok API call...")
         response = client.chat.completions.create(
-            model="grok-4-latest",
+            model="grok-beta",  # ← Changed to grok-beta (more stable/current)
             messages=[
                 {"role": "system", "content": "You are ObsidianAI's expert zero-trust security and xAI Grok automation assistant for Orlando businesses and nationwide clients."},
                 {"role": "user", "content": req.message}
@@ -38,10 +40,12 @@ async def chat(req: ChatRequest):
             temperature=0.7,
             max_tokens=1000
         )
-        return {"reply": response.choices[0].message.content}
+        reply = response.choices[0].message.content
+        print(f"DEBUG: Grok API success - reply starts with: {reply[:100]}...")
+        return {"reply": reply}
     except Exception as e:
-        raise HTTPException(status_code=500, detail=str(e))
-
-@app.get("/")
-async def root():
-    return {"status": "ObsidianAI Backend running", "model": "grok-4-latest"}
+        error_msg = f"ERROR in /chat: {str(e)}"
+        print(error_msg)
+        import traceback
+        traceback.print_exc()  # Full stack trace in logs
+        raise HTTPException(status_code=500, detail=error_msg)
