@@ -1072,7 +1072,7 @@
         const chatSend = document.getElementById('chatSend');
         const chatMessages = document.getElementById('chatMessages');
 
-        const BACKEND_URL = const BACKEND_URL = 'https://obsidianai-evtu.onrender.com';
+        const BACKEND_URL = 'https://obsidianai-evtu.onrender.com';  // ← FIXED: Correct live backend URL
 
         chatTrigger.addEventListener('click', () => {
             chatWindow.classList.add('active');
@@ -1119,10 +1119,16 @@
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify({ message: message })
                 });
+
+                if (!res.ok) {
+                    throw new Error(`Backend responded with status ${res.status}`);
+                }
+
                 const data = await res.json();
                 hideTyping();
                 addMessage(data.reply);
             } catch (e) {
+                console.error('Chat error:', e);
                 hideTyping();
                 addMessage("Sorry, I'm having trouble connecting to the backend. Please try again.");
             }
