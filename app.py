@@ -1,4 +1,6 @@
 import os
+print("DEBUG: XAI_API_KEY present?", "XAI_API_KEY" in os.environ)
+print("DEBUG: All env keys:", list(os.environ.keys()))
 from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel
 from openai import OpenAI
