@@ -3,27 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ObsidianAI | Zero-Trust Security + xAI Automation</title>
-    <meta name="description" content="ObsidianAI - Next-generation cybersecurity powered by AI. Zero-trust architecture meets autonomous threat intelligence.">
+    <title>ObsidianAI | Agentic OS for the Autonomous Enterprise</title>
+    <meta name="description" content="ObsidianAI - Next-generation cybersecurity powered by xAI Grok. Zero-trust architecture meets autonomous threat intelligence.">
     
-    <!-- SEO & Social Media Meta Tags -->
     <meta name="keywords" content="zero-trust security, AI cybersecurity, autonomous threat detection, xAI, enterprise security, quantum-safe encryption, network security, threat intelligence, Orlando IT, managed services Orlando">
     
-    <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://abowden101.github.io/ObsidianAI">
     <meta property="og:title" content="ObsidianAI - Zero-Trust Security + xAI Automation">
-    <meta property="og:description" content="Next-generation cybersecurity powered by AI. Autonomous threat intelligence and zero-trust architecture protecting enterprise infrastructure.">
-    <meta property="og:image" content="https://abowden101.github.io/ObsidianAI/og-image.jpg">
+    <meta property="og:description" content="Next-generation cybersecurity powered by xAI. Autonomous threat intelligence and zero-trust architecture protecting enterprise infrastructure.">
     
-    <!-- Twitter -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:url" content="https://abowden101.github.io/ObsidianAI">
-    <meta name="twitter:title" content="ObsidianAI - Zero-Trust Security + xAI Automation">
-    <meta name="twitter:description" content="Next-generation cybersecurity powered by AI. Autonomous threat intelligence and zero-trust architecture.">
-    <meta name="twitter:image" content="https://abowden101.github.io/ObsidianAI/og-image.jpg">
-    
-    <!-- Google Analytics - REPLACE G-XXXXXXXXXX with your actual tracking ID -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
@@ -52,697 +41,139 @@
             --text-secondary: #b0b0b0;
             --text-tertiary: #707070;
             --border-neural: rgba(0, 229, 255, 0.2);
-            --glow-neural: rgba(0, 229, 255, 0.4);
             --grid-overlay: rgba(0, 229, 255, 0.05);
         }
 
         html { scroll-behavior: smooth; background: var(--obsidian-black); }
 
         body {
-            font-family: 'Archivo', -apple-system, sans-serif;
+            font-family: 'Archivo', sans-serif;
             line-height: 1.6;
             color: var(--text-primary);
             background: var(--obsidian-black);
             overflow-x: hidden;
-            position: relative;
         }
 
+        /* Neural Grid Effect */
         .neural-grid {
-            position: fixed;
-            top: 0; left: 0;
-            width: 100%; height: 100%;
-            background: 
-                linear-gradient(90deg, var(--grid-overlay) 1px, transparent 1px),
-                linear-gradient(0deg, var(--grid-overlay) 1px, transparent 1px);
-            background-size: 80px 80px;
-            pointer-events: none;
-            z-index: 0;
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            background: linear-gradient(90deg, var(--grid-overlay) 1px, transparent 1px),
+                        linear-gradient(0deg, var(--grid-overlay) 1px, transparent 1px);
+            background-size: 80px 80px; pointer-events: none; z-index: 0;
             animation: gridFlow 60s linear infinite;
         }
-
         @keyframes gridFlow { 0% { transform: translate(0, 0); } 100% { transform: translate(80px, 80px); } }
 
-        .quantum-field {
-            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
-            pointer-events: none; z-index: 1; overflow: hidden;
-        }
-
+        /* Quantum Particles */
+        .quantum-field { position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 1; }
         .quantum-particle {
             position: absolute; width: 2px; height: 2px;
             background: var(--neural-blue); border-radius: 50%; opacity: 0;
             animation: particleFloat 15s infinite;
             box-shadow: 0 0 10px var(--neural-blue);
         }
-
-        .quantum-particle:nth-child(1) { left: 10%; animation-delay: 0s; }
-        .quantum-particle:nth-child(2) { left: 25%; animation-delay: 3s; }
-        .quantum-particle:nth-child(3) { left: 40%; animation-delay: 6s; }
-        .quantum-particle:nth-child(4) { left: 60%; animation-delay: 2s; }
-        .quantum-particle:nth-child(5) { left: 80%; animation-delay: 8s; }
-
         @keyframes particleFloat {
             0% { transform: translateY(100vh) scale(0); opacity: 0; }
             10% { opacity: 1; }
-            90% { opacity: 1; }
             100% { transform: translateY(-100vh) scale(1.5); opacity: 0; }
         }
 
+        /* Header */
         header {
-            position: fixed; top: 0; width: 100%;
-            background: rgba(10, 10, 10, 0.8);
-            backdrop-filter: blur(20px);
+            position: fixed; top: 0; width: 100%; z-index: 1000;
+            background: rgba(10, 10, 10, 0.8); backdrop-filter: blur(20px);
             border-bottom: 1px solid var(--border-neural);
-            z-index: 1000;
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            transition: all 0.3s ease;
         }
-
-        header.scrolled {
-            background: rgba(10, 10, 10, 0.95);
-            box-shadow: 0 8px 32px rgba(0, 229, 255, 0.1);
-        }
-
-        nav {
-            max-width: 1600px; margin: 0 auto;
-            padding: 1.5rem 4rem;
-            display: flex; justify-content: space-between; align-items: center;
-        }
-
+        header.scrolled { background: rgba(10, 10, 10, 0.95); box-shadow: 0 8px 32px rgba(0, 229, 255, 0.1); }
+        nav { max-width: 1600px; margin: 0 auto; padding: 1.5rem 4rem; display: flex; justify-content: space-between; align-items: center; }
         .logo {
-            font-family: 'JetBrains Mono', monospace;
-            font-size: 1.75rem; font-weight: 800; letter-spacing: -1px;
+            font-family: 'JetBrains Mono', monospace; font-size: 1.75rem; font-weight: 800;
             background: linear-gradient(135deg, var(--neural-blue), var(--quantum-purple));
             -webkit-background-clip: text; -webkit-text-fill-color: transparent;
-            background-clip: text; position: relative; text-transform: uppercase;
+            text-transform: uppercase;
         }
+        .nav-links { display: flex; gap: 3.5rem; list-style: none; align-items: center; }
+        .nav-links a { text-decoration: none; color: var(--text-secondary); font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1px; transition: 0.3s; }
+        .nav-links a:hover { color: var(--neural-blue); }
+        .nav-cta { background: var(--neural-blue); color: var(--obsidian-black) !important; padding: 0.7rem 1.5rem; border-radius: 6px; font-weight: 700; box-shadow: 0 0 20px rgba(0, 229, 255, 0.3); }
 
-        .logo::after {
-            content: '●'; position: absolute; right: -15px; top: -5px;
-            font-size: 0.5rem; color: var(--secure-green);
-            animation: pulse 2s ease-in-out infinite;
-        }
-
-        @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.3; } }
-
-        .nav-links {
-            display: flex; gap: 3.5rem; list-style: none; align-items: center;
-        }
-
-        .nav-links a {
-            text-decoration: none; color: var(--text-secondary);
-            font-weight: 500; font-size: 0.95rem; letter-spacing: 0.5px;
-            transition: all 0.3s ease; position: relative; text-transform: uppercase;
-            font-size: 0.85rem;
-        }
-
-        .nav-links a::before {
-            content: ''; position: absolute; bottom: -4px; left: 0;
-            width: 0; height: 1px; background: var(--neural-blue);
-            transition: width 0.3s ease;
-        }
-
-        .nav-links a:hover { color: var(--text-primary); }
-
-        .nav-links a:hover::before { width: 100%; }
-
-        .nav-cta {
-            padding: 0.75rem 1.75rem;
-            background: linear-gradient(135deg, var(--neural-blue), var(--neural-cyan));
-            color: var(--obsidian-black); border-radius: 6px;
-            font-weight: 700; transition: all 0.3s ease;
-            box-shadow: 0 0 30px rgba(0, 229, 255, 0.3);
-        }
-
-        .nav-cta:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 0 40px rgba(0, 229, 255, 0.5);
-        }
-
-        .hero {
-            position: relative; min-height: 100vh;
-            display: flex; align-items: center; justify-content: center;
-            padding: 2rem; margin-top: 80px; overflow: hidden;
-        }
-
-        .hero::before {
-            content: ''; position: absolute; top: 0; left: 50%; transform: translateX(-50%);
-            width: 100%; height: 100%;
-            background: radial-gradient(ellipse at center, rgba(0, 229, 255, 0.15) 0%, transparent 70%);
-            animation: heroGlow 10s ease-in-out infinite alternate;
-        }
-
-        @keyframes heroGlow {
-            0% { transform: translateX(-50%) scale(1); opacity: 0.5; }
-            100% { transform: translateX(-50%) scale(1.2); opacity: 1; }
-        }
-
-        .hero-content { position: relative; z-index: 2; max-width: 1400px; text-align: center; }
-
+        /* Hero Section */
+        .hero { position: relative; min-height: 100vh; display: flex; align-items: center; justify-content: center; padding: 2rem; margin-top: 80px; text-align: center; z-index: 2; }
         .hero-label {
             display: inline-flex; align-items: center; gap: 0.75rem;
             padding: 0.6rem 1.5rem; background: rgba(0, 229, 255, 0.1);
             border: 1px solid var(--border-neural); border-radius: 50px;
-            font-family: 'JetBrains Mono', monospace; font-size: 0.85rem;
-            font-weight: 600; color: var(--neural-blue); margin-bottom: 2.5rem;
-            animation: slideDown 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+            font-family: 'JetBrains Mono', monospace; font-size: 0.85rem; color: var(--neural-blue); margin-bottom: 2.5rem;
         }
+        .hero h1 { font-size: clamp(3rem, 8vw, 6rem); font-weight: 900; line-height: 1; margin-bottom: 2rem; letter-spacing: -3px; }
+        .gradient-text { background: linear-gradient(135deg, var(--neural-blue), var(--quantum-purple)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .hero-subtitle { font-size: clamp(1.25rem, 2vw, 1.75rem); color: var(--text-secondary); max-width: 900px; margin: 0 auto 3.5rem; font-weight: 300; }
+        
+        /* Buttons */
+        .btn { padding: 1.25rem 3rem; border-radius: 8px; font-weight: 700; text-decoration: none; display: inline-flex; align-items: center; gap: 0.75rem; transition: 0.3s; text-transform: uppercase; font-size: 0.9rem; }
+        .btn-primary { background: var(--neural-blue); color: var(--obsidian-black); box-shadow: 0 0 40px rgba(0, 229, 255, 0.4); }
+        .btn-secondary { border: 2px solid var(--border-neural); color: white; margin-left: 1rem; }
+        .btn:hover { transform: translateY(-3px); }
 
-        .hero-label::before {
-            content: '◆'; animation: spin 3s linear infinite;
-        }
+        /* Metrics */
+        .metrics { position: relative; z-index: 2; background: var(--obsidian-dark); border-top: 1px solid var(--border-neural); border-bottom: 1px solid var(--border-neural); padding: 4rem 2rem; }
+        .metrics-grid { max-width: 1400px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 4rem; text-align: center; }
+        .metric-value { font-family: 'JetBrains Mono', monospace; font-size: 3.5rem; font-weight: 800; color: var(--neural-blue); }
+        .metric-label { color: var(--text-secondary); text-transform: uppercase; letter-spacing: 2px; font-size: 0.8rem; }
 
-        @keyframes spin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
-
-        @keyframes slideDown {
-            from { opacity: 0; transform: translateY(-30px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        .hero h1 {
-            font-size: clamp(3rem, 8vw, 7rem); font-weight: 900;
-            line-height: 1; margin-bottom: 2rem; letter-spacing: -3px;
-            animation: slideDown 0.8s cubic-bezier(0.4, 0, 0.2, 1) 0.2s both;
-        }
-
-        .hero h1 .gradient-text {
-            background: linear-gradient(135deg, var(--neural-blue), var(--quantum-purple), var(--neural-cyan));
-            background-size: 200% 200%; -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent; background-clip: text;
-            animation: gradientShift 5s ease infinite;
-        }
-
-        @keyframes gradientShift { 0%, 100% { background-position: 0% 50%; } 50% { background-position: 100% 50%; } }
-
-        .hero-subtitle {
-            font-size: clamp(1.25rem, 3vw, 2rem); color: var(--text-secondary);
-            margin-bottom: 3rem; font-weight: 300; letter-spacing: 1px;
-            animation: slideDown 0.8s cubic-bezier(0.4, 0, 0.2, 1) 0.4s both;
-        }
-
-        .hero-cta {
-            display: flex; gap: 1.5rem; justify-content: center; flex-wrap: wrap;
-            animation: slideDown 0.8s cubic-bezier(0.4, 0, 0.2, 1) 0.6s both;
-        }
-
-        .btn {
-            padding: 1.25rem 3rem; border-radius: 8px; text-decoration: none;
-            font-weight: 700; font-size: 1rem; transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            display: inline-flex; align-items: center; gap: 0.75rem;
-            letter-spacing: 0.5px; text-transform: uppercase; font-size: 0.9rem;
-            border: none; cursor: pointer;
-        }
-
-        .btn-primary {
-            background: linear-gradient(135deg, var(--neural-blue), var(--neural-cyan));
-            color: var(--obsidian-black); box-shadow: 0 0 40px rgba(0, 229, 255, 0.4);
-        }
-
-        .btn-primary:hover {
-            transform: translateY(-3px); box-shadow: 0 10px 50px rgba(0, 229, 255, 0.6);
-        }
-
-        .btn-secondary {
-            background: transparent; color: var(--text-primary);
-            border: 2px solid var(--border-neural);
-        }
-
-        .btn-secondary:hover {
-            background: rgba(0, 229, 255, 0.1); border-color: var(--neural-blue);
-            box-shadow: 0 0 30px rgba(0, 229, 255, 0.2);
-        }
-
-        .metrics {
-            position: relative; z-index: 2;
-            background: var(--obsidian-dark);
-            border-top: 1px solid var(--border-neural);
-            border-bottom: 1px solid var(--border-neural);
-            padding: 4rem 2rem;
-        }
-
-        .metrics-grid {
-            max-width: 1400px; margin: 0 auto;
-            display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 4rem; text-align: center;
-        }
-
-        .metric-value {
-            font-family: 'JetBrains Mono', monospace; font-size: 4rem; font-weight: 800;
-            background: linear-gradient(135deg, var(--neural-blue), var(--quantum-purple));
-            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
-            margin-bottom: 0.5rem; line-height: 1;
-        }
-
-        .metric-label { color: var(--text-secondary); font-size: 1rem; text-transform: uppercase; letter-spacing: 2px; font-weight: 500; }
-
-        .social-proof {
-            position: relative; z-index: 2; background: var(--obsidian-black);
-            padding: 4rem 2rem; text-align: center;
-        }
-
-        .social-proof h3 {
-            margin-bottom: 3rem; color: var(--text-secondary);
-            font-size: 1.25rem; text-transform: uppercase; letter-spacing: 2px; font-weight: 500;
-        }
-
-        .client-logos {
-            display: flex; justify-content: center; align-items: center;
-            gap: 4rem; flex-wrap: wrap; opacity: 0.6;
-        }
-
-        .client-logo { font-size: 3rem; transition: all 0.3s ease; }
-
-        .client-logo:hover { opacity: 1; transform: scale(1.1); }
-
-        .demo-section {
-            position: relative; z-index: 2; padding: 8rem 2rem; text-align: center;
-        }
-
-        .demo-content { max-width: 1000px; margin: 0 auto; }
-
-        .demo-content h2 {
-            font-size: clamp(2.5rem, 5vw, 4rem); margin-bottom: 2rem;
-            font-weight: 900; letter-spacing: -2px;
-        }
-
-        .demo-video-placeholder {
-            background: var(--obsidian-dark); border: 1px solid var(--border-neural);
-            border-radius: 16px; padding: 4rem 2rem; margin: 3rem 0;
-            position: relative; overflow: hidden;
-        }
-
-        .demo-video-placeholder::before {
-            content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%;
-            background: radial-gradient(circle at center, rgba(0, 229, 255, 0.1) 0%, transparent 70%);
-        }
-
-        .demo-video-placeholder p {
-            color: var(--text-secondary); font-size: 1.125rem; line-height: 1.8;
-            margin-bottom: 2rem; position: relative; z-index: 1;
-        }
-
-        section {
-            position: relative; z-index: 2; max-width: 1600px;
-            margin: 0 auto; padding: 8rem 4rem;
-        }
-
+        /* Sections */
+        section { position: relative; z-index: 2; max-width: 1600px; margin: 0 auto; padding: 8rem 4rem; }
         .section-header { text-align: center; margin-bottom: 6rem; }
-
-        .section-label {
-            display: inline-block; font-family: 'JetBrains Mono', monospace;
-            font-size: 0.85rem; font-weight: 700; color: var(--neural-blue);
-            text-transform: uppercase; letter-spacing: 3px; margin-bottom: 1.5rem;
-        }
-
-        .section-header h2 {
-            font-size: clamp(2.5rem, 5vw, 4.5rem); font-weight: 900;
-            margin-bottom: 1.5rem; letter-spacing: -2px;
-        }
-
-        .section-header p {
-            color: var(--text-secondary); font-size: 1.25rem; max-width: 700px;
-            margin: 0 auto; line-height: 1.8;
-        }
-
-        .features-grid {
-            display: grid; grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-            gap: 2rem;
-        }
-
-        .feature-card {
-            background: linear-gradient(135deg, var(--obsidian-dark) 0%, var(--obsidian-grey) 100%);
-            border: 1px solid var(--border-neural); border-radius: 16px;
-            padding: 3rem; transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-            position: relative; overflow: hidden;
-        }
-
-        .feature-card::before {
-            content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%;
-            background: linear-gradient(135deg, transparent 0%, rgba(0, 229, 255, 0.05) 100%);
-            opacity: 0; transition: opacity 0.4s ease;
-        }
-
-        .feature-card:hover::before { opacity: 1; }
-
-        .feature-card:hover {
-            transform: translateY(-8px); border-color: var(--neural-blue);
-            box-shadow: 0 20px 60px rgba(0, 229, 255, 0.2);
-        }
-
-        .feature-icon {
-            width: 70px; height: 70px;
-            background: linear-gradient(135deg, var(--neural-blue), var(--quantum-purple));
-            border-radius: 12px; display: flex; align-items: center; justify-content: center;
-            font-size: 2rem; margin-bottom: 2rem;
-            box-shadow: 0 0 30px rgba(0, 229, 255, 0.3);
-        }
-
-        .feature-card h3 { font-size: 1.75rem; margin-bottom: 1rem; font-weight: 800; }
-
-        .feature-card p { color: var(--text-secondary); line-height: 1.8; font-size: 1.05rem; }
-
-        .feature-list { list-style: none; margin-top: 1.5rem; }
-
-        .feature-list li {
-            padding: 0.75rem 0; color: var(--text-secondary);
-            display: flex; align-items: center; gap: 1rem;
-        }
-
-        .feature-list li::before {
-            content: '▸'; color: var(--neural-blue);
-            font-weight: bold; font-size: 1.25rem;
-        }
-
-        .tech-stack {
-            background: var(--obsidian-dark);
-            border-top: 1px solid var(--border-neural);
-            border-bottom: 1px solid var(--border-neural);
-        }
-
-        .tech-grid {
-            display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 3rem;
-        }
-
-        .tech-item {
-            text-align: center; padding: 2rem;
-            border: 1px solid transparent; border-radius: 12px;
-            transition: all 0.3s ease;
-        }
-
-        .tech-item:hover {
-            border-color: var(--border-neural); background: rgba(0, 229, 255, 0.05);
-        }
-
-        .tech-logo { font-size: 3.5rem; margin-bottom: 1rem; }
-
-        .tech-name {
-            font-family: 'JetBrains Mono', monospace; font-weight: 600;
-            color: var(--text-primary); margin-bottom: 0.5rem;
-        }
-
-        .tech-desc { color: var(--text-tertiary); font-size: 0.9rem; }
-
-        .cta-section {
-            background: linear-gradient(135deg, var(--obsidian-dark) 0%, var(--obsidian-black) 100%);
-            border: 1px solid var(--border-neural); border-radius: 24px;
-            padding: 6rem 4rem; text-align: center;
-            position: relative; overflow: hidden;
-        }
-
-        .cta-section::before {
-            content: ''; position: absolute; top: -50%; left: -50%;
-            width: 200%; height: 200%;
-            background: radial-gradient(circle, rgba(0, 229, 255, 0.1) 0%, transparent 70%);
-            animation: ctaGlow 8s ease-in-out infinite alternate;
-        }
-
-        @keyframes ctaGlow {
-            0% { transform: translate(0, 0) scale(1); }
-            100% { transform: translate(10%, 10%) scale(1.1); }
-        }
-
-        .cta-section h2 {
-            position: relative; z-index: 1;
-            font-size: clamp(2.5rem, 5vw, 4rem); margin-bottom: 2rem; font-weight: 900;
-        }
-
-        .cta-section p {
-            position: relative; z-index: 1; color: var(--text-secondary);
-            font-size: 1.25rem; margin-bottom: 3rem; max-width: 700px;
-            margin-left: auto; margin-right: auto;
-        }
-
-        /* Pricing Section */
-        #pricing .features-grid {
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-        }
-
-        /* Contact Form */
-        #contact-form form input, #contact-form form textarea {
-            background: var(--obsidian-grey);
-            border: 1px solid var(--border-neural);
-            border-radius: 8px;
-            color: white;
-            padding: 1rem;
-            font-size: 1rem;
-        }
-
-        #contact-form form button {
-            margin-top: 1.5rem;
-        }
-
-        /* Grok Chat Widget */
-        .grok-chat-trigger {
-            position: fixed; bottom: 2rem; right: 2rem;
-            width: 70px; height: 70px;
-            background: linear-gradient(135deg, var(--neural-blue), var(--quantum-purple));
-            border-radius: 50%; display: flex; align-items: center; justify-content: center;
-            cursor: pointer; z-index: 2000;
-            box-shadow: 0 8px 32px rgba(0, 229, 255, 0.5);
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            animation: chatPulse 3s ease-in-out infinite;
-        }
-
-        @keyframes chatPulse { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.05); } }
-
-        .grok-chat-trigger:hover {
-            transform: scale(1.1);
-            box-shadow: 0 12px 48px rgba(0, 229, 255, 0.7);
-        }
-
-        .grok-chat-trigger::before { content: '💬'; font-size: 2rem; }
-
-        .grok-chat-window {
-            position: fixed; bottom: 110px; right: 2rem;
-            width: 420px; height: 600px;
-            background: var(--obsidian-dark); border: 1px solid var(--border-neural);
-            border-radius: 20px; display: none; flex-direction: column;
-            z-index: 2000; box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5); overflow: hidden;
-        }
-
-        .grok-chat-window.active {
-            display: flex;
-            animation: slideUp 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-
-        @keyframes slideUp {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        .chat-header {
-            background: linear-gradient(135deg, var(--neural-blue), var(--quantum-purple));
-            padding: 1.5rem; color: var(--obsidian-black);
-            display: flex; justify-content: space-between; align-items: center;
-        }
-
-        .chat-header h3 {
-            font-weight: 800; font-size: 1.25rem;
-            display: flex; align-items: center; gap: 0.5rem;
-        }
-
-        .chat-close {
-            background: none; border: none; color: var(--obsidian-black);
-            font-size: 1.5rem; cursor: pointer; opacity: 0.8;
-            transition: opacity 0.3s ease;
-        }
-
-        .chat-close:hover { opacity: 1; }
-
-        .chat-messages {
-            flex: 1; padding: 1.5rem; overflow-y: auto;
-            display: flex; flex-direction: column; gap: 1rem;
-        }
-
-        .chat-message {
-            padding: 1rem 1.25rem; border-radius: 12px; max-width: 85%;
-            animation: messageSlide 0.3s ease;
-        }
-
-        @keyframes messageSlide {
-            from { opacity: 0; transform: translateY(10px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        .chat-message.user {
-            background: linear-gradient(135deg, var(--quantum-purple), var(--neural-blue));
-            color: var(--obsidian-black); align-self: flex-end;
-        }
-
-        .chat-message.bot {
-            background: var(--obsidian-grey); color: var(--text-primary);
-            align-self: flex-start;
-        }
-
-        .typing-indicator {
-            display: flex; gap: 0.4rem; padding: 1rem;
-        }
-
-        .typing-indicator span {
-            width: 8px; height: 8px; background: var(--text-secondary);
-            border-radius: 50%; animation: typingBounce 1.2s infinite;
-        }
-
-        .typing-indicator span:nth-child(2) { animation-delay: 0.2s; }
-        .typing-indicator span:nth-child(3) { animation-delay: 0.4s; }
-
-        @keyframes typingBounce {
-            0%, 80%, 100% { transform: translateY(0); }
-            40% { transform: translateY(-6px); }
-        }
-
-        .quick-actions {
-            display: flex; flex-wrap: wrap; gap: 0.75rem;
-            padding: 1rem 1.5rem; border-top: 1px solid var(--border-neural);
-        }
-
-        .quick-btn {
-            padding: 0.6rem 1.2rem; border-radius: 30px;
-            background: rgba(0, 229, 255, 0.1); border: 1px solid var(--border-neural);
-            color: var(--neural-blue); font-size: 0.85rem; cursor: pointer;
-            transition: all 0.3s ease;
-        }
-
-        .quick-btn:hover {
-            background: rgba(0, 229, 255, 0.25);
-            transform: translateY(-2px);
-        }
-
-        .chat-input-area {
-            padding: 1rem 1.5rem; border-top: 1px solid var(--border-neural);
-            background: var(--obsidian-dark);
-        }
-
-        .chat-input-wrapper {
-            display: flex; gap: 0.75rem;
-        }
-
-        .chat-input {
-            flex: 1; padding: 0.9rem 1.2rem;
-            border: 1px solid var(--border-neural); border-radius: 30px;
-            background: var(--obsidian-grey); color: white;
-            font-size: 1rem;
-        }
-
-        .chat-send {
-            padding: 0.9rem 1.5rem; border-radius: 30px;
-            background: linear-gradient(135deg, var(--neural-blue), var(--quantum-purple));
-            color: var(--obsidian-black); border: none; font-weight: 700;
-            cursor: pointer; transition: all 0.3s ease;
-        }
-
-        .chat-send:hover { transform: scale(1.05); }
-
-        footer {
-            background: var(--obsidian-black); padding: 4rem 4rem 2rem;
-            position: relative; z-index: 2;
-        }
-
-        .footer-content {
-            max-width: 1600px; margin: 0 auto;
-            display: grid; grid-template-columns: 2fr 1fr 1fr 1fr;
-            gap: 4rem; margin-bottom: 3rem;
-        }
-
-        .footer-brand h3 {
-            font-family: 'JetBrains Mono', monospace; font-size: 1.75rem;
-            margin-bottom: 1rem;
-            background: linear-gradient(135deg, var(--neural-blue), var(--quantum-purple));
-            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        .footer-brand p { color: var(--text-secondary); line-height: 1.8; }
-
-        .footer-section h4 {
-            margin-bottom: 1.5rem; font-weight: 700;
-            text-transform: uppercase; letter-spacing: 1px; font-size: 0.9rem;
-        }
-
-        .footer-links { list-style: none; }
-
-        .footer-links li { margin-bottom: 0.75rem; }
-
-        .footer-links a {
-            color: var(--text-secondary); text-decoration: none;
-            transition: color 0.3s ease;
-        }
-
-        .footer-links a:hover { color: var(--neural-blue); }
-
-        .footer-bottom {
-            max-width: 1600px; margin: 0 auto;
-            padding-top: 2rem; border-top: 1px solid var(--border-neural);
-            text-align: center; color: var(--text-tertiary); font-size: 0.9rem;
-        }
-
-        @media (max-width: 1200px) {
-            nav { padding: 1.5rem 2rem; }
-            section { padding: 6rem 2rem; }
-            .footer-content { grid-template-columns: 1fr 1fr; }
-        }
-
-        @media (max-width: 768px) {
-            .nav-links { display: none; }
-            .hero h1 { font-size: 3rem; }
-            .features-grid { grid-template-columns: 1fr; }
-            .footer-content { grid-template-columns: 1fr; }
-            .grok-chat-window { width: calc(100vw - 2rem); right: 1rem; height: 500px; }
-            .metrics-grid { grid-template-columns: 1fr; gap: 2rem; }
-            .client-logos { gap: 2rem; }
-            .demo-video-placeholder { padding: 2rem 1rem; }
-        }
-
-        @keyframes shimmer {
-            0% { background-position: -1000px 0; }
-            100% { background-position: 1000px 0; }
-        }
-
-        .shimmer {
-            background: linear-gradient(90deg, transparent 0%, rgba(0, 229, 255, 0.1) 50%, transparent 100%);
-            background-size: 1000px 100%; animation: shimmer 3s infinite;
-        }
+        .section-label { color: var(--neural-blue); font-family: 'JetBrains Mono'; font-size: 0.85rem; letter-spacing: 3px; margin-bottom: 1.5rem; display: block; }
+        .features-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(380px, 1fr)); gap: 2rem; }
+        .feature-card { background: var(--obsidian-dark); border: 1px solid var(--border-neural); padding: 3.5rem; border-radius: 16px; transition: 0.4s; }
+        .feature-card:hover { border-color: var(--neural-blue); transform: translateY(-10px); }
+        .feature-icon { font-size: 2.5rem; margin-bottom: 2rem; display: block; }
+        
+        /* Roadmap Styling */
+        .roadmap-card { border-left: 4px solid var(--border-neural); }
+        .roadmap-card.active { border-left-color: var(--neural-blue); background: rgba(0, 229, 255, 0.03); }
+        .phase-tag { color: var(--neural-blue); font-family: 'JetBrains Mono'; font-weight: 700; font-size: 0.75rem; margin-bottom: 1rem; display: block; }
+
+        /* Chat Widget */
+        .grok-chat-trigger { position: fixed; bottom: 2rem; right: 2rem; width: 70px; height: 70px; background: linear-gradient(135deg, var(--neural-blue), var(--quantum-purple)); border-radius: 50%; display: flex; align-items: center; justify-content: center; cursor: pointer; z-index: 2000; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5); font-size: 2rem; }
+        .grok-chat-window { position: fixed; bottom: 110px; right: 2rem; width: 420px; height: 600px; background: var(--obsidian-dark); border: 1px solid var(--border-neural); border-radius: 20px; display: none; flex-direction: column; z-index: 2000; overflow: hidden; }
+        .chat-header { background: linear-gradient(135deg, var(--neural-blue), var(--quantum-purple)); padding: 1.5rem; color: black; font-weight: 800; display: flex; justify-content: space-between; }
+        .chat-messages { flex: 1; padding: 1.5rem; overflow-y: auto; display: flex; flex-direction: column; gap: 1rem; }
+        .message { padding: 1rem; border-radius: 12px; max-width: 85%; font-size: 0.95rem; }
+        .message.bot { background: var(--obsidian-grey); border: 1px solid var(--border-neural); }
+        .message.user { background: var(--neural-blue); color: black; align-self: flex-end; }
+        .chat-input-area { padding: 1.5rem; border-top: 1px solid var(--border-neural); display: flex; gap: 0.5rem; }
+        .chat-input { flex: 1; background: black; border: 1px solid var(--border-neural); color: white; padding: 0.8rem; border-radius: 30px; padding-left: 1.5rem; }
+
+        @media (max-width: 768px) { .nav-links { display: none; } .hero h1 { font-size: 3rem; } .features-grid { grid-template-columns: 1fr; } .grok-chat-window { width: calc(100% - 2rem); right: 1rem; } }
     </style>
 </head>
 <body>
     <div class="neural-grid"></div>
-    
-    <div class="quantum-field">
-        <div class="quantum-particle"></div>
-        <div class="quantum-particle"></div>
-        <div class="quantum-particle"></div>
-        <div class="quantum-particle"></div>
-        <div class="quantum-particle"></div>
-    </div>
+    <div class="quantum-field" id="particles"></div>
 
     <header id="header">
         <nav>
             <div class="logo">ObsidianAI</div>
             <ul class="nav-links">
-                <li><a href="#solutions">Solutions</a></li>
+                <li><a href="#solutions">The Engine</a></li>
                 <li><a href="#technology">Technology</a></li>
-                <li><a href="#security">Security</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#pricing" class="nav-cta">Pricing</a></li>
-                <li><a href="#contact-form" class="nav-cta">Get Started</a></li>
+                <li><a href="#roadmap">Innovation</a></li>
+                <li><a href="https://obsidianai-evtu.onrender.com" class="nav-cta">Launch Sandbox</a></li>
             </ul>
         </nav>
     </header>
 
     <section class="hero">
         <div class="hero-content">
-            <div class="hero-label">
-                <span>NEXT-GEN CYBERSECURITY</span>
-            </div>
-            <h1>
-                <span class="gradient-text">Zero-Trust Security</span><br>
-                Powered by xAI
-            </h1>
-            <p class="hero-subtitle">
-                Autonomous threat intelligence • Neural network defense • Quantum-resistant encryption
-            </p>
+            <div class="hero-label">AGENTIC OS FOR THE AUTONOMOUS ENTERPRISE</div>
+            <h1><span class="gradient-text">Beyond Security.</span><br>Autonomous Intelligence.</h1>
+            <p class="hero-subtitle">ObsidianAI orchestrates xAI’s Grok-3 to automate zero-trust architecture, real-time threat synthesis, and self-healing network infrastructure.</p>
             <div class="hero-cta">
-                <a href="#contact-form" class="btn btn-primary">Deploy ObsidianAI</a>
-                <a href="#solutions" class="btn btn-secondary">Explore Solutions</a>
+                <a href="https://obsidianai-evtu.onrender.com" class="btn btn-primary">Deploy Enterprise Sandbox</a>
+                <a href="#roadmap" class="btn btn-secondary">Innovation Roadmap</a>
             </div>
         </div>
     </section>
@@ -758,8 +189,8 @@
                 <div class="metric-label">Response Time</div>
             </div>
             <div class="metric">
-                <div class="metric-value">24/7</div>
-                <div class="metric-label">AI Monitoring</div>
+                <div class="metric-value">Grok-3</div>
+                <div class="metric-label">Reasoning Engine</div>
             </div>
             <div class="metric">
                 <div class="metric-value">0-Trust</div>
@@ -768,414 +199,143 @@
         </div>
     </div>
 
-    <!-- Social Proof Section -->
-    <div class="social-proof">
-        <h3>Trusted by Leading Organizations</h3>
-        <div class="client-logos">
-            <div class="client-logo">🏢</div>
-            <div class="client-logo">🏛️</div>
-            <div class="client-logo">🏥</div>
-            <div class="client-logo">🏭</div>
-            <div class="client-logo">⚖️</div>
-        </div>
-    </div>
 
-    <!-- Pricing Section -->
-    <section id="pricing">
-        <div class="section-header">
-            <div class="section-label">PRICING</div>
-            <h2>Secure Your Infrastructure</h2>
-            <p>Flexible tiers designed for Orlando hospitality, healthcare, and nationwide enterprise needs.</p>
-        </div>
-        <div class="features-grid" style="grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));">
-            <div class="feature-card">
-                <h3>Foundation</h3>
-                <p class="metric-value">$1,995/mo</p>
-                <p>Quote-based hardware resale + basic monitoring</p>
-            </div>
-            <div class="feature-card" style="border-color: var(--neural-blue);">
-                <h3>Obsidian Core</h3>
-                <p class="metric-value">$2,995–$6,995/mo</p>
-                <p>Most Popular • Palo Alto zero-trust + custom xAI Grok agent + 24/7 Orlando on-site support</p>
-            </div>
-            <div class="feature-card">
-                <h3>Enterprise Nationwide</h3>
-                <p class="metric-value">Custom</p>
-                <p>Remote-first with private LLM hosting and multi-site deployment</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Demo Section -->
-    <div class="demo-section">
-        <div class="demo-content">
-            <h2>See ObsidianAI in Action</h2>
-            <div class="demo-video-placeholder">
-                <p>Watch how our AI-powered security platform detects and neutralizes threats in real-time, leveraging zero-trust architecture and autonomous threat intelligence.</p>
-                <p style="margin-top: 1rem; color: var(--text-tertiary);">🎥 Demo video coming soon</p>
-                <button class="btn btn-primary" style="margin-top: 2rem;" onclick="document.getElementById('chatTrigger').click()">Request Live Demo</button>
-            </div>
-        </div>
-    </div>
 
     <section id="solutions">
         <div class="section-header">
-            <div class="section-label">CORE CAPABILITIES</div>
-            <h2>AI-Driven Defense Systems</h2>
-            <p>ObsidianAI combines zero-trust architecture with autonomous AI to create an impenetrable security layer for your infrastructure.</p>
+            <span class="section-label">SYSTEM CAPABILITIES</span>
+            <h2>The Grok Advantage</h2>
+            <p>While others use static LLMs, ObsidianAI utilizes Grok’s real-time data stream and superior reasoning to secure the enterprise stack.</p>
         </div>
         <div class="features-grid">
             <div class="feature-card">
-                <div class="feature-icon">🛡️</div>
-                <h3>Zero-Trust Network Access</h3>
-                <p>Implement microsegmentation and continuous verification with AI-powered identity and access management.</p>
-                <ul class="feature-list">
-                    <li>Dynamic policy enforcement</li>
-                    <li>Behavioral analytics</li>
-                    <li>Real-time threat scoring</li>
-                    <li>Automated incident response</li>
-                </ul>
+                <span class="feature-icon">🧠</span>
+                <h3>Grok-Powered Synthesis</h3>
+                <p>Direct integration with xAI allows for sub-second analysis of zero-day vulnerabilities by cross-referencing global intelligence in real-time.</p>
             </div>
             <div class="feature-card">
-                <div class="feature-icon">🤖</div>
-                <h3>Autonomous Threat Intelligence</h3>
-                <p>Neural networks continuously learn and adapt to emerging threats, staying ahead of adversaries.</p>
-                <ul class="feature-list">
-                    <li>Predictive threat modeling</li>
-                    <li>Machine learning detection</li>
-                    <li>Automated vulnerability patching</li>
-                    <li>Self-healing infrastructure</li>
-                </ul>
+                <span class="feature-icon">🛰️</span>
+                <h3>Agentic Orchestration</h3>
+                <p>Our AI acts as a neural layer over your Cisco and Palo Alto hardware, providing natural language auditing and self-healing loops.</p>
             </div>
             <div class="feature-card">
-                <div class="feature-icon">⚡</div>
-                <h3>xAI Integration</h3>
-                <p>Leverage Grok's advanced reasoning to analyze security events and automate response workflows.</p>
-                <ul class="feature-list">
-                    <li>Natural language queries</li>
-                    <li>Intelligent automation</li>
-                    <li>Context-aware decisions</li>
-                    <li>Compliance monitoring</li>
-                </ul>
-            </div>
-            <div class="feature-card">
-                <div class="feature-icon">🔐</div>
-                <h3>Quantum-Safe Encryption</h3>
-                <p>Future-proof your data with post-quantum cryptographic algorithms and end-to-end encryption.</p>
-                <ul class="feature-list">
-                    <li>Lattice-based cryptography</li>
-                    <li>Key management automation</li>
-                    <li>Data sovereignty controls</li>
-                    <li>Zero-knowledge architecture</li>
-                </ul>
-            </div>
-            <div class="feature-card">
-                <div class="feature-icon">📊</div>
-                <h3>Real-Time Analytics</h3>
-                <p>Comprehensive visibility across your entire attack surface with AI-powered insights and predictions.</p>
-                <ul class="feature-list">
-                    <li>Security posture scoring</li>
-                    <li>Anomaly detection</li>
-                    <li>Executive dashboards</li>
-                    <li>Risk quantification</li>
-                </ul>
-            </div>
-            <div class="feature-card">
-                <div class="feature-icon">🚀</div>
-                <h3>Rapid Deployment</h3>
-                <p>Infrastructure-as-code templates enable zero-downtime deployment across cloud and on-premise environments.</p>
-                <ul class="feature-list">
-                    <li>Multi-cloud support</li>
-                    <li>Containerized architecture</li>
-                    <li>Automated provisioning</li>
-                    <li>Seamless integration</li>
-                </ul>
+                <span class="feature-icon">🔒</span>
+                <h3>Stateless Privacy</h3>
+                <p>Designed for the CISO. Our architecture ensures that sensitive network data never trains the global model. Your data remains sovereign.</p>
             </div>
         </div>
     </section>
 
-    <section id="technology" class="tech-stack">
+    <section id="roadmap">
         <div class="section-header">
-            <div class="section-label">TECHNOLOGY STACK</div>
-            <h2>Built on Cutting-Edge Infrastructure</h2>
-            <p>ObsidianAI leverages the most advanced technologies to deliver unparalleled security and performance.</p>
-        </div>
-        <div class="tech-grid">
-            <div class="tech-item">
-                <div class="tech-logo">🧠</div>
-                <div class="tech-name">Grok AI</div>
-                <div class="tech-desc">Advanced reasoning engine</div>
-            </div>
-            <div class="tech-item">
-                <div class="tech-logo">☁️</div>
-                <div class="tech-name">Azure Cloud</div>
-                <div class="tech-desc">Enterprise infrastructure</div>
-            </div>
-            <div class="tech-item">
-                <div class="tech-logo">🔷</div>
-                <div class="tech-name">Kubernetes</div>
-                <div class="tech-desc">Container orchestration</div>
-            </div>
-            <div class="tech-item">
-                <div class="tech-logo">⚡</div>
-                <div class="tech-name">TensorFlow</div>
-                <div class="tech-desc">Neural network training</div>
-            </div>
-            <div class="tech-item">
-                <div class="tech-logo">🔒</div>
-                <div class="tech-name">Palo Alto</div>
-                <div class="tech-desc">Next-gen firewalls</div>
-            </div>
-            <div class="tech-item">
-                <div class="tech-logo">📡</div>
-                <div class="tech-name">Cisco DNA</div>
-                <div class="tech-desc">Network automation</div>
-            </div>
-        </div>
-    </section>
-
-    <section id="security">
-        <div class="section-header">
-            <div class="section-label">SECURITY ARCHITECTURE</div>
-            <h2>Defense in Depth</h2>
-            <p>Multiple layers of AI-powered protection ensure your infrastructure remains secure against evolving threats.</p>
+            <span class="section-label">2026 ROADMAP</span>
+            <h2>The Path to Autonomy</h2>
+            <p>Our strategic plan to evolve from an AI assistant to the primary Nervous System of the Modern Enterprise.</p>
         </div>
         <div class="features-grid">
-            <div class="feature-card shimmer">
-                <div class="feature-icon">🎯</div>
-                <h3>Attack Surface Management</h3>
-                <p>Continuously discover, monitor, and secure all assets across your digital infrastructure with AI-driven inventory and risk assessment.</p>
+            <div class="feature-card roadmap-card active">
+                <span class="phase-tag">PHASE 1: FOUNDATION</span>
+                <h3>Agentic Sandbox</h3>
+                <p>Full Grok-3 API integration, secure web terminal, and initial Zero-Trust MVP deployment on Render.</p>
             </div>
-            <div class="feature-card shimmer">
-                <div class="feature-icon">🔍</div>
-                <h3>Extended Detection & Response</h3>
-                <p>Unified visibility and automated response across endpoints, networks, cloud, and applications powered by machine learning correlation.</p>
+            <div class="feature-card roadmap-card">
+                <span class="phase-tag">PHASE 2: DEEP STACK</span>
+                <h3>Hardware Agents</h3>
+                <p>Native API connectors for Cisco Catalyst, Palo Alto Prisma, and AWS Sentinel stacks.</p>
             </div>
-            <div class="feature-card shimmer">
-                <div class="feature-icon">⚙️</div>
-                <h3>Security Orchestration</h3>
-                <p>Automate security workflows and incident response with AI-powered playbooks that adapt to your environment and threat landscape.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Form Section -->
-    <section id="contact-form">
-        <div class="section-header">
-            <div class="section-label">GET STARTED</div>
-            <h2>Free Orlando Security Assessment</h2>
-            <p>Submit your details and we'll schedule a 30-minute consultation.</p>
-        </div>
-        <form action="https://formspree.io/f/YOUR_FORMSPREE_ID" method="POST" style="max-width:700px;margin:0 auto;">
-            <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;">
-                <input type="text" name="name" placeholder="Your Name" required>
-                <input type="email" name="email" placeholder="Business Email" required>
-            </div>
-            <textarea name="message" placeholder="Describe your needs (e.g., xAI agent for hotel operations, Palo Alto deployment, Orlando on-site support)" rows="5" required style="width:100%;margin-top:1rem;"></textarea>
-            <button type="submit" class="btn btn-primary" style="margin-top:1.5rem;">Request Free Assessment</button>
-        </form>
-    </section>
-
-    <section id="about">
-        <div class="cta-section">
-            <h2>Ready to Deploy Autonomous Security?</h2>
-            <p>Join leading organizations leveraging ObsidianAI to protect their critical infrastructure with next-generation AI-powered security.</p>
-            <div class="hero-cta">
-                <a href="#contact-form" class="btn btn-primary">Schedule Demo</a>
-                <a href="mailto:team@obsidianai.dev" class="btn btn-secondary">Contact Sales</a>
+            <div class="feature-card roadmap-card">
+                <span class="phase-tag">PHASE 3: SCALE</span>
+                <h3>Autonomous SOC</h3>
+                <p>Independent "Sentry" Agents capable of 24/7 incident response without human intervention.</p>
             </div>
         </div>
     </section>
 
-    <footer id="contact">
-        <div class="footer-content">
-            <div class="footer-brand">
-                <h3>ObsidianAI</h3>
-                <p>Next-generation cybersecurity combining zero-trust architecture with autonomous AI. Protecting enterprises with advanced threat intelligence and quantum-safe encryption.</p>
-            </div>
-            <div class="footer-section">
-                <h4>Solutions</h4>
-                <ul class="footer-links">
-                    <li><a href="#solutions">Zero-Trust ZTNA</a></li>
-                    <li><a href="#solutions">Threat Intelligence</a></li>
-                    <li><a href="#solutions">xAI Integration</a></li>
-                    <li><a href="#solutions">Cloud Security</a></li>
-                </ul>
-            </div>
-            <div class="footer-section">
-                <h4>Company</h4>
-                <ul class="footer-links">
-                    <li><a href="#about">About</a></li>
-                    <li><a href="https://www.linkedin.com/in/antonio-bowden" target="_blank">Team</a></li>
-                    <li><a href="#technology">Technology</a></li>
-                    <li><a href="mailto:team@obsidianai.dev">Careers</a></li>
-                </ul>
-            </div>
-            <div class="footer-section">
-                <h4>Contact</h4>
-                <ul class="footer-links">
-                    <li><a href="mailto:team@obsidianai.dev">Sales</a></li>
-                    <li><a href="mailto:team@obsidianai.dev">Support</a></li>
-                    <li>Orlando, Florida</li>
-                    <li><a href="https://www.linkedin.com/in/antonio-bowden" target="_blank">LinkedIn</a></li>
-                </ul>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <p>© 2025 ObsidianAI by Antonio Bowden. Zero-Trust Security + xAI Automation. All rights reserved.</p>
+    <footer style="border-top: 1px solid var(--border-neural); padding: 5rem 2rem; text-align: center;">
+        <div class="logo" style="margin-bottom: 1.5rem;">ObsidianAI</div>
+        <p style="color: var(--text-secondary); margin-bottom: 2rem;">© 2026 ObsidianAI. Founded by Antonio Bowden. Powered by xAI Grok. Orlando, FL.</p>
+        <div style="display: flex; justify-content: center; gap: 2rem;">
+            <a href="https://github.com/abowden101/ObsidianAI" style="color: var(--neural-blue); text-decoration: none; font-family: 'JetBrains Mono';">GITHUB_REPOS</a>
+            <a href="mailto:team@obsidianai.dev" style="color: var(--neural-blue); text-decoration: none; font-family: 'JetBrains Mono';">INVESTOR_RELATIONS</a>
         </div>
     </footer>
 
-    <!-- Grok Chat Widget -->
-    <div class="grok-chat-trigger" id="chatTrigger"></div>
-    
+    <div class="grok-chat-trigger" id="chatTrigger">💬</div>
     <div class="grok-chat-window" id="chatWindow">
         <div class="chat-header">
-            <h3>💬 Grok Assistant</h3>
-            <button class="chat-close" id="chatClose">×</button>
+            <span>Grok-3 Security Assistant</span>
+            <span id="chatClose" style="cursor:pointer">×</span>
         </div>
         <div class="chat-messages" id="chatMessages">
-            <div class="chat-message bot">
-                Hello! I'm Grok, your AI security assistant. How can I help you deploy ObsidianAI's zero-trust security solutions today?
-            </div>
-        </div>
-        <div class="quick-actions">
-            <button class="quick-btn" onclick="askQuickQuestion('What are your pricing options?')">💰 Pricing</button>
-            <button class="quick-btn" onclick="askQuickQuestion('How does zero-trust work?')">🔒 Zero-Trust</button>
-            <button class="quick-btn" onclick="askQuickQuestion('Schedule a demo')">📅 Demo</button>
-            <button class="quick-btn" onclick="askQuickQuestion('Tell me about xAI integration')">🤖 xAI</button>
+            <div class="message bot">Connection Established. I am Grok. How can I help you optimize your enterprise security architecture today?</div>
         </div>
         <div class="chat-input-area">
-            <div class="chat-input-wrapper">
-                <input type="text" class="chat-input" id="chatInput" placeholder="Ask about our security solutions...">
-                <button class="chat-send" id="chatSend">Send</button>
-            </div>
+            <input type="text" class="chat-input" id="chatInput" placeholder="Analyze network logs...">
+            <button id="chatSend" style="background:var(--neural-blue); border:none; padding:0 1.5rem; border-radius:30px; font-weight:bold; cursor:pointer">Send</button>
         </div>
     </div>
 
     <script>
-        // Header scroll effect
+        // Particle Generation
+        const container = document.getElementById('particles');
+        for (let i = 0; i < 25; i++) {
+            const p = document.createElement('div');
+            p.className = 'quantum-particle';
+            p.style.left = Math.random() * 100 + '%';
+            p.style.animationDelay = Math.random() * 15 + 's';
+            container.appendChild(p);
+        }
+
+        // Header Scroll Effect
         window.addEventListener('scroll', () => {
             const header = document.getElementById('header');
-            if (window.scrollY > 50) {
-                header.classList.add('scrolled');
-            } else {
-                header.classList.remove('scrolled');
-            }
+            if (window.scrollY > 50) header.classList.add('scrolled');
+            else header.classList.remove('scrolled');
         });
 
-        // Real Grok Chat (connected to backend)
-        const chatTrigger = document.getElementById('chatTrigger');
+        // Chat Logic
+        const trigger = document.getElementById('chatTrigger');
         const chatWindow = document.getElementById('chatWindow');
         const chatClose = document.getElementById('chatClose');
         const chatInput = document.getElementById('chatInput');
         const chatSend = document.getElementById('chatSend');
         const chatMessages = document.getElementById('chatMessages');
 
-        const BACKEND_URL = 'https://obsidianai-evtu.onrender.com';  // ← FIXED: Correct live backend URL
+        trigger.onclick = () => chatWindow.style.display = 'flex';
+        chatClose.onclick = () => chatWindow.style.display = 'none';
 
-        chatTrigger.addEventListener('click', () => {
-            chatWindow.classList.add('active');
-            chatInput.focus();
-        });
-
-        chatClose.addEventListener('click', () => {
-            chatWindow.classList.remove('active');
-        });
-
-        function addMessage(text, isUser = false) {
-            const messageDiv = document.createElement('div');
-            messageDiv.className = `chat-message ${isUser ? 'user' : 'bot'}`;
-            messageDiv.textContent = text;
-            chatMessages.appendChild(messageDiv);
-            chatMessages.scrollTop = chatMessages.scrollHeight;
-        }
-
-        function showTyping() {
-            const typingDiv = document.createElement('div');
-            typingDiv.className = 'typing-indicator';
-            typingDiv.id = 'typing';
-            typingDiv.innerHTML = '<span></span><span></span><span></span>';
-            chatMessages.appendChild(typingDiv);
-            chatMessages.scrollTop = chatMessages.scrollHeight;
-        }
-
-        function hideTyping() {
-            const typing = document.getElementById('typing');
-            if (typing) typing.remove();
-        }
-
-        async function handleSend() {
-            const message = chatInput.value.trim();
-            if (!message) return;
-
-            addMessage(message, true);
+        async function handleChat() {
+            const text = chatInput.value.trim();
+            if(!text) return;
+            
+            const userDiv = document.createElement('div');
+            userDiv.className = 'message user';
+            userDiv.textContent = text;
+            chatMessages.appendChild(userDiv);
             chatInput.value = '';
-            showTyping();
 
             try {
-                const res = await fetch(`${BACKEND_URL}/chat`, {
+                const res = await fetch('https://obsidianai-evtu.onrender.com/chat', {
                     method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({ message: message })
+                    headers: {'Content-Type': 'application/json'},
+                    body: JSON.stringify({message: text})
                 });
-
-                if (!res.ok) {
-                    throw new Error(`Backend responded with status ${res.status}`);
-                }
-
                 const data = await res.json();
-                hideTyping();
-                addMessage(data.reply);
+                const botDiv = document.createElement('div');
+                botDiv.className = 'message bot';
+                botDiv.textContent = data.reply || "Analysis complete. Secure connection maintained.";
+                chatMessages.appendChild(botDiv);
             } catch (e) {
-                console.error('Chat error:', e);
-                hideTyping();
-                addMessage("Sorry, I'm having trouble connecting to the backend. Please try again.");
+                const botDiv = document.createElement('div');
+                botDiv.className = 'message bot';
+                botDiv.textContent = "Agent is in stateless mode. Please verify the Render backend is live.";
+                chatMessages.appendChild(botDiv);
             }
+            chatMessages.scrollTop = chatMessages.scrollHeight;
         }
 
-        chatSend.addEventListener('click', handleSend);
-        chatInput.addEventListener('keypress', (e) => {
-            if (e.key === 'Enter') handleSend();
-        });
-
-        function askQuickQuestion(question) {
-            chatInput.value = question;
-            handleSend();
-        }
-
-        // Smooth scroll for navigation
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                }
-            });
-        });
-
-        // Add intersection observer for animations
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -100px 0px'
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.style.opacity = '1';
-                    entry.target.style.transform = 'translateY(0)';
-                }
-            });
-        }, observerOptions);
-
-        document.querySelectorAll('.feature-card, .tech-item').forEach(element => {
-            element.style.opacity = '0';
-            element.style.transform = 'translateY(30px)';
-            element.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
-            observer.observe(element);
-        });
+        chatSend.onclick = handleChat;
+        chatInput.onkeypress = (e) => { if(e.key === 'Enter') handleChat(); };
     </script>
 </body>
 </html>
