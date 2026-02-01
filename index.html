@@ -23,13 +23,13 @@
     <meta name="twitter:description" content="Next-generation cybersecurity powered by AI. Autonomous threat intelligence and zero-trust architecture.">
     <meta name="twitter:image" content="https://obsidianai.org/og-image.jpg">
     
-    <!-- Google Analytics - REPLACE G-XXXXXXXXXX with your actual tracking ID if you have one -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <!-- Google tag (gtag.js) - Your Analytics is now fully active -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-71SYTMY3FL"></script>
     <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'G-XXXXXXXXXX');
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-71SYTMY3FL');
     </script>
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -767,7 +767,6 @@
         </div>
     </div>
 
-    <!-- Social Proof -->
     <div class="social-proof">
         <h3>Trusted by Leading Organizations</h3>
         <div class="client-logos">
@@ -779,7 +778,6 @@
         </div>
     </div>
 
-    <!-- Pricing -->
     <section id="pricing">
         <div class="section-header">
             <div class="section-label">PRICING</div>
@@ -805,7 +803,6 @@
         </div>
     </section>
 
-    <!-- Demo Section -->
     <div class="demo-section">
         <div class="demo-content">
             <h2>See ObsidianAI in Action</h2>
@@ -847,7 +844,6 @@
         </div>
     </section>
 
-    <!-- Contact Form -->
     <section id="contact-form">
         <div class="section-header">
             <div class="section-label">GET STARTED</div>
@@ -951,7 +947,7 @@
             }
         });
 
-        // Real Grok Chat — 100% working with your live backend
+        // Real Grok Chat - fully working with your live backend
         const chatTrigger = document.getElementById('chatTrigger');
         const chatWindow = document.getElementById('chatWindow');
         const chatClose = document.getElementById('chatClose');
@@ -959,7 +955,7 @@
         const chatSend = document.getElementById('chatSend');
         const chatMessages = document.getElementById('chatMessages');
 
-        // ← CRITICAL: Replace with your exact Render URL (no trailing slash)
+        // ← Your exact Render backend URL (update if it changes)
         const BACKEND_URL = 'https://obsidianai-evtu.onrender.com';
 
         chatTrigger.addEventListener('click', () => {
@@ -1007,12 +1003,15 @@
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify({ message: message })
                 });
+
+                if (!res.ok) throw new Error(`HTTP ${res.status}`);
+
                 const data = await res.json();
                 hideTyping();
-                addMessage(data.reply || "Received response from Grok.");
+                addMessage(data.reply || "Grok responded.");
             } catch (e) {
                 hideTyping();
-                addMessage("Connection issue — check backend status or refresh page.");
+                addMessage("Backend sleeping (free tier) — refresh or try again in 30 seconds.");
             }
         }
 
