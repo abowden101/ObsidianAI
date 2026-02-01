@@ -31,5 +31,5 @@ ObsidianAI isn't a chatbot. It is a **Network-Aware Intelligence Layer** designe
 - [ ] Phase 4: Full Enterprise Scaling & Global Deployment.
 ## 📬 Contact
 * **Owner:** Antonio Bowden
-* **Email:** [team@obsidianai.dev](mailto:team@obsidianai.dev)
+* **Email:** [team@obsidianai.org](mailto:team@obsidianai.org)
 * **Portfolio:** [abowden101.github.io/ObsidianAI](https://abowden101.github.io/ObsidianAI)
