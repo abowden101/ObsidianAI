@@ -1,0 +1,45 @@
+import os
+from openai import OpenAI   # xAI Grok client
+from nvapi import NVIDIAClient   # NVIDIA API Catalog client (pip install nvapi)
+
+# Initialize clients
+grok = OpenAI(
+    api_key=os.getenv("XAI_API_KEY"),
+    base_url="https://api.x.ai/v1"
+)
+
+nvidia = NVIDIAClient(
+    api_key=os.getenv("NVIDIA_API_KEY"),   # from build.nvidia.com
+    base_url="https://integrate.api.nvidia.com/v1"
+)
+
+def generate_code_with_grok_and_nim(requirement: str):
+    # Step 1: Grok reasons and creates detailed prompt
+    planning = grok.chat.completions.create(
+        model="grok-4-latest",
+        messages=[{
+            "role": "system",
+            "content": "You are an expert secure code architect. Plan step-by-step, include tests, security best practices."
+        }, {
+            "role": "user",
+            "content": f"Generate Python code for: {requirement}"
+        }],
+        temperature=0.3
+    )
+    plan = planning.choices[0].message.content
+
+    # Step 2: Send plan to NVIDIA NIM (e.g., DeepSeek-Coder or CodeLlama)
+    response = nvidia.chat.completions.create(
+        model="deepseek-ai/deepseek-coder-33b-instruct",   # or nemotron-4-340b-instruct
+        messages=[{"role": "user", "content": plan}],
+        temperature=0.2,
+        max_tokens=2048
+    )
+    
+    generated_code = response.choices[0].message.content
+    return plan, generated_code
+
+# Example usage
+plan, code = generate_code_with_grok_and_nim("Create a secure REST API for hotel inventory management with JWT authentication and rate limiting")
+print("Plan:\n", plan)
+print("\nGenerated Code:\n", code)
