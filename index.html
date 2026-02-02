@@ -4,15 +4,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ObsidianAI | Zero-Trust Security + xAI Automation</title>
-    <meta name="description" content="Obsidian AI helps modern businesses automate workflows and scale with custom AI integration. Orlando-based zero-trust security & xAI Grok automation.">
-    <meta name="keywords" content="zero-trust security, AI cybersecurity, xAI, enterprise security, Orlando IT, managed services">
+    <meta name="description" content="Orlando-based zero-trust network security & xAI Grok automation for hospitality, healthcare, SMBs. On-site local support + nationwide remote.">
     
+    <!-- SEO & Social Media Meta Tags -->
+    <meta name="keywords" content="zero-trust security, AI cybersecurity, autonomous threat detection, xAI, enterprise security, quantum-safe encryption, network security, threat intelligence, Orlando IT, managed services Orlando">
+    
+    <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://obsidianai.org">
-    <meta property="og:title" content="ObsidianAI | Tailored AI Solutions for Business">
+    <meta property="og:title" content="ObsidianAI - Zero-Trust Security + xAI Automation">
     <meta property="og:description" content="Next-generation cybersecurity powered by AI. Autonomous threat intelligence and zero-trust architecture protecting enterprise infrastructure.">
     <meta property="og:image" content="https://obsidianai.org/og-image.jpg">
     
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://obsidianai.org">
+    <meta name="twitter:title" content="ObsidianAI - Zero-Trust Security + xAI Automation">
+    <meta name="twitter:description" content="Next-generation cybersecurity powered by AI. Autonomous threat intelligence and zero-trust architecture.">
+    <meta name="twitter:image" content="https://obsidianai.org/og-image.jpg">
+    
+    <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-71SYTMY3FL"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
@@ -256,6 +267,10 @@
         .chat-send { padding: 0.9rem 1.5rem; border-radius: 30px; background: linear-gradient(135deg, var(--neural-blue), var(--quantum-purple)); color: var(--obsidian-black); border: none; font-weight: 700; cursor: pointer; }
         
         footer { background: var(--obsidian-black); padding: 4rem 4rem 2rem; text-align: center; border-top: 1px solid var(--border-neural); color: var(--text-tertiary); }
+
+        /* Form status styling */
+        #my-form-status.success { color: var(--secure-green); }
+        #my-form-status.error { color: var(--threat-red); }
     </style>
 </head>
 <body>
@@ -361,14 +376,23 @@
             if (response.ok) {
               status.innerHTML = "Success! We'll be in touch shortly.";
               status.style.color = "#00ff88"; 
+              status.className = "success";
               form.reset();
             } else {
-              status.innerHTML = "Oops! Problem submitting form.";
+              response.json().then(data => {
+                if (Object.hasOwn(data, 'errors')) {
+                  status.innerHTML = data["errors"].map(error => error["message"]).join(", ");
+                } else {
+                  status.innerHTML = "Oops! Problem submitting form.";
+                }
+              });
               status.style.color = "#ff0050";
+              status.className = "error";
             }
           }).catch(error => {
             status.innerHTML = "Server connection error.";
             status.style.color = "#ff0050";
+            status.className = "error";
           });
         }
         form.addEventListener("submit", handleSubmit);
