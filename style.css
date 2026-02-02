@@ -76,3 +76,14 @@ nav, #my-form {
     right: 20px;
     z-index: 1000;
 }
+.nav-links a:hover {
+    color: var(--neural-blue);
+    text-shadow: 0 0 10px var(--glow-neural);
+}
+
+/* Make the input fields glow when typing */
+input:focus, textarea:focus {
+    outline: none;
+    border-color: var(--neural-blue) !important;
+    box-shadow: 0 0 15px rgba(0, 229, 255, 0.3);
+}
