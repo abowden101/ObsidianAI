@@ -23,7 +23,7 @@ limiter = Limiter(key_func=get_remote_address)
 app.state.limiter = limiter
 app.add_exception_handler(RateLimitExceeded, _rate_limit_exceeded_handler)
 
-# Secure Headers Middleware (Security: Basic web protection)
+# Secure Headers Middleware
 class SecurityHeadersMiddleware:
     async def dispatch(self, request: Request, call_next):
         response = await call_next(request)
@@ -50,7 +50,7 @@ client = OpenAI(
     base_url="https://api.x.ai/v1"
 )
 
-# AWS S3 Client (Cloud Storage)
+# AWS S3 Client
 s3 = boto3.client(
     's3',
     aws_access_key_id=os.getenv("AWS_ACCESS_KEY_ID"),
@@ -58,11 +58,11 @@ s3 = boto3.client(
     region_name=os.getenv("AWS_REGION", "us-east-1")
 )
 
-# AWS RDS PostgreSQL (Cloud Database)
-DATABASE_URL = os.getenv("DATABASE_URL")  # e.g., postgresql+psycopg2://user:pass@host:5432/dbname
+# AWS RDS PostgreSQL
+DATABASE_URL = os.getenv("DATABASE_URL")
 engine = create_engine(DATABASE_URL) if DATABASE_URL else None
 
-# Create tables from init.sql if needed (run once)
+# Initialize DB tables (run once)
 if engine:
     with engine.connect() as conn:
         with open("init.sql") as f:
@@ -81,13 +81,13 @@ async def health():
     return {"status": "healthy", "api_key_loaded": "XAI_API_KEY" in os.environ, "db_connected": engine is not None}
 
 @app.post("/chat")
-@limiter.limit("10/minute")  # Security: Limit to 10 requests per minute per IP
-async def chat(req: ChatRequest):
+@limiter.limit("10/minute")
+async def chat(request: Request, req: ChatRequest):  # ← FIXED: Added request: Request
     print(f"DEBUG: Received /chat request - message: {req.message}")
     try:
         print("DEBUG: Calling xAI API with model 'grok-beta'...")
         response = client.chat.completions.create(
-            model="grok-beta",  # Stable/current Grok model
+            model="grok-beta",
             messages=[
                 {"role": "system", "content": "You are ObsidianAI's expert zero-trust security and xAI Grok automation assistant for Orlando businesses and nationwide clients."},
                 {"role": "user", "content": req.message}
@@ -104,12 +104,11 @@ async def chat(req: ChatRequest):
         traceback.print_exc()
         raise HTTPException(status_code=500, detail=error_msg)
 
-# Example: Upload a generated report to S3 (cloud storage)
+# Upload report to S3
 @app.post("/upload-report")
 @limiter.limit("5/minute")
-async def upload_report(req: ChatRequest):
-    # Generate report with Grok (example)
-    report = (await chat(req))["reply"]
+async def upload_report(request: Request, req: ChatRequest):
+    report = (await chat(request, req))["reply"]
     report_bytes = report.encode('utf-8')
     bucket = os.getenv("S3_BUCKET")
     key = f"reports/report-{os.urandom(8).hex()}.txt"
@@ -117,7 +116,7 @@ async def upload_report(req: ChatRequest):
     url = s3.generate_presigned_url('get_object', Params={'Bucket': bucket, 'Key': key}, ExpiresIn=3600)
     return {"report_url": url, "message": "Report securely stored in AWS S3"}
 
-# Example: Query clients from RDS (cloud database)
+# Get clients from RDS
 @app.get("/clients")
 @limiter.limit("20/minute")
 async def get_clients():
