@@ -1,9 +1,21 @@
+# Web framework
 fastapi==0.115.6
 uvicorn[standard]==0.34.0
+starlette==0.41.3
+
+# AI / LLM
 openai==1.59.9
+
+# Config & validation
 python-dotenv==1.0.1
 pydantic==2.10.4
-boto3
-sqlalchemy
-psycopg2-binary
-slowapi
+
+# Rate limiting
+slowapi==0.1.9
+
+# Database (optional — comment out if not using RDS)
+sqlalchemy==2.0.36
+psycopg2-binary==2.9.10
+
+# AWS (optional — comment out if not using S3)
+boto3==1.35.98

@@ -1,35 +1,109 @@
-# ObsidianAI: The Agentic Backbone for Enterprise Security
+# ObsidianAI
 
-![Status](https://img.shields.io/badge/Status-Scale_Ready-green)
-![Engine](https://img.shields.io/badge/Powered_by-xAI_Grok-orange)
+**Network-Aware Intelligence Layer for Enterprise Security**
 
-### **The Vision**
-ObsidianAI isn't a chatbot. It is a **Network-Aware Intelligence Layer** designed to bridge the gap between Large Language Models and Enterprise Infrastructure. By leveraging xAI's real-time data processing, we enable companies to move from "Human-in-the-loop" to "AI-Accelerated" operations.
+Bridges large language models and enterprise infrastructure. Real-time threat synthesis, automated incident response, and zero-trust architecture — powered by xAI Grok.
 
 ---
 
-## 🚀 Enterprise Core Pillars
+## Stack
 
-### 1. Cybersecurity Autopilot
-* **Real-Time Threat Synthesis:** Uses Grok to analyze live X (Twitter) security feeds and cross-reference them with internal network logs.
-* **Automated Incident Response:** Translates natural language commands into firewall rules and routing adjustments instantly.
-
-### 2. Intelligent Networking
-* **Infrastructure-as-Code (IaC) Intelligence:** Audit and generate BGP, VLAN, and SD-WAN configurations via xAI.
-* **Semantic Network Maps:** Ask "Where is the bottleneck?" and get a Grok-powered analysis of your topology.
-
-### 3. The Enterprise Moat
-* **Zero-Training Privacy:** Built on xAI Enterprise APIs. Your data is never used to train global models. 
-* **Agentic Framework:** Not just text—ObsidianAI can execute Python scripts and API calls to manage your hardware.
+| Layer | Technology |
+|---|---|
+| AI | xAI Grok (via OpenAI-compatible API) |
+| Backend | FastAPI + Uvicorn |
+| Rate limiting | SlowAPI |
+| Database | PostgreSQL (prod) / SQLite (dev) |
+| Storage | AWS S3 |
+| Frontend | Vanilla HTML/CSS/JS |
+| Deploy | Render (backend) · GitHub Pages (frontend) |
 
 ---
 
-## 📈 Roadmap for Investors
-- [x] Phase 1: MVP with xAI Integration & Web Terminal.
-- [ ] Phase 2: Native Integration with Cisco/Palo Alto/AWS APIs.
-- [ ] Phase 3: Autonomous SOC (Security Operations Center) Agents.
-- [ ] Phase 4: Full Enterprise Scaling & Global Deployment.
-## 📬 Contact
-* **Owner:** Antonio Bowden
-* **Email:** [team@obsidianai.org](mailto:team@obsidianai.org)
-* **Portfolio:** [abowden101.github.io/ObsidianAI](https://abowden101.github.io/ObsidianAI)
+## Project Structure
+
+```
+obsidianai/
+├── app.py                  # FastAPI backend — /chat, /health, /clients, /upload-report
+├── agent.py                # Core ObsidianAgent class (threat analysis, firewall gen, audits)
+├── hospitality_agent.py    # Hotel inventory automation agent
+├── seed_db.py              # Local SQLite seed script
+├── init.sql                # PostgreSQL schema (runs on backend startup)
+├── requirements.txt
+├── .env.example
+├── index.html              # Frontend (deployed to GitHub Pages)
+├── robots.txt
+├── CNAME
+└── docs/
+    ├── ROADMAP.md
+    └── SECURITY.md
+```
+
+---
+
+## Local Setup
+
+```bash
+# 1. Clone and install
+git clone https://github.com/abowden101/ObsidianAI.git
+cd ObsidianAI
+python -m venv .venv && source .venv/bin/activate
+pip install -r requirements.txt
+
+# 2. Configure environment
+cp .env.example .env
+# Fill in XAI_API_KEY at minimum
+
+# 3. Seed local database (optional)
+python seed_db.py
+
+# 4. Run backend
+uvicorn app:app --reload --port 8000
+```
+
+Backend will be available at `http://localhost:8000`.
+
+---
+
+## Environment Variables
+
+| Variable | Required | Description |
+|---|---|---|
+| `XAI_API_KEY` | ✓ | xAI API key from [x.ai/api](https://x.ai/api) |
+| `DATABASE_URL` | — | PostgreSQL connection string (Render / Supabase) |
+| `AWS_ACCESS_KEY_ID` | — | For S3 report storage |
+| `AWS_SECRET_ACCESS_KEY` | — | For S3 report storage |
+| `AWS_REGION` | — | Default: `us-east-1` |
+| `S3_BUCKET` | — | Bucket name for report uploads |
+
+---
+
+## API Endpoints
+
+```
+GET  /           Status + feature flags
+GET  /health     Health check
+POST /chat       { "message": "..." } → { "reply": "..." }
+POST /upload-report  Generate + store report to S3
+GET  /clients    List clients from database
+```
+
+---
+
+## Roadmap
+
+**Q1 2026** — Foundation ✓  
+xAI integration · Web CLI · GitHub/Render deploy
+
+**Q2 2026** — Agentic Expansion  
+Cisco Catalyst API · Palo Alto Networks API · Automated firewall policy · First MSP pilot
+
+**Q3 2026** — Autonomous SOC  
+Obsidian Sentry (24/7 syslog agent) · White-label portal · Seed round
+
+---
+
+## Contact
+
+**Antonio Bowden** · [team@obsidianai.org](mailto:team@obsidianai.org)  
+[obsidianai.org](https://obsidianai.org) · [LinkedIn](https://www.linkedin.com/in/antonio-bowden) · [GitHub](https://abowden101.github.io/ObsidianAI)
