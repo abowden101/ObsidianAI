@@ -1,0 +1,288 @@
+/* =========================
+OBSIDIAN AI — ELITE UI + CONVERSION SYSTEM
+========================= */
+
+:root {
+    --black: #000000;
+    --white: #ffffff;
+    --off-white: #f5f5f5;
+    --dim: #888888;
+    --subtle: #333333;
+    --border: #1a1a1a;
+    --accent: #00ff9d;
+    --accent2: #00ccff;
+
+    --font-display: 'Syne', sans-serif;
+    --font-mono: 'DM Mono', monospace;
+}
+
+* { margin:0; padding:0; box-sizing:border-box; }
+
+html { scroll-behavior: smooth; background: var(--black); }
+
+body {
+    font-family: var(--font-display);
+    color: var(--white);
+    background: var(--black);
+    line-height: 1.6;
+}
+
+/* =========================
+CONTAINER SYSTEM
+========================= */
+.container {
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 0 40px;
+}
+
+/* =========================
+NAVIGATION
+========================= */
+header {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    height: 72px;
+    background: rgba(0,0,0,0.85);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--border);
+    z-index: 1000;
+    display: flex; align-items: center;
+}
+
+nav {
+    width: 100%;
+    display: flex; justify-content: space-between; align-items: center;
+}
+
+.logo {
+    font-size: 1.2rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.nav-links {
+    display: flex; gap: 32px; list-style: none;
+}
+
+.nav-links a {
+    position: relative;
+    font-size: 0.8rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--dim);
+    text-decoration: none;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+    color: var(--white);
+}
+
+.nav-links a.active::after {
+    content: '';
+    position: absolute;
+    bottom: -6px;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background: var(--accent);
+}
+
+.nav-cta {
+    padding: 10px 24px;
+    border: 1px solid var(--accent);
+    color: var(--accent);
+}
+
+.nav-cta:hover {
+    background: var(--accent);
+    color: var(--black);
+}
+
+/* =========================
+HERO
+========================= */
+.hero {
+    min-height: 100vh;
+    display: flex; flex-direction: column; justify-content: center;
+}
+
+.hero h1 {
+    font-size: clamp(3.5rem, 8vw, 8rem);
+    font-weight: 800;
+    line-height: 0.95;
+    margin-bottom: 30px;
+}
+
+.hero-desc {
+    max-width: 600px;
+    color: var(--dim);
+    font-size: 1.1rem;
+}
+
+.hero-actions {
+    margin-top: 40px;
+    display: flex;
+    gap: 20px;
+}
+
+.trust-bar {
+    margin-top: 40px;
+    font-size: 0.8rem;
+    color: var(--dim);
+}
+
+/* =========================
+BUTTONS
+========================= */
+.btn {
+    padding: 14px 30px;
+    font-size: 0.85rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    border-radius: 4px;
+    text-decoration: none;
+}
+
+.btn-primary {
+    background: var(--accent);
+    color: var(--black);
+    box-shadow: 0 0 20px rgba(0,255,157,0.2);
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 0 30px rgba(0,255,157,0.4);
+}
+
+.btn-ghost {
+    border: 1px solid var(--border);
+    color: var(--white);
+}
+
+.btn-ghost:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+}
+
+/* =========================
+GRID SYSTEM
+========================= */
+.grid {
+    display: grid;
+    gap: 32px;
+}
+
+.grid-2 {
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.grid-3 {
+    grid-template-columns: repeat(3, 1fr);
+}
+
+@media (max-width: 768px) {
+    .grid-2, .grid-3 {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* =========================
+CARD SYSTEM
+========================= */
+.card {
+    background: #0a0a0a;
+    border: 1px solid var(--border);
+    padding: 30px;
+    border-radius: 8px;
+    transition: 0.3s;
+}
+
+.card:hover {
+    border-color: var(--accent);
+    transform: translateY(-5px);
+}
+
+/* =========================
+SECTION
+========================= */
+.section {
+    padding: 120px 0;
+    border-top: 1px solid var(--border);
+}
+
+.section-title {
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+}
+
+/* =========================
+FOOTER
+========================= */
+footer {
+    border-top: 1px solid var(--border);
+    padding: 40px;
+    text-align: center;
+    color: var(--dim);
+    font-size: 0.85rem;
+}
+
+/* =========================
+INDEX.HTML (ELITE HERO SECTION)
+========================= */
+
+<!-- COPY THIS INTO YOUR INDEX HERO -->
+<section class="hero container">
+  <h1>Secure Your Business<br><span style="color: var(--accent);">Without Complexity</span></h1>
+
+  <p class="hero-desc">
+    We deploy enterprise-grade cybersecurity for small and mid-size businesses — firewalls, endpoint protection, and 24/7 monitoring.
+  </p>
+
+  <div class="hero-actions">
+    <a href="contact.html" class="btn btn-primary">Get Free Assessment</a>
+    <a href="solutions.html" class="btn btn-ghost">View Solutions</a>
+  </div>
+
+  <div class="trust-bar">
+    Built by Network Engineers • Azure • Cisco • Fortinet • 5+ Years Experience
+  </div>
+</section>
+
+/* =========================
+PRICING CARDS (DROP INTO PRICING.HTML)
+========================= */
+
+<div class="grid grid-3 container">
+  <div class="card">
+    <h3>Starter</h3>
+    <p>$1500/month</p>
+    <ul>
+      <li>Firewall Management</li>
+      <li>Basic Monitoring</li>
+      <li>Email Support</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h3>Professional</h3>
+    <p>$3000/month</p>
+    <ul>
+      <li>EDR Protection</li>
+      <li>24/7 Monitoring</li>
+      <li>Priority Support</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h3>Enterprise</h3>
+    <p>Custom</p>
+    <ul>
+      <li>Full Security Stack</li>
+      <li>Dedicated Engineer</li>
+      <li>Incident Response SLA</li>
+    </ul>
+  </div>
+</div>
