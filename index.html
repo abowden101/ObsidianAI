@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ObsidianAI — Zero-Trust Security Powered by xAI Grok</title>
     <meta name="description" content="Orlando-built zero-trust infrastructure intelligence layer powered by xAI Grok.">
-    
     <link rel="stylesheet" href="styles.css">
 </head>
 <body class="loading">
@@ -38,33 +37,28 @@
             <div class="hero-desc">
                 We don't just secure networks. We make them intelligent — using Grok to reason about threats, policies, and operations in real time.
             </div>
-            <div class="hero-actions" style="margin-top: 48px; display: flex; gap: 16px;">
+            <div style="margin-top: 48px; display: flex; gap: 16px;">
                 <a href="solutions.html" class="btn btn-primary">Explore Solutions</a>
                 <a href="contact.html" class="btn btn-ghost">Book Free Assessment</a>
             </div>
         </div>
 
-        <div class="divider" style="height:1px; background:var(--border); margin:0 40px;"></div>
-
-        <!-- Live Demo Banner -->
-        <div style="background:#111; padding:40px 40px; text-align:center; margin:60px 40px; border:1px solid #222; font-size:1.1rem;">
+        <div style="background:#111; padding:40px; text-align:center; margin:60px 40px; border:1px solid #222;">
             <strong>🚀 LIVE GROK DEMO</strong> — The chat widget is connected to real xAI Grok. Ask anything about zero-trust, firewall rules, or hotel inventory.
         </div>
     </main>
 
-    <!-- === PASTE YOUR ORIGINAL FOOTER HERE === -->
+    <!-- Paste your original footer here -->
 
-    <!-- === PASTE YOUR ORIGINAL CHAT WIDGET HTML HERE === -->
+    <!-- Paste your original full chat widget HTML + JS here -->
 
-    <!-- TRANSITION & NAV SCRIPT -->
+    <!-- Transition Script -->
     <script>
         function initTransitions() {
             document.body.classList.remove('loading');
             const current = window.location.pathname.split('/').pop() || 'index.html';
             document.querySelectorAll('.nav-links a').forEach(link => {
-                if (link.getAttribute('href') === current) {
-                    link.classList.add('active');
-                }
+                if (link.getAttribute('href') === current) link.classList.add('active');
             });
         }
 
@@ -73,16 +67,14 @@
                 if (this.href !== window.location.href) {
                     e.preventDefault();
                     document.body.classList.add('loading');
-                    setTimeout(() => {
-                        window.location.href = this.href;
-                    }, 480);
+                    setTimeout(() => window.location.href = this.href, 480);
                 }
             });
         });
 
         window.addEventListener('load', initTransitions);
 
-        // Keep your original chat widget JavaScript here
+        // Your chat widget JS goes here
     </script>
 </body>
 </html>
