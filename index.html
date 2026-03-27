@@ -4,61 +4,85 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ObsidianAI — Zero-Trust Security Powered by xAI Grok</title>
-    <meta name="description" content="Orlando-based autonomous cybersecurity and operations intelligence.">
-    <!-- Your original meta, fonts, Google Analytics here -->
-    <style>
-        /* Paste your FULL original CSS here + the new transition CSS above */
-    </style>
+    <meta name="description" content="Orlando-built zero-trust infrastructure intelligence layer powered by xAI Grok.">
+    
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body class="loading">
 
-    <!-- NAV -->
-    [Paste the shared navigation block here]
+    <!-- NAVIGATION -->
+    <header>
+        <nav>
+            <a href="index.html" class="logo">
+                <span>ObsidianAI</span>
+                <span class="logo-dot"></span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="solutions.html">Solutions</a></li>
+                <li><a href="pricing.html">Pricing</a></li>
+                <li><a href="roadmap.html">Roadmap</a></li>
+                <li><a href="contact.html" class="nav-cta">Get Started</a></li>
+            </ul>
+        </nav>
+    </header>
 
     <main>
         <div class="hero">
-            <div class="hero-eyebrow">Network-Aware Intelligence Layer • Powered by <span style="color:#00ff9d">xAI Grok</span></div>
+            <div class="hero-eyebrow">UNDERSTANDING THE INFRASTRUCTURE • POWERED BY xAI GROK</div>
             <h1>
-                Zero-Trust.<br>
-                Grok-Powered.<br>
-                <em>Orlando-Built.</em>
+                ZERO-TRUST.<br>
+                MAXIMUM TRUTH.<br>
+                <em>BUILT IN ORLANDO.</em>
             </h1>
-            <div class="hero-footer">
-                <p class="hero-desc">Real-time threat intelligence, natural-language automation, and hospitality operations — all powered by xAI Grok.</p>
-                <div class="hero-actions">
-                    <a href="solutions.html" class="btn btn-primary">Explore Solutions</a>
-                    <a href="contact.html" class="btn btn-ghost">Book Free Assessment</a>
-                </div>
+            <div class="hero-desc">
+                We don't just secure networks. We make them intelligent — using Grok to reason about threats, policies, and operations in real time.
+            </div>
+            <div class="hero-actions" style="margin-top: 48px; display: flex; gap: 16px;">
+                <a href="solutions.html" class="btn btn-primary">Explore Solutions</a>
+                <a href="contact.html" class="btn btn-ghost">Book Free Assessment</a>
             </div>
         </div>
 
-        <div class="divider"></div>
-
-        <!-- Your original stats strip here (keep as-is) -->
+        <div class="divider" style="height:1px; background:var(--border); margin:0 40px;"></div>
 
         <!-- Live Demo Banner -->
-        <div style="background:#111; padding:32px 40px; text-align:center; margin:40px; border:1px solid #222; font-size:1.05rem;">
-            <strong>🚀 Live Supergrok Demo</strong> — The chat widget below is connected to real xAI Grok. Ask about firewall rules, threat logs, or hotel inventory optimization.
+        <div style="background:#111; padding:40px 40px; text-align:center; margin:60px 40px; border:1px solid #222; font-size:1.1rem;">
+            <strong>🚀 LIVE GROK DEMO</strong> — The chat widget is connected to real xAI Grok. Ask anything about zero-trust, firewall rules, or hotel inventory.
         </div>
-
-        <!-- Short teaser section linking to solutions -->
-        <section class="section">
-            <div class="section-tag">Capabilities</div>
-            <h2 class="section-title">Built for Orlando. Scaled for Enterprise.</h2>
-            <p style="max-width:620px; margin:0 auto 60px; text-align:center; color:var(--dim);">
-                From zero-trust network access to autonomous inventory planning for resorts and theme parks.
-            </p>
-            <div style="text-align:center;">
-                <a href="solutions.html" class="btn btn-primary">See All Capabilities →</a>
-            </div>
-        </section>
     </main>
 
-    <!-- FOOTER (copy your original footer) -->
+    <!-- === PASTE YOUR ORIGINAL FOOTER HERE === -->
 
-    <!-- CHAT WIDGET (copy your full chat HTML + script) -->
+    <!-- === PASTE YOUR ORIGINAL CHAT WIDGET HTML HERE === -->
 
-    [Paste the shared transition script here]
+    <!-- TRANSITION & NAV SCRIPT -->
+    <script>
+        function initTransitions() {
+            document.body.classList.remove('loading');
+            const current = window.location.pathname.split('/').pop() || 'index.html';
+            document.querySelectorAll('.nav-links a').forEach(link => {
+                if (link.getAttribute('href') === current) {
+                    link.classList.add('active');
+                }
+            });
+        }
 
+        document.querySelectorAll('a[href$=".html"]').forEach(link => {
+            link.addEventListener('click', function(e) {
+                if (this.href !== window.location.href) {
+                    e.preventDefault();
+                    document.body.classList.add('loading');
+                    setTimeout(() => {
+                        window.location.href = this.href;
+                    }, 480);
+                }
+            });
+        });
+
+        window.addEventListener('load', initTransitions);
+
+        // Keep your original chat widget JavaScript here
+    </script>
 </body>
 </html>
