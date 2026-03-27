@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pricing — ObsidianAI</title>
+    <!-- Same head -->
+    <style>
+        /* Full CSS + transitions */
+    </style>
+</head>
+<body class="loading">
+
+    <!-- NAV -->
+
+    <main class="section" id="pricing">
+        <div class="section-tag">Pricing</div>
+        <h2 class="section-title">Secure Your Infrastructure</h2>
+        
+        <!-- Paste your full original pricing-grid here (3 cards) -->
+        <!-- Keep the Foundation, Obsidian Core, Enterprise tiers exactly as you had them -->
+
+        <div style="text-align:center; margin-top:80px;">
+            <a href="contact.html" class="btn btn-primary">Get Your Custom Quote →</a>
+        </div>
+    </main>
+
+    <!-- FOOTER + CHAT + script -->
+</body>
+</html>
