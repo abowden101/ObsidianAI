@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Roadmap — ObsidianAI</title>
+    <!-- Same head -->
+    <style>
+        /* Full CSS + transitions */
+    </style>
+</head>
+<body class="loading">
+
+    <!-- NAV -->
+
+    <main class="section" id="roadmap">
+        <div class="section-tag">2026 Roadmap</div>
+        <h2 class="section-title">What's Next</h2>
+        <div class="roadmap-list">
+            <!-- Your original three roadmap items, but update Q1 status to COMPLETE ✓ -->
+            <div class="roadmap-item">
+                <div class="roadmap-period">Q1 2026</div>
+                <div class="roadmap-line"></div>
+                <div class="roadmap-content">
+                    <div class="roadmap-status active">COMPLETE ✓</div>
+                    <div class="roadmap-title">Foundation</div>
+                    <div class="roadmap-items">
+                        <span class="roadmap-tag done">xAI Grok Integration</span>
+                        <span class="roadmap-tag done">Marketing Site + Multi-Page</span>
+                        <span class="roadmap-tag done">Render Deploy</span>
+                    </div>
+                </div>
+            </div>
+            <!-- Keep Q2 and Q3 as before, or expand if you want -->
+        </div>
+    </main>
+
+    <!-- FOOTER + CHAT + script -->
+</body>
+</html>
