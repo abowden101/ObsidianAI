@@ -3,17 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ObsidianAI — Zero-Trust Security + xAI Grok</title>
-    <meta name="description" content="Orlando-based zero-trust network security powered by xAI Grok.">
-    <!-- Keep your existing fonts, meta, Google Analytics -->
+    <title>ObsidianAI — Zero-Trust Security Powered by xAI Grok</title>
+    <meta name="description" content="Orlando-based autonomous cybersecurity and operations intelligence.">
+    <!-- Your original meta, fonts, Google Analytics here -->
     <style>
-        /* Paste your original styles here + the new transition styles above */
-        /* ... your full original CSS ... */
+        /* Paste your FULL original CSS here + the new transition CSS above */
     </style>
 </head>
-<body>
+<body class="loading">
 
-    <!-- NAV (paste the new nav above) -->
+    <!-- NAV -->
+    [Paste the shared navigation block here]
 
     <main>
         <div class="hero">
@@ -24,70 +24,41 @@
                 <em>Orlando-Built.</em>
             </h1>
             <div class="hero-footer">
-                <p class="hero-desc">Autonomous cybersecurity and operations intelligence for hospitality, healthcare, and enterprise.</p>
+                <p class="hero-desc">Real-time threat intelligence, natural-language automation, and hospitality operations — all powered by xAI Grok.</p>
                 <div class="hero-actions">
                     <a href="solutions.html" class="btn btn-primary">Explore Solutions</a>
-                    <a href="contact.html" class="btn btn-ghost">Free Assessment</a>
+                    <a href="contact.html" class="btn btn-ghost">Book Free Assessment</a>
                 </div>
             </div>
         </div>
 
         <div class="divider"></div>
 
-        <!-- Keep your stats strip here -->
+        <!-- Your original stats strip here (keep as-is) -->
 
-        <!-- Teaser for Solutions -->
+        <!-- Live Demo Banner -->
+        <div style="background:#111; padding:32px 40px; text-align:center; margin:40px; border:1px solid #222; font-size:1.05rem;">
+            <strong>🚀 Live Supergrok Demo</strong> — The chat widget below is connected to real xAI Grok. Ask about firewall rules, threat logs, or hotel inventory optimization.
+        </div>
+
+        <!-- Short teaser section linking to solutions -->
         <section class="section">
             <div class="section-tag">Capabilities</div>
-            <h2 class="section-title">AI That Understands Your Network</h2>
-            <div class="capabilities-grid">
-                <!-- Short versions of your 4 cards – link to solutions.html for full details -->
-            </div>
-            <div style="text-align:center; margin-top:60px;">
+            <h2 class="section-title">Built for Orlando. Scaled for Enterprise.</h2>
+            <p style="max-width:620px; margin:0 auto 60px; text-align:center; color:var(--dim);">
+                From zero-trust network access to autonomous inventory planning for resorts and theme parks.
+            </p>
+            <div style="text-align:center;">
                 <a href="solutions.html" class="btn btn-primary">See All Capabilities →</a>
             </div>
         </section>
-
-        <!-- Live Grok Demo Banner -->
-        <div style="background:#111; padding:32px; text-align:center; margin:0 40px; border:1px solid #222;">
-            <strong>🚀 Live Supergrok Demo</strong> — The chat widget on every page is connected to real xAI Grok. Ask about zero-trust, firewall rules, or hotel inventory.
-        </div>
-
-        <!-- Pricing teaser + CTA to full pricing.html -->
     </main>
 
-    <!-- FOOTER (shared) -->
+    <!-- FOOTER (copy your original footer) -->
 
-    <!-- Chat Widget (keep your existing chat code) -->
+    <!-- CHAT WIDGET (copy your full chat HTML + script) -->
 
-    <script>
-        // Page Load Transition
-        window.addEventListener('load', () => {
-            document.body.classList.remove('loading');
-        });
+    [Paste the shared transition script here]
 
-        // Smooth navigation with transition
-        document.querySelectorAll('a[href]').forEach(link => {
-            if (link.getAttribute('href').endsWith('.html') || link.getAttribute('href').startsWith('/')) {
-                link.addEventListener('click', (e) => {
-                    if (link.href !== window.location.href) {
-                        e.preventDefault();
-                        document.body.classList.add('loading');
-                        setTimeout(() => {
-                            window.location.href = link.href;
-                        }, 500);
-                    }
-                });
-            }
-        });
-
-        // Active nav highlighting
-        const currentPage = window.location.pathname.split('/').pop() || 'index.html';
-        document.querySelectorAll('.nav-links a').forEach(a => {
-            if (a.getAttribute('href') === currentPage) a.classList.add('active');
-        });
-
-        // Keep your existing IntersectionObserver for fade-ins + chat widget script
-    </script>
 </body>
 </html>
