@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solutions — ObsidianAI</title>
+    <!-- Same head content as index.html (fonts, meta, etc.) -->
+    <style>
+        /* Full original CSS + new transition CSS */
+    </style>
+</head>
+<body class="loading">
+
+    <!-- NAV -->
+
+    <main class="section">
+        <div class="section-tag">Core Capabilities</div>
+        <h2 class="section-title">AI That Speaks Your Infrastructure</h2>
+        <div class="capabilities-grid">
+            <div class="cap-card">
+                <div class="cap-num">01</div>
+                <h3>Zero-Trust Network Access</h3>
+                <p>Microsegmentation, continuous verification, and AI-driven identity enforcement.</p>
+            </div>
+            <div class="cap-card">
+                <div class="cap-num">02</div>
+                <h3>Autonomous Threat Intelligence</h3>
+                <p>Grok analyzes logs in real time, flags lateral movement, and suggests immediate containment.</p>
+            </div>
+            <div class="cap-card">
+                <div class="cap-num">03</div>
+                <h3>Natural Language Automation</h3>
+                <p>Turn English into Palo Alto or Cisco firewall rules in seconds.</p>
+            </div>
+            <div class="cap-card">
+                <div class="cap-num">04</div>
+                <h3>Hospitality Operations Agent</h3>
+                <p>Occupancy-aware inventory forecasting and reorder plans for Orlando resorts & theme parks.</p>
+            </div>
+        </div>
+    </main>
+
+    <!-- FOOTER + CHAT WIDGET + transition script -->
+</body>
+</html>
