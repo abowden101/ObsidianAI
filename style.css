@@ -6,8 +6,8 @@
     --dim: #888888;
     --subtle: #333333;
     --border: #1a1a1a;
-    --accent: #00ff9d;          /* Grok/xAI neon green */
-    --accent2: #00ccff;         /* Cyber cyan */
+    --accent: #00ff9d;      /* xAI Grok neon green */
+    --accent2: #00ccff;
 
     --font-display: 'Syne', sans-serif;
     --font-mono: 'DM Mono', monospace;
@@ -116,7 +116,7 @@ nav {
     color: var(--black) !important;
 }
 
-/* Hero & Sections */
+/* Hero */
 .hero {
     min-height: 100vh;
     display: flex; flex-direction: column; justify-content: center;
@@ -127,8 +127,95 @@ nav {
 
 .hero-eyebrow {
     font-family: var(--font-mono);
-    font-size: 0.8rem;
-    letter-spacing: 0.2em;
+    font-size: 0.82rem;
+    letter-spacing: 0.25em;
     color: var(--accent);
     text-transform: uppercase;
-    margin-bottom:
+    margin-bottom: 24px;
+}
+
+.hero h1 {
+    font-size: clamp(3.8rem, 9vw, 9.5rem);
+    font-weight: 800;
+    line-height: 0.94;
+    letter-spacing: -0.045em;
+    margin-bottom: 40px;
+}
+
+.hero h1 em {
+    font-style: normal;
+    color: var(--dim);
+}
+
+.hero-desc {
+    max-width: 560px;
+    font-size: 1.15rem;
+    color: var(--dim);
+    line-height: 1.75;
+}
+
+/* Buttons */
+.btn {
+    padding: 16px 36px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    border-radius: 4px;
+    transition: all 0.3s;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-flex; align-items: center; gap: 10px;
+}
+
+.btn-primary {
+    background: var(--accent);
+    color: var(--black);
+}
+
+.btn-primary:hover { 
+    background: #00cc7a; 
+    transform: translateY(-2px); 
+}
+
+.btn-ghost {
+    background: transparent;
+    color: var(--white);
+    border: 1px solid var(--border);
+}
+
+.btn-ghost:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+}
+
+/* Sections */
+.section {
+    max-width: 1440px; 
+    margin: 0 auto;
+    padding: 120px 40px;
+}
+
+.section-tag {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 40px;
+}
+
+.section-title {
+    font-size: clamp(2.6rem, 5.5vw, 4.2rem);
+    font-weight: 800;
+    line-height: 1.05;
+    letter-spacing: -0.03em;
+}
+
+/* Media Queries */
+@media (max-width: 1024px) {
+    nav { padding: 0 24px; }
+    .nav-links { gap: 24px; font-size: 0.8rem; }
+    .section { padding: 80px 24px; }
+    .hero { padding: 0 24px; min-height: 85vh; }
+}
