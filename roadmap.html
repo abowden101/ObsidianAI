@@ -9,8 +9,7 @@
 </head>
 <body class="loading">
 
-    <!-- NAVIGATION (same) -->
-
+    <!-- NAVIGATION -->
     <header>
         <nav>
             <a href="index.html" class="logo">
@@ -45,6 +44,7 @@
                     </div>
                 </div>
             </div>
+
             <div class="roadmap-item">
                 <div class="roadmap-period">Q2 2026</div>
                 <div class="roadmap-line"></div>
@@ -52,12 +52,14 @@
                     <div class="roadmap-status">In Progress</div>
                     <div class="roadmap-title">Agentic Expansion</div>
                     <div class="roadmap-items">
-                        <span class="roadmap-tag">Cisco & Palo Alto APIs</span>
-                        <span class="roadmap-tag">Automated Firewall Policies</span>
+                        <span class="roadmap-tag">Cisco Catalyst API</span>
+                        <span class="roadmap-tag">Palo Alto Networks API</span>
+                        <span class="roadmap-tag">Automated Firewall Policy</span>
                         <span class="roadmap-tag">First MSP Pilot</span>
                     </div>
                 </div>
             </div>
+
             <div class="roadmap-item">
                 <div class="roadmap-period">Q3 2026</div>
                 <div class="roadmap-line"></div>
@@ -65,8 +67,8 @@
                     <div class="roadmap-status">Planned</div>
                     <div class="roadmap-title">Autonomous SOC</div>
                     <div class="roadmap-items">
-                        <span class="roadmap-tag">24/7 Syslog Agent</span>
-                        <span class="roadmap-tag">White-label Portal</span>
+                        <span class="roadmap-tag">Obsidian Sentry (24/7 syslog agent)</span>
+                        <span class="roadmap-tag">White-label Enterprise Portal</span>
                         <span class="roadmap-tag">Seed Round</span>
                     </div>
                 </div>
@@ -74,6 +76,31 @@
         </div>
     </main>
 
-    <!-- FOOTER + CHAT WIDGET + TRANSITION SCRIPT (same as solutions.html) -->
+    <!-- YOUR ORIGINAL FOOTER GOES HERE -->
+
+    <!-- YOUR ORIGINAL CHAT WIDGET HTML + JS GOES HERE -->
+
+    <!-- TRANSITION SCRIPT -->
+    <script>
+        function initTransitions() {
+            document.body.classList.remove('loading');
+            const current = window.location.pathname.split('/').pop() || 'index.html';
+            document.querySelectorAll('.nav-links a').forEach(link => {
+                if (link.getAttribute('href') === current) link.classList.add('active');
+            });
+        }
+
+        document.querySelectorAll('a[href$=".html"]').forEach(link => {
+            link.addEventListener('click', function(e) {
+                if (this.href !== window.location.href) {
+                    e.preventDefault();
+                    document.body.classList.add('loading');
+                    setTimeout(() => window.location.href = this.href, 480);
+                }
+            });
+        });
+
+        window.addEventListener('load', initTransitions);
+    </script>
 </body>
 </html>
