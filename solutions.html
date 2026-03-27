@@ -1,84 +1,63 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Solutions — ObsidianAI</title>
-    <meta name="description" content="Zero-trust security, threat intelligence, and hospitality automation powered by xAI Grok.">
-    <link rel="stylesheet" href="styles.css">
+<title>Solutions | ObsidianAI</title>
+<link rel="stylesheet" href="styles.css">
 </head>
-<body class="loading">
 
-    <!-- NAVIGATION -->
-    <header>
-        <nav>
-            <a href="index.html" class="logo">
-                <span>ObsidianAI</span>
-                <span class="logo-dot"></span>
-            </a>
-            <ul class="nav-links">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="solutions.html">Solutions</a></li>
-                <li><a href="pricing.html">Pricing</a></li>
-                <li><a href="roadmap.html">Roadmap</a></li>
-                <li><a href="contact.html" class="nav-cta">Get Started</a></li>
-            </ul>
-        </nav>
-    </header>
+<body>
 
-    <main class="section">
-        <div class="section-tag">Core Capabilities</div>
-        <h2 class="section-title">AI That Understands Your Infrastructure</h2>
-        
-        <div class="capabilities-grid">
-            <div class="cap-card">
-                <div class="cap-num">01</div>
-                <h3>Zero-Trust Network Access</h3>
-                <p>Microsegmentation, continuous verification, and AI-driven identity enforcement across all devices.</p>
-            </div>
-            <div class="cap-card">
-                <div class="cap-num">02</div>
-                <h3>Autonomous Threat Intelligence</h3>
-                <p>Grok analyzes logs in real time, detects lateral movement, and suggests immediate containment actions.</p>
-            </div>
-            <div class="cap-card">
-                <div class="cap-num">03</div>
-                <h3>Natural Language Automation</h3>
-                <p>Convert plain English into production-ready firewall rules for Palo Alto, Cisco, and more.</p>
-            </div>
-            <div class="cap-card">
-                <div class="cap-num">04</div>
-                <h3>Hospitality Operations Agent</h3>
-                <p>Occupancy-driven inventory forecasting and reorder recommendations for Orlando resorts and theme parks.</p>
-            </div>
-        </div>
-    </main>
+<header>
+<div class="container">
+<nav>
+<h2>ObsidianAI</h2>
+<ul class="nav-links">
+<li><a href="index.html">Home</a></li>
+<li><a href="solutions.html">Solutions</a></li>
+<li><a href="pricing.html">Pricing</a></li>
+<li><a href="roadmap.html">Roadmap</a></li>
+<li><a href="dashboard.html">Dashboard</a></li>
+<li><a href="contact.html">Contact</a></li>
+</ul>
+</nav>
+</div>
+</header>
 
-    <!-- YOUR ORIGINAL FOOTER -->
+<section class="section">
+<div class="container">
 
-    <!-- YOUR ORIGINAL CHAT WIDGET -->
+<h2>Security Solutions</h2>
 
-    <!-- TRANSITION SCRIPT (copy from index.html) -->
-    <script>
-        function initTransitions() {
-            document.body.classList.remove('loading');
-            const current = window.location.pathname.split('/').pop() || 'index.html';
-            document.querySelectorAll('.nav-links a').forEach(link => {
-                if (link.getAttribute('href') === current) link.classList.add('active');
-            });
-        }
+<div class="grid grid-3">
 
-        document.querySelectorAll('a[href$=".html"]').forEach(link => {
-            link.addEventListener('click', function(e) {
-                if (this.href !== window.location.href) {
-                    e.preventDefault();
-                    document.body.classList.add('loading');
-                    setTimeout(() => window.location.href = this.href, 480);
-                }
-            });
-        });
+<div class="card">
+<h3>Network Security</h3>
+<p>Firewalls, VLANs, VPNs</p>
+</div>
 
-        window.addEventListener('load', initTransitions);
-    </script>
+<div class="card">
+<h3>Endpoint Protection</h3>
+<p>EDR/XDR monitoring</p>
+</div>
+
+<div class="card">
+<h3>Cloud Security</h3>
+<p>Azure & M365 protection</p>
+</div>
+
+</div>
+
+<!-- CTA -->
+<div style="margin-top:60px;">
+<a href="contact.html" class="btn btn-primary">
+Get Your Free Security Audit
+</a>
+</div>
+
+</div>
+</section>
+
+<footer>© 2026 ObsidianAI</footer>
+
 </body>
 </html>
