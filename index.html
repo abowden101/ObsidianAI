@@ -37,22 +37,23 @@
             <div class="hero-desc">
                 We don't just secure networks. We make them intelligent — using Grok to reason about threats, policies, and operations in real time.
             </div>
-            <div style="margin-top: 48px; display: flex; gap: 16px;">
+            <div style="margin-top: 48px; display: flex; gap: 16px; flex-wrap: wrap;">
                 <a href="solutions.html" class="btn btn-primary">Explore Solutions</a>
                 <a href="contact.html" class="btn btn-ghost">Book Free Assessment</a>
             </div>
         </div>
 
+        <!-- Live Grok Demo Banner -->
         <div style="background:#111; padding:40px; text-align:center; margin:60px 40px; border:1px solid #222;">
             <strong>🚀 LIVE GROK DEMO</strong> — The chat widget is connected to real xAI Grok. Ask anything about zero-trust, firewall rules, or hotel inventory.
         </div>
     </main>
 
-    <!-- Paste your original footer here -->
+    <!-- YOUR ORIGINAL FOOTER GOES HERE -->
 
-    <!-- Paste your original full chat widget HTML + JS here -->
+    <!-- YOUR ORIGINAL CHAT WIDGET (full HTML + JS) GOES HERE -->
 
-    <!-- Transition Script -->
+    <!-- TRANSITION SCRIPT -->
     <script>
         function initTransitions() {
             document.body.classList.remove('loading');
@@ -67,14 +68,16 @@
                 if (this.href !== window.location.href) {
                     e.preventDefault();
                     document.body.classList.add('loading');
-                    setTimeout(() => window.location.href = this.href, 480);
+                    setTimeout(() => {
+                        window.location.href = this.href;
+                    }, 480);
                 }
             });
         });
 
         window.addEventListener('load', initTransitions);
 
-        // Your chat widget JS goes here
+        // Paste your original chat widget JavaScript here
     </script>
 </body>
 </html>
