@@ -6,8 +6,8 @@
     --dim: #888888;
     --subtle: #333333;
     --border: #1a1a1a;
-    --accent: #00ff9d;      /* xAI Grok neon green */
-    --accent2: #00ccff;
+    --accent: #00ff9d;          /* Grok/xAI neon green */
+    --accent2: #00ccff;         /* Cyber cyan */
 
     --font-display: 'Syne', sans-serif;
     --font-mono: 'DM Mono', monospace;
@@ -116,7 +116,7 @@ nav {
     color: var(--black) !important;
 }
 
-/* Hero */
+/* Hero & Sections */
 .hero {
     min-height: 100vh;
     display: flex; flex-direction: column; justify-content: center;
@@ -127,18 +127,18 @@ nav {
 
 .hero-eyebrow {
     font-family: var(--font-mono);
-    font-size: 0.82rem;
-    letter-spacing: 0.25em;
+    font-size: 0.8rem;
+    letter-spacing: 0.2em;
     color: var(--accent);
     text-transform: uppercase;
     margin-bottom: 24px;
 }
 
 .hero h1 {
-    font-size: clamp(3.8rem, 9vw, 9.5rem);
+    font-size: clamp(3.5rem, 8vw, 9rem);
     font-weight: 800;
-    line-height: 0.94;
-    letter-spacing: -0.045em;
+    line-height: 0.95;
+    letter-spacing: -0.04em;
     margin-bottom: 40px;
 }
 
@@ -148,13 +148,12 @@ nav {
 }
 
 .hero-desc {
-    max-width: 560px;
-    font-size: 1.15rem;
+    max-width: 520px;
+    font-size: 1.1rem;
     color: var(--dim);
-    line-height: 1.75;
+    line-height: 1.7;
 }
 
-/* Buttons */
 .btn {
     padding: 16px 36px;
     font-size: 0.9rem;
@@ -173,10 +172,7 @@ nav {
     color: var(--black);
 }
 
-.btn-primary:hover { 
-    background: #00cc7a; 
-    transform: translateY(-2px); 
-}
+.btn-primary:hover { background: #00cc7a; transform: translateY(-2px); }
 
 .btn-ghost {
     background: transparent;
@@ -189,10 +185,9 @@ nav {
     color: var(--accent);
 }
 
-/* Sections */
+/* Section styling */
 .section {
-    max-width: 1440px; 
-    margin: 0 auto;
+    max-width: 1440px; margin: 0 auto;
     padding: 120px 40px;
 }
 
@@ -206,16 +201,17 @@ nav {
 }
 
 .section-title {
-    font-size: clamp(2.6rem, 5.5vw, 4.2rem);
+    font-size: clamp(2.5rem, 5vw, 4rem);
     font-weight: 800;
     line-height: 1.05;
     letter-spacing: -0.03em;
 }
 
-/* Media Queries */
+/* Keep your existing card, pricing, roadmap, contact styles */
+/* Just update colors where needed: use var(--accent) for highlights */
+
 @media (max-width: 1024px) {
     nav { padding: 0 24px; }
-    .nav-links { gap: 24px; font-size: 0.8rem; }
+    .nav-links { gap: 24px; }
     .section { padding: 80px 24px; }
-    .hero { padding: 0 24px; min-height: 85vh; }
 }
