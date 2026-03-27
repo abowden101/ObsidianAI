@@ -1,76 +1,88 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ObsidianAI — Zero-Trust Security Powered by xAI Grok</title>
-    <meta name="description" content="Orlando-built zero-trust infrastructure intelligence layer powered by xAI Grok.">
-    <link rel="stylesheet" href="styles.css">
+<title>ObsidianAI | Orlando Cybersecurity</title>
+<link rel="stylesheet" href="styles.css">
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700&display=swap" rel="stylesheet">
 </head>
-<body class="loading">
 
-    <!-- NAVIGATION -->
-    <header>
-        <nav>
-            <a href="index.html" class="logo">
-                <span>ObsidianAI</span>
-                <span class="logo-dot"></span>
-            </a>
-            <ul class="nav-links">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="solutions.html">Solutions</a></li>
-                <li><a href="pricing.html">Pricing</a></li>
-                <li><a href="roadmap.html">Roadmap</a></li>
-                <li><a href="contact.html" class="nav-cta">Get Started</a></li>
-            </ul>
-        </nav>
-    </header>
+<body>
 
-    <main>
-        <div class="hero">
-            <div class="hero-eyebrow">UNDERSTANDING THE INFRASTRUCTURE • POWERED BY xAI GROK</div>
-            <h1>
-                ZERO-TRUST.<br>
-                MAXIMUM TRUTH.<br>
-                <em>BUILT IN ORLANDO.</em>
-            </h1>
-            <div class="hero-desc">
-                We don't just secure networks. We make them intelligent — using Grok to reason about threats, policies, and operations in real time.
-            </div>
-            <div style="margin-top:48px; display:flex; gap:16px; flex-wrap:wrap;">
-                <a href="solutions.html" class="btn btn-primary">Explore Solutions</a>
-                <a href="contact.html" class="btn btn-ghost">Book Free Assessment</a>
-            </div>
-        </div>
+<header>
+<div class="container">
+<nav>
+<h2>ObsidianAI</h2>
+<ul class="nav-links">
+<li><a href="index.html">Home</a></li>
+<li><a href="solutions.html">Solutions</a></li>
+<li><a href="pricing.html">Pricing</a></li>
+<li><a href="roadmap.html">Roadmap</a></li>
+<li><a href="dashboard.html">Dashboard</a></li>
+<li><a href="contact.html">Contact</a></li>
+</ul>
+</nav>
+</div>
+</header>
 
-        <div style="background:#111; padding:40px; text-align:center; margin:60px 40px; border:1px solid #222;">
-            <strong>🚀 LIVE GROK DEMO</strong> — The chat widget is connected to real xAI Grok. Ask about zero-trust, firewall rules, or hotel inventory.
-        </div>
-    </main>
+<!-- HERO -->
+<section class="section">
+<div class="container">
 
-    <!-- Paste your original footer here if you want it -->
-    <!-- Paste your full chat widget HTML + JS here -->
+<h1>Secure Your Business Before It Gets Breached</h1>
 
-    <script>
-        function initTransitions() {
-            document.body.classList.remove('loading');
-            const current = window.location.pathname.split('/').pop() || 'index.html';
-            document.querySelectorAll('.nav-links a').forEach(link => {
-                if (link.getAttribute('href') === current) link.classList.add('active');
-            });
-        }
+<p>We protect Orlando businesses with firewalls, endpoint security, and 24/7 monitoring.</p>
 
-        document.querySelectorAll('a[href$=".html"]').forEach(link => {
-            link.addEventListener('click', function(e) {
-                if (this.href !== window.location.href) {
-                    e.preventDefault();
-                    document.body.classList.add('loading');
-                    setTimeout(() => window.location.href = this.href, 480);
-                }
-            });
-        });
+<a href="contact.html" class="btn btn-primary">Get Free Assessment</a>
 
-        window.addEventListener('load', initTransitions);
-    </script>
+<p>Cisco • Azure • Fortinet • 5+ Years Experience</p>
+
+</div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="section">
+<div class="container">
+
+<h2>How We Secure Your Business</h2>
+
+<div class="grid grid-3">
+<div class="card">1. Assess vulnerabilities</div>
+<div class="card">2. Deploy security stack</div>
+<div class="card">3. Monitor & respond</div>
+</div>
+
+</div>
+</section>
+
+<!-- PROOF -->
+<section class="section">
+<div class="container">
+
+<h2>Why Businesses Choose Us</h2>
+
+<div class="grid grid-3">
+<div class="card">5+ Years Network Engineering</div>
+<div class="card">100+ Deployments</div>
+<div class="card">Improved Network Uptime</div>
+</div>
+
+</div>
+</section>
+
+<!-- MID CTA -->
+<section class="section">
+<div class="container">
+
+<h2>See Where You're Vulnerable</h2>
+
+<a href="contact.html" class="btn btn-primary">
+Get Your Free Security Audit
+</a>
+
+</div>
+</section>
+
+<footer>© 2026 ObsidianAI</footer>
+
 </body>
 </html>
