@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pricing — ObsidianAI</title>
+    <meta name="description" content="ObsidianAI pricing tiers for zero-trust security and Grok automation.">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="loading">
+
+    <header>
+        <nav>
+            <a href="index.html" class="logo">
+                <span>ObsidianAI</span>
+                <span class="logo-dot"></span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="solutions.html">Solutions</a></li>
+                <li><a href="pricing.html">Pricing</a></li>
+                <li><a href="roadmap.html">Roadmap</a></li>
+                <li><a href="contact.html" class="nav-cta">Get Started</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="section">
+        <div class="section-tag">Pricing</div>
+        <h2 class="section-title">Secure Your Infrastructure</h2>
+
+        <div class="pricing-grid">
+            <div class="price-card">
+                <div class="price-tier">Foundation</div>
+                <div class="price-amount">$1,995<span style="font-size:1rem;color:var(--dim)">/mo</span></div>
+                <p class="price-desc">Ideal for SMBs. Hardware resale + baseline AI monitoring.</p>
+                <ul class="price-features">
+                    <li>Network hardware resale</li>
+                    <li>Basic threat monitoring</li>
+                    <li>Remote support</li>
+                    <li>Monthly reports</li>
+                </ul>
+                <a href="contact.html" class="btn btn-ghost" style="width:100%; text-align:center;">Get Started</a>
+            </div>
+
+            <div class="price-card featured">
+                <span class="price-badge">Most Popular</span>
+                <div class="price-tier">Obsidian Core</div>
+                <div class="price-amount">$2,995–$6,995<span style="font-size:1rem;color:var(--dim)">/mo</span></div>
+                <p class="price-desc">Full zero-trust deployment + custom Grok agent + 24/7 Orlando support.</p>
+                <ul class="price-features">
+                    <li>Palo Alto ZTNA deployment</li>
+                    <li>Custom xAI Grok agent</li>
+                    <li>24/7 on-site support</li>
+                    <li>Automated incident response</li>
+                </ul>
+                <a href="contact.html" class="btn btn-primary" style="width:100%; text-align:center;">Deploy Now</a>
+            </div>
+
+            <div class="price-card">
+                <div class="price-tier">Enterprise</div>
+                <div class="price-amount">Custom</div>
+                <p class="price-desc">Multi-site, private LLM hosting, white-label for MSPs.</p>
+                <ul class="price-features">
+                    <li>Private LLM hosting</li>
+                    <li>Multi-site deployment</li>
+                    <li>White-label portal</li>
+                    <li>Autonomous SOC agents</li>
+                </ul>
+                <a href="contact.html" class="btn btn-ghost" style="width:100%; text-align:center;">Contact Sales</a>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer + Chat Widget -->
+
+    <script>
+        function initTransitions() {
+            document.body.classList.remove('loading');
+            const current = window.location.pathname.split('/').pop() || 'index.html';
+            document.querySelectorAll('.nav-links a').forEach(link => {
+                if (link.getAttribute('href') === current) link.classList.add('active');
+            });
+        }
+
+        document.querySelectorAll('a[href$=".html"]').forEach(link => {
+            link.addEventListener('click', function(e) {
+                if (this.href !== window.location.href) {
+                    e.preventDefault();
+                    document.body.classList.add('loading');
+                    setTimeout(() => window.location.href = this.href, 480);
+                }
+            });
+        });
+
+        window.addEventListener('load', initTransitions);
+    </script>
+</body>
+</html>
