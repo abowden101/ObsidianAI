@@ -119,10 +119,8 @@ nav {
 
 .badge-dot {
     width: 6px; height: 6px; border-radius: 50%;
-    background: var(--green);
-    box-shadow: 0 0 8px var(--green);
-    animation: blink 3s ease-in-out infinite;
-    flex-shrink: 0;
+    background: var(--green); box-shadow: 0 0 8px var(--green);
+    animation: blink 3s ease-in-out infinite; flex-shrink: 0;
 }
 
 .hero h1 {
@@ -146,7 +144,6 @@ nav {
 }
 
 .hero-desc em { font-style: normal; color: var(--white); }
-
 .hero-actions { display: flex; gap: 12px; align-items: center; flex-shrink: 0; }
 
 /* ── BUTTONS ── */
@@ -172,13 +169,11 @@ nav {
     border-top: 1px solid var(--border-mid);
     border-bottom: 1px solid var(--border-mid);
     padding: 20px var(--pad-x);
-    max-width: var(--max-w); margin: 0 auto;
-    width: 100%;
+    max-width: var(--max-w); margin: 0 auto; width: 100%;
 }
 
 .proof-inner {
-    display: flex; align-items: center;
-    flex-wrap: wrap; max-width: var(--max-w);
+    display: flex; align-items: center; flex-wrap: wrap;
 }
 
 .proof-item {
@@ -343,6 +338,169 @@ nav {
     font-size: 1.375rem; font-weight: 700;
     letter-spacing: -0.02em; max-width: 560px; line-height: 1.3;
 }
+
+/* ═══════════════════════════════════════════════════
+   INSTANT AUDIT — PAID PRODUCT SECTION
+═══════════════════════════════════════════════════ */
+#audit { border-top: 1px solid var(--border); }
+
+.audit-layout {
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 80px; align-items: start;
+}
+
+.audit-desc {
+    font-size: 0.95rem; color: var(--dim); line-height: 1.85;
+    margin-top: 20px; margin-bottom: 40px;
+}
+
+.audit-includes { display: flex; flex-direction: column; margin-bottom: 40px; }
+
+.audit-item {
+    display: flex; align-items: flex-start; gap: 16px;
+    padding: 16px 0; border-top: 1px solid var(--border);
+}
+
+.audit-item:last-child { border-bottom: 1px solid var(--border); }
+
+.audit-check {
+    font-family: var(--font-mono); font-size: 0.75rem;
+    color: var(--green); flex-shrink: 0; padding-top: 2px;
+    width: 20px; text-align: center;
+}
+
+.audit-item-title { font-size: 0.875rem; font-weight: 600; margin-bottom: 3px; }
+.audit-item-sub { font-family: var(--font-mono); font-size: 0.68rem; color: var(--dim); letter-spacing: 0.04em; }
+
+.audit-price-block {
+    display: flex; align-items: baseline; gap: 14px;
+    padding: 28px 0; border-top: 1px solid var(--border-mid);
+}
+
+.audit-price {
+    font-family: var(--font-mono); font-size: 3rem; font-weight: 500;
+    color: var(--white); letter-spacing: -0.03em; line-height: 1;
+}
+
+.audit-price-label {
+    font-family: var(--font-mono); font-size: 0.7rem;
+    color: var(--dim); letter-spacing: 0.08em;
+}
+
+/* Audit form */
+.audit-form-wrap {
+    border: 1px solid var(--border);
+    background: #060606;
+}
+
+.audit-form-header {
+    padding: 24px 28px 20px;
+    border-bottom: 1px solid var(--border);
+}
+
+.audit-step-label {
+    font-family: var(--font-mono); font-size: 0.62rem;
+    letter-spacing: 0.18em; text-transform: uppercase;
+    color: var(--dim); margin-bottom: 6px;
+}
+
+.audit-form-title {
+    font-size: 1.1rem; font-weight: 700; letter-spacing: -0.01em;
+}
+
+#auditInputForm .form-field,
+#auditStep2 .form-field {
+    border-left: none; border-right: none;
+    border-top: none;
+    border-bottom: 1px solid var(--border);
+}
+
+#auditInputForm .form-field:focus-within,
+#auditStep2 .form-field:focus-within { background: rgba(255,255,255,0.025); }
+
+.audit-form-footer {
+    padding: 20px 28px;
+    display: flex; flex-direction: column; gap: 10px;
+    border-top: 1px solid var(--border);
+}
+
+.audit-next-btn {
+    width: 100%; justify-content: center;
+    padding: 15px 28px; font-size: 0.85rem;
+}
+
+.audit-secure-note {
+    font-family: var(--font-mono); font-size: 0.65rem;
+    color: var(--dim); letter-spacing: 0.08em; text-align: center;
+}
+
+.audit-summary {
+    font-family: var(--font-mono); font-size: 0.72rem;
+    color: var(--dim); letter-spacing: 0.06em; line-height: 1.8;
+    padding: 16px 28px; border-bottom: 1px solid var(--border);
+    background: rgba(255,255,255,0.02);
+}
+
+.stripe-card-wrap {
+    padding: 16px 28px 20px;
+    border-bottom: 1px solid var(--border);
+}
+
+.stripe-card-label {
+    font-family: var(--font-mono); font-size: 0.61rem;
+    letter-spacing: 0.18em; text-transform: uppercase;
+    color: var(--dim); margin-bottom: 12px;
+}
+
+#stripeCardElement {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid var(--border-mid);
+    border-radius: 2px; padding: 14px 16px;
+}
+
+.audit-pay-error {
+    font-family: var(--font-mono); font-size: 0.7rem;
+    color: #f87171; padding: 0 28px; min-height: 0;
+    transition: all 0.2s;
+}
+
+.audit-pay-error:not(:empty) { padding: 12px 28px; }
+
+.audit-back-btn {
+    background: none; border: none;
+    font-family: var(--font-mono); font-size: 0.65rem;
+    letter-spacing: 0.1em; color: var(--dim);
+    cursor: pointer; padding: 12px 28px 16px;
+    text-align: left; transition: color 0.2s;
+    display: block; width: 100%;
+}
+
+.audit-back-btn:hover { color: var(--white); }
+
+.audit-delivered {
+    padding: 56px 28px; text-align: center;
+}
+
+.audit-delivered-icon {
+    font-size: 2rem; color: var(--green);
+    margin-bottom: 20px;
+    width: 56px; height: 56px; border-radius: 50%;
+    border: 1px solid rgba(74,222,128,0.3);
+    display: flex; align-items: center; justify-content: center;
+    margin: 0 auto 20px;
+}
+
+.audit-delivered-title {
+    font-size: 1.25rem; font-weight: 700; margin-bottom: 12px;
+    letter-spacing: -0.01em;
+}
+
+.audit-delivered-sub {
+    font-size: 0.875rem; color: var(--dim); line-height: 1.8;
+}
+
+.audit-delivered-sub a { color: var(--white); text-decoration: none; }
+.audit-delivered-sub a:hover { color: var(--dim); }
 
 /* ── INDUSTRIES ── */
 #industries { border-top: 1px solid var(--border); }
@@ -752,6 +910,7 @@ footer {
     .platform-header    { grid-template-columns: 1fr; gap: 24px; }
     .contact-grid       { grid-template-columns: 1fr; gap: 52px; }
     .impact-grid        { grid-template-columns: 1fr 1fr; }
+    .audit-layout       { grid-template-columns: 1fr; gap: 48px; }
 }
 
 @media (max-width: 860px) {

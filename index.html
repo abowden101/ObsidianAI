@@ -35,21 +35,9 @@
       "description": "AI-powered managed security platform for Orlando businesses and nationwide enterprise.",
       "url": "https://obsidianai.org",
       "email": "team@obsidianai.org",
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "Orlando",
-        "addressRegion": "FL",
-        "addressCountry": "US"
-      },
-      "founder": {
-        "@type": "Person",
-        "name": "Antonio Bowden",
-        "url": "https://www.linkedin.com/in/antonio-bowden"
-      },
-      "sameAs": [
-        "https://www.linkedin.com/in/antonio-bowden",
-        "https://github.com/abowden101"
-      ]
+      "address": { "@type": "PostalAddress", "addressLocality": "Orlando", "addressRegion": "FL", "addressCountry": "US" },
+      "founder": { "@type": "Person", "name": "Antonio Bowden", "url": "https://www.linkedin.com/in/antonio-bowden" },
+      "sameAs": ["https://www.linkedin.com/in/antonio-bowden", "https://github.com/abowden101"]
     }
     </script>
 
@@ -60,6 +48,9 @@
         gtag('js', new Date());
         gtag('config', 'G-71SYTMY3FL');
     </script>
+
+    <!-- Stripe.js -->
+    <script src="https://js.stripe.com/v3/"></script>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -79,7 +70,7 @@
                 <li><a href="#platform">Platform</a></li>
                 <li><a href="#impact">Results</a></li>
                 <li><a href="#pricing">Pricing</a></li>
-                <li><a href="#roadmap">Roadmap</a></li>
+                <li><a href="#audit">Instant Audit</a></li>
                 <li><a href="#contact-form" class="nav-cta">Get Started</a></li>
             </ul>
         </nav>
@@ -104,7 +95,7 @@
                     ObsidianAI combines hands-on managed security with a cloud platform &mdash; so you get a dedicated engineer <em>and</em> a live dashboard. Not just a vendor. A security partner with software.
                 </p>
                 <div class="hero-actions">
-                    <a href="#contact-form" class="btn btn-primary">Get Free Assessment</a>
+                    <a href="#audit" class="btn btn-primary">Get Instant Audit &mdash; $97</a>
                     <a href="#platform" class="btn btn-ghost">See the Platform</a>
                 </div>
             </div>
@@ -155,7 +146,6 @@
                     </div>
                 </div>
             </div>
-
             <div class="capabilities-grid">
                 <article class="cap-card fade-in">
                     <div class="cap-num" aria-hidden="true">01</div>
@@ -187,7 +177,7 @@
                 <article class="cap-card fade-in">
                     <div class="cap-num" aria-hidden="true">04</div>
                     <h3>IaC Network Intelligence</h3>
-                    <p>Ask &ldquo;Where is my bottleneck?&rdquo; in plain English and get a Grok-powered analysis of your topology. Generate BGP, VLAN, and SD-WAN configs in seconds. Turn your network engineer&rsquo;s knowledge into reusable automation.</p>
+                    <p>Ask &ldquo;Where is my bottleneck?&rdquo; in plain English and get a Grok-powered analysis of your topology. Generate BGP, VLAN, and SD-WAN configs in seconds.</p>
                     <div class="cap-impact">
                         <span class="impact-tag">Natural language &rarr; config</span>
                         <span class="impact-tag">Cisco &amp; Palo Alto native</span>
@@ -203,7 +193,7 @@
             <div class="section-tag" aria-hidden="true">Real Business Impact</div>
             <div class="impact-header">
                 <h2 id="impact-title" class="section-title fade-in">The Cost of<br>Doing Nothing</h2>
-                <p class="impact-sub fade-in">Security isn&rsquo;t an IT expense. It&rsquo;s a business risk you&rsquo;re either managing or absorbing. Here&rsquo;s what the data says.</p>
+                <p class="impact-sub fade-in">Security isn&rsquo;t an IT expense. It&rsquo;s a business risk you&rsquo;re either managing or absorbing.</p>
             </div>
             <div class="impact-grid">
                 <div class="impact-card fade-in">
@@ -214,17 +204,17 @@
                 <div class="impact-card fade-in">
                     <div class="impact-num">60%</div>
                     <div class="impact-label">of SMBs close within 6 months of a cyberattack</div>
-                    <div class="impact-context">National Cybersecurity Alliance. Your competitors are betting you won&rsquo;t be a target. Attackers are betting you&rsquo;re not protected.</div>
+                    <div class="impact-context">National Cybersecurity Alliance. Attackers are betting you&rsquo;re not protected.</div>
                 </div>
                 <div class="impact-card fade-in">
                     <div class="impact-num">287</div>
-                    <div class="impact-label">days avg. to identify a breach without AI monitoring</div>
-                    <div class="impact-context">9.5 months of silent damage &mdash; stolen data, corrupted systems, compliance violations &mdash; before most businesses know anything happened.</div>
+                    <div class="impact-label">days avg. to identify a breach without AI</div>
+                    <div class="impact-context">9.5 months of silent damage before most businesses know anything happened.</div>
                 </div>
                 <div class="impact-card fade-in">
                     <div class="impact-num">74%</div>
                     <div class="impact-label">of breaches involve the human element</div>
-                    <div class="impact-context">Verizon DBIR 2024. Stolen credentials, phishing, misconfigurations &mdash; these aren&rsquo;t firewall problems. They require continuous behavioral monitoring.</div>
+                    <div class="impact-context">Verizon DBIR 2024. Stolen credentials and misconfigs require continuous behavioral monitoring.</div>
                 </div>
             </div>
             <div class="impact-cta fade-in">
@@ -232,7 +222,149 @@
                     <div class="impact-cta-label">ObsidianAI clients get</div>
                     <div class="impact-cta-headline">Real-time detection. Automated response. A human who answers the phone.</div>
                 </div>
-                <a href="#contact-form" class="btn btn-primary">Get Your Free Risk Assessment</a>
+                <a href="#audit" class="btn btn-primary">Get Instant AI Audit &mdash; $97</a>
+            </div>
+        </section>
+
+        <div class="divider" role="separator"></div>
+
+        <!-- ═══ INSTANT AUDIT — PAID PRODUCT ═══ -->
+        <section class="section" id="audit" aria-labelledby="audit-title">
+            <div class="section-tag" aria-hidden="true">Instant AI Security Audit</div>
+            <div class="audit-layout">
+                <div class="audit-left fade-in">
+                    <h2 id="audit-title" class="section-title">Know Your Risk<br>in 60 Seconds.<br><span class="dim-text">Not 60 Days.</span></h2>
+                    <p class="audit-desc">Stop guessing. Get a Grok-powered security analysis of your business environment delivered instantly. No sales call. No waiting. Just your real risk score.</p>
+                    <div class="audit-includes">
+                        <div class="audit-item">
+                            <span class="audit-check">&#10003;</span>
+                            <div>
+                                <div class="audit-item-title">Network Vulnerability Assessment</div>
+                                <div class="audit-item-sub">Open ports, weak protocols, misconfigured services</div>
+                            </div>
+                        </div>
+                        <div class="audit-item">
+                            <span class="audit-check">&#10003;</span>
+                            <div>
+                                <div class="audit-item-title">Zero-Trust Gap Analysis</div>
+                                <div class="audit-item-sub">Where your perimeter can be breached right now</div>
+                            </div>
+                        </div>
+                        <div class="audit-item">
+                            <span class="audit-check">&#10003;</span>
+                            <div>
+                                <div class="audit-item-title">Compliance Risk Rating</div>
+                                <div class="audit-item-sub">HIPAA / PCI-DSS / SOC2 exposure score</div>
+                            </div>
+                        </div>
+                        <div class="audit-item">
+                            <span class="audit-check">&#10003;</span>
+                            <div>
+                                <div class="audit-item-title">Priority Remediation Roadmap</div>
+                                <div class="audit-item-sub">Ranked action items, highest risk first</div>
+                            </div>
+                        </div>
+                        <div class="audit-item">
+                            <span class="audit-check">&#10003;</span>
+                            <div>
+                                <div class="audit-item-title">Estimated Breach Cost Exposure</div>
+                                <div class="audit-item-sub">Dollar figure of your current risk profile</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="audit-price-block">
+                        <div class="audit-price">$97</div>
+                        <div class="audit-price-label">one-time &middot; delivered in minutes &middot; no subscription</div>
+                    </div>
+                </div>
+
+                <div class="audit-right fade-in">
+                    <!-- Step 1: Input form (shown first) -->
+                    <div id="auditStep1" class="audit-form-wrap">
+                        <div class="audit-form-header">
+                            <div class="audit-step-label">Step 1 of 2</div>
+                            <div class="audit-form-title">Tell us about your environment</div>
+                        </div>
+                        <form id="auditInputForm">
+                            <div class="form-field full">
+                                <label for="a-company">Company Name</label>
+                                <input id="a-company" type="text" name="company" placeholder="Your company" required>
+                            </div>
+                            <div class="form-field full">
+                                <label for="a-industry">Industry</label>
+                                <select id="a-industry" name="industry" required>
+                                    <option value="" disabled selected>Select industry</option>
+                                    <option>Hospitality / Hotel</option>
+                                    <option>Healthcare / Medical</option>
+                                    <option>Legal / Professional Services</option>
+                                    <option>SMB / General Business</option>
+                                    <option>Enterprise / Multi-site</option>
+                                    <option>Other</option>
+                                </select>
+                            </div>
+                            <div class="form-field full">
+                                <label for="a-size">Employee Count</label>
+                                <select id="a-size" name="size" required>
+                                    <option value="" disabled selected>Select size</option>
+                                    <option>1&ndash;10</option>
+                                    <option>10&ndash;50</option>
+                                    <option>50&ndash;200</option>
+                                    <option>200+</option>
+                                </select>
+                            </div>
+                            <div class="form-field full">
+                                <label for="a-stack">Current Security Stack</label>
+                                <textarea id="a-stack" name="stack" rows="3"
+                                    placeholder="e.g. Windows Defender, Cisco Meraki firewall, M365, no EDR..."></textarea>
+                            </div>
+                            <div class="form-field full">
+                                <label for="a-concerns">Top Security Concerns</label>
+                                <textarea id="a-concerns" name="concerns" rows="3"
+                                    placeholder="e.g. ransomware, compliance audit coming up, recent phishing attempts..."></textarea>
+                            </div>
+                            <div class="audit-form-footer">
+                                <button type="submit" class="btn btn-primary audit-next-btn">
+                                    Continue to Payment &rarr;
+                                </button>
+                                <div class="audit-secure-note">&#128274; Secure checkout via Stripe</div>
+                            </div>
+                        </form>
+                    </div>
+
+                    <!-- Step 2: Payment (shown after form) -->
+                    <div id="auditStep2" class="audit-form-wrap" style="display:none;">
+                        <div class="audit-form-header">
+                            <div class="audit-step-label">Step 2 of 2</div>
+                            <div class="audit-form-title">Complete your purchase</div>
+                        </div>
+                        <div class="audit-summary" id="auditSummary"></div>
+                        <div class="form-field full">
+                            <label for="a-email">Email for delivery</label>
+                            <input id="a-email" type="email" name="email" placeholder="your@email.com" required>
+                        </div>
+                        <div class="stripe-card-wrap">
+                            <div class="stripe-card-label">Card Details</div>
+                            <div id="stripeCardElement"></div>
+                        </div>
+                        <div id="auditPayError" class="audit-pay-error"></div>
+                        <div class="audit-form-footer">
+                            <button id="auditPayBtn" class="btn btn-primary audit-next-btn">
+                                Pay $97 &mdash; Get My Report
+                            </button>
+                            <div class="audit-secure-note">&#128274; 256-bit SSL &middot; Powered by Stripe</div>
+                        </div>
+                        <button class="audit-back-btn" id="auditBack">&larr; Edit my answers</button>
+                    </div>
+
+                    <!-- Step 3: Delivered (shown after payment) -->
+                    <div id="auditStep3" class="audit-form-wrap" style="display:none;">
+                        <div class="audit-delivered">
+                            <div class="audit-delivered-icon">&#10003;</div>
+                            <div class="audit-delivered-title">Your report is on the way.</div>
+                            <p class="audit-delivered-sub">Check your inbox within 5&ndash;10 minutes. If you don&rsquo;t see it, check spam or email <a href="mailto:team@obsidianai.org">team@obsidianai.org</a>.</p>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
 
@@ -280,7 +412,6 @@
                 <p class="pricing-sub">All tiers include a dedicated engineer, the ObsidianAI platform, and monthly reporting. You own your security posture &mdash; we run it.</p>
             </div>
             <div class="pricing-grid">
-
                 <article class="price-card fade-in">
                     <div class="price-tier">Foundation</div>
                     <div class="price-amount">$1,995<span>/mo</span></div>
@@ -294,7 +425,6 @@
                     </ul>
                     <a href="#contact-form" class="btn btn-ghost" style="justify-content:center;">Start with Foundation</a>
                 </article>
-
                 <article class="price-card featured fade-in">
                     <div class="price-card-top">
                         <span class="price-badge">Most Popular</span>
@@ -314,7 +444,6 @@
                     </ul>
                     <a href="#contact-form" class="btn btn-primary" style="justify-content:center;">Deploy Obsidian Core</a>
                 </article>
-
                 <article class="price-card fade-in">
                     <div class="price-tier">Enterprise Nationwide</div>
                     <div class="price-amount">Custom</div>
@@ -329,7 +458,6 @@
                     </ul>
                     <a href="mailto:team@obsidianai.org" class="btn btn-ghost" style="justify-content:center;">Talk to Sales</a>
                 </article>
-
             </div>
             <div class="pricing-footnote fade-in">
                 <span>All tiers: No lock-in contracts on Foundation &middot; Core and Enterprise include annual pricing options &middot; Hardware costs quoted separately</span>
@@ -343,68 +471,62 @@
             <div class="section-tag" aria-hidden="true">Platform Roadmap</div>
             <div class="roadmap-header fade-in">
                 <h2 id="roadmap-title" class="section-title">Website &rarr; Platform<br>&rarr; Scalable Company.</h2>
-                <p class="roadmap-sub">ObsidianAI is actively building the backend infrastructure that turns managed services into a defensible SaaS business. Here&rsquo;s the build sequence.</p>
+                <p class="roadmap-sub">ObsidianAI is actively building the backend infrastructure that turns managed services into a defensible SaaS business.</p>
             </div>
             <div class="roadmap-list">
-
                 <div class="roadmap-item fade-in">
                     <div class="roadmap-period">Q1 2026</div>
                     <div class="roadmap-line" aria-hidden="true"></div>
                     <div>
                         <div class="roadmap-status active">&#10003; Live</div>
                         <div class="roadmap-title">Foundation</div>
-                        <p class="roadmap-desc">MSP operations running. xAI Grok API integrated. FastAPI backend deployed on Render. Public site live at obsidianai.org.</p>
+                        <p class="roadmap-desc">MSP operations running. xAI Grok API integrated. FastAPI backend deployed. Public site live. Instant AI Audit product launched.</p>
                         <div class="roadmap-tags">
                             <span class="roadmap-tag done">xAI Grok API</span>
                             <span class="roadmap-tag done">FastAPI Backend</span>
-                            <span class="roadmap-tag done">Formspree Lead Capture</span>
                             <span class="roadmap-tag done">obsidianai.org Live</span>
+                            <span class="roadmap-tag done">Instant Audit ($97)</span>
                         </div>
                     </div>
                 </div>
-
                 <div class="roadmap-item fade-in">
                     <div class="roadmap-period">Q2 2026</div>
                     <div class="roadmap-line" aria-hidden="true"></div>
                     <div>
                         <div class="roadmap-status building">&#9654; Building</div>
                         <div class="roadmap-title">Real Backend &mdash; Auth + Database + Client Portal</div>
-                        <p class="roadmap-desc">This is the website &rarr; platform transition. Node.js backend with JWT auth, PostgreSQL client database, and a live portal where clients log in to see their security posture, threat alerts, device inventory, and compliance score in real time.</p>
+                        <p class="roadmap-desc">Node.js backend with JWT auth, PostgreSQL client database, and a live portal where clients log in to see their security posture in real time.</p>
                         <div class="roadmap-tags">
                             <span class="roadmap-tag">Node.js + Express API</span>
                             <span class="roadmap-tag">JWT Auth + Role-based Access</span>
                             <span class="roadmap-tag">PostgreSQL Client DB</span>
                             <span class="roadmap-tag">Client Security Dashboard</span>
-                            <span class="roadmap-tag">Live Threat Feed</span>
-                            <span class="roadmap-tag">Stripe Billing Integration</span>
+                            <span class="roadmap-tag">Stripe Billing</span>
                         </div>
                     </div>
                 </div>
-
                 <div class="roadmap-item fade-in">
                     <div class="roadmap-period">Q3 2026</div>
                     <div class="roadmap-line" aria-hidden="true"></div>
                     <div>
                         <div class="roadmap-status">Planned</div>
                         <div class="roadmap-title">Autonomous SOC &mdash; Obsidian Sentry</div>
-                        <p class="roadmap-desc">Always-on agent monitoring syslogs, SIEM events, and network telemetry. Fires automated responses without human intervention. This is the margin engine &mdash; more clients, same engineer headcount.</p>
+                        <p class="roadmap-desc">Always-on agent monitoring syslogs, SIEM events, and network telemetry. The margin engine &mdash; more clients, same headcount.</p>
                         <div class="roadmap-tags">
                             <span class="roadmap-tag">24/7 Syslog Agent</span>
                             <span class="roadmap-tag">Cisco Catalyst API</span>
                             <span class="roadmap-tag">Palo Alto Networks API</span>
                             <span class="roadmap-tag">Auto Firewall Policy</span>
-                            <span class="roadmap-tag">White-label Portal</span>
                         </div>
                     </div>
                 </div>
-
                 <div class="roadmap-item fade-in">
                     <div class="roadmap-period">Q4 2026</div>
                     <div class="roadmap-line" aria-hidden="true"></div>
                     <div>
                         <div class="roadmap-status">Planned</div>
                         <div class="roadmap-title">Scale &mdash; MSP Partner Network + Seed Round</div>
-                        <p class="roadmap-desc">White-label the ObsidianAI platform to other MSPs. Each partner brings their own clients. MRR compounds without linear headcount growth. Target: $500K ARR before raise.</p>
+                        <p class="roadmap-desc">White-label the platform to other MSPs. MRR compounds without linear headcount. Target: $500K ARR before raise.</p>
                         <div class="roadmap-tags">
                             <span class="roadmap-tag">MSP Partner Licensing</span>
                             <span class="roadmap-tag">SOC2 Type II</span>
@@ -413,7 +535,6 @@
                         </div>
                     </div>
                 </div>
-
             </div>
         </section>
 
@@ -423,7 +544,6 @@
         <section class="section" id="contact-form" aria-labelledby="contact-title">
             <div class="section-tag" aria-hidden="true">Get Started</div>
             <div class="contact-grid">
-
                 <div class="contact-left fade-in">
                     <h2 id="contact-title">Free Orlando<br>Security Assessment</h2>
                     <p>30 minutes. We look at your current stack, identify your real exposure, and give you a concrete risk score &mdash; no sales pitch, no fluff.</p>
@@ -458,7 +578,6 @@
                         </div>
                     </div>
                 </div>
-
                 <div class="fade-in">
                     <form id="contactForm" class="form-wrap"
                           action="https://formspree.io/f/mbdkongb"
@@ -503,7 +622,6 @@
                         </div>
                     </form>
                 </div>
-
             </div>
         </section>
 
@@ -519,7 +637,7 @@
             <li><a href="#platform">Platform</a></li>
             <li><a href="#impact">Results</a></li>
             <li><a href="#pricing">Pricing</a></li>
-            <li><a href="#roadmap">Roadmap</a></li>
+            <li><a href="#audit">Instant Audit</a></li>
             <li><a href="mailto:team@obsidianai.org">Contact</a></li>
         </ul>
         <div class="footer-copy">&#169; 2026 ObsidianAI &middot; Orlando, FL</div>
@@ -527,8 +645,7 @@
 
     <!-- CHAT WIDGET -->
     <button class="chat-fab" id="chatFab" aria-label="Open Grok AI assistant" title="Chat with Grok">
-        <svg viewBox="0 0 24 24" fill="none" stroke="black" stroke-width="2"
-             stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
             <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
         </svg>
     </button>
@@ -542,19 +659,16 @@
             <button class="chat-close" id="chatClose" aria-label="Close chat">&#215;</button>
         </div>
         <div class="chat-messages" id="chatMessages" role="log" aria-live="polite">
-            <div class="msg bot">I'm Grok, ObsidianAI's security assistant. Ask me about our platform, pricing, or how we protect Orlando businesses from cyber threats.</div>
+            <div class="msg bot">I'm Grok, ObsidianAI's security assistant. Ask me about our platform, the $97 instant audit, pricing, or how we protect Orlando businesses.</div>
         </div>
         <div class="chat-shortcuts" role="group" aria-label="Quick questions">
+            <button class="shortcut" onclick="quickSend('What is the $97 instant audit and what do I get?')">Instant Audit</button>
             <button class="shortcut" onclick="quickSend('What makes ObsidianAI different from a regular MSP?')">MSP vs SaaS</button>
-            <button class="shortcut" onclick="quickSend('What does the client portal include?')">Portal</button>
-            <button class="shortcut" onclick="quickSend('What are your pricing options?')">Pricing</button>
-            <button class="shortcut" onclick="quickSend('I want to book a security assessment')">Assessment</button>
+            <button class="shortcut" onclick="quickSend('What are your monthly pricing options?')">Pricing</button>
+            <button class="shortcut" onclick="quickSend('I want to book a free security assessment')">Assessment</button>
         </div>
         <div class="chat-input-row">
-            <input class="chat-in" id="chatIn" type="text"
-                   placeholder="Ask anything&#8230;"
-                   aria-label="Type a message"
-                   autocomplete="off">
+            <input class="chat-in" id="chatIn" type="text" placeholder="Ask anything&#8230;" aria-label="Type a message" autocomplete="off">
             <button class="chat-send" id="chatSend" aria-label="Send message">Send</button>
         </div>
     </div>
