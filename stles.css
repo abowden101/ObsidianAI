@@ -1,0 +1,138 @@
+:root {
+    --black: #000000;
+    --white: #ffffff;
+    --accent: #00ff9d;
+    --dim: #888888;
+    --border: #1a1a1a;
+    --font-display: 'Syne', sans-serif;
+    --font-mono: 'DM Mono', monospace;
+}
+
+* { margin:0; padding:0; box-sizing:border-box; }
+
+body {
+    font-family: var(--font-display);
+    background: var(--black);
+    color: var(--white);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+body.loading {
+    opacity: 0;
+    transform: scale(0.98);
+}
+
+header {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    height: 72px;
+    background: rgba(0,0,0,0.95);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+    z-index: 1000;
+}
+
+nav {
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 0 40px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    font-size: 1.3rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.logo-dot {
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    background: var(--accent);
+    border-radius: 50%;
+    margin-left: 6px;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse { 0%,100% {opacity:1} 50% {opacity:0.3} }
+
+.nav-links {
+    display: flex;
+    gap: 40px;
+    list-style: none;
+}
+
+.nav-links a {
+    color: var(--dim);
+    text-decoration: none;
+    font-size: 0.9rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+}
+
+.nav-links a.active,
+.nav-links a:hover {
+    color: var(--white);
+}
+
+.nav-cta {
+    padding: 10px 24px;
+    border: 1px solid var(--accent);
+    color: var(--accent);
+    border-radius: 4px;
+}
+
+.hero {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0 40px;
+    max-width: 1440px;
+    margin: 0 auto;
+}
+
+.hero-eyebrow {
+    color: var(--accent);
+    font-family: var(--font-mono);
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+}
+
+.hero h1 {
+    font-size: clamp(3.5rem, 8vw, 9rem);
+    line-height: 0.95;
+    font-weight: 800;
+    letter-spacing: -0.04em;
+}
+
+.btn {
+    padding: 16px 32px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    border-radius: 4px;
+    text-decoration: none;
+}
+
+.btn-primary {
+    background: var(--accent);
+    color: #000;
+}
+
+.btn-ghost {
+    border: 1px solid var(--border);
+    color: var(--white);
+}
+
+.section {
+    padding: 100px 40px;
+    max-width: 1440px;
+    margin: 0 auto;
+}
