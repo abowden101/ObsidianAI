@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Roadmap — ObsidianAI</title>
+    <meta name="description" content="ObsidianAI 2026 development roadmap.">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="loading">
+
+    <header>
+        <nav>
+            <a href="index.html" class="logo">
+                <span>ObsidianAI</span>
+                <span class="logo-dot"></span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="solutions.html">Solutions</a></li>
+                <li><a href="pricing.html">Pricing</a></li>
+                <li><a href="roadmap.html">Roadmap</a></li>
+                <li><a href="contact.html" class="nav-cta">Get Started</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="section">
+        <div class="section-tag">2026 Roadmap</div>
+        <h2 class="section-title">Building the Future of Intelligent Infrastructure</h2>
+
+        <div class="roadmap-list">
+            <div class="roadmap-item">
+                <div class="roadmap-period">Q1 2026</div>
+                <div class="roadmap-line"></div>
+                <div class="roadmap-content">
+                    <div class="roadmap-status active">COMPLETE ✓</div>
+                    <div class="roadmap-title">Foundation</div>
+                    <div class="roadmap-items">
+                        <span class="roadmap-tag done">xAI Grok Integration</span>
+                        <span class="roadmap-tag done">Multi-Page Site</span>
+                        <span class="roadmap-tag done">Render Deploy</span>
+                    </div>
+                </div>
+            </div>
+            <div class="roadmap-item">
+                <div class="roadmap-period">Q2 2026</div>
+                <div class="roadmap-line"></div>
+                <div class="roadmap-content">
+                    <div class="roadmap-status">In Progress</div>
+                    <div class="roadmap-title">Agentic Expansion</div>
+                    <div class="roadmap-items">
+                        <span class="roadmap-tag">Cisco & Palo Alto APIs</span>
+                        <span class="roadmap-tag">Automated Firewall Policy</span>
+                        <span class="roadmap-tag">First MSP Pilot</span>
+                    </div>
+                </div>
+            </div>
+            <div class="roadmap-item">
+                <div class="roadmap-period">Q3 2026</div>
+                <div class="roadmap-line"></div>
+                <div class="roadmap-content">
+                    <div class="roadmap-status">Planned</div>
+                    <div class="roadmap-title">Autonomous SOC</div>
+                    <div class="roadmap-items">
+                        <span class="roadmap-tag">24/7 Syslog Agent</span>
+                        <span class="roadmap-tag">White-label Portal</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        function initTransitions() {
+            document.body.classList.remove('loading');
+            const current = window.location.pathname.split('/').pop() || 'index.html';
+            document.querySelectorAll('.nav-links a').forEach(link => {
+                if (link.getAttribute('href') === current) link.classList.add('active');
+            });
+        }
+
+        document.querySelectorAll('a[href$=".html"]').forEach(link => {
+            link.addEventListener('click', function(e) {
+                if (this.href !== window.location.href) {
+                    e.preventDefault();
+                    document.body.classList.add('loading');
+                    setTimeout(() => window.location.href = this.href, 480);
+                }
+            });
+        });
+
+        window.addEventListener('load', initTransitions);
+    </script>
+</body>
+</html>
