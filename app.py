@@ -14,7 +14,7 @@ from slowapi.errors import RateLimitExceeded
 
 load_dotenv()
 
-# ── Optional integrations (won't crash if unconfigured) ──────────────────────
+# Optional integrations — won't crash if unconfigured
 try:
     import boto3
     _s3 = boto3.client(
@@ -38,7 +38,7 @@ try:
 except Exception:
     _engine = None
 
-# ── App setup ────────────────────────────────────────────────────────────────
+# App setup
 app = FastAPI(title="ObsidianAI Backend", version="1.0.0")
 
 limiter = Limiter(key_func=get_remote_address)
@@ -64,15 +64,15 @@ app.add_middleware(SecurityHeadersMiddleware)
 app.add_middleware(
     CORSMiddleware,
     allow_origins=[
-        "https://abowden101.github.io",
         "https://obsidianai.org",
+        "https://abowden101.github.io",
         "http://localhost:3000",
     ],
     allow_methods=["GET", "POST"],
     allow_headers=["Content-Type"],
 )
 
-# ── xAI Grok client ──────────────────────────────────────────────────────────
+# xAI Grok client
 _xai = OpenAI(
     api_key=os.getenv("XAI_API_KEY"),
     base_url="https://api.x.ai/v1",
@@ -81,14 +81,14 @@ _xai = OpenAI(
 SYSTEM_PROMPT = (
     "You are ObsidianAI's expert assistant — a zero-trust security and xAI Grok "
     "automation specialist serving Orlando businesses and nationwide enterprise clients. "
-    "Be concise, precise, and action-oriented. When relevant, reference ObsidianAI's "
-    "three service tiers: Foundation ($1,995/mo), Obsidian Core ($2,995–$6,995/mo), "
-    "and Enterprise (custom). Always encourage scheduling a free assessment at "
-    "team@obsidianai.org for detailed technical questions."
+    "ObsidianAI is an MSP + SaaS hybrid: we provide both hands-on managed security "
+    "AND a cloud platform with a client portal. "
+    "Service tiers: Foundation ($1,995/mo), Obsidian Core ($2,995-$6,995/mo), Enterprise (custom). "
+    "Be concise, precise, and action-oriented. Always encourage scheduling a free "
+    "security assessment at team@obsidianai.org."
 )
 
 
-# ── Models ───────────────────────────────────────────────────────────────────
 class ChatRequest(BaseModel):
     message: str
 
@@ -97,7 +97,6 @@ class ReportRequest(BaseModel):
     message: str
 
 
-# ── Routes ───────────────────────────────────────────────────────────────────
 @app.get("/")
 async def root():
     return {
@@ -142,24 +141,13 @@ async def chat(request: Request, req: ChatRequest):
 async def upload_report(request: Request, req: ReportRequest):
     if not _s3:
         raise HTTPException(status_code=503, detail="S3 not configured")
-
     chat_req = ChatRequest(message=req.message)
     result = await chat(request, chat_req)
     report_bytes = result["reply"].encode("utf-8")
-
     bucket = os.getenv("S3_BUCKET")
     key = f"reports/report-{os.urandom(8).hex()}.txt"
-    _s3.put_object(
-        Bucket=bucket,
-        Key=key,
-        Body=report_bytes,
-        ServerSideEncryption="AES256",
-    )
-    url = _s3.generate_presigned_url(
-        "get_object",
-        Params={"Bucket": bucket, "Key": key},
-        ExpiresIn=3600,
-    )
+    _s3.put_object(Bucket=bucket, Key=key, Body=report_bytes, ServerSideEncryption="AES256")
+    url = _s3.generate_presigned_url("get_object", Params={"Bucket": bucket, "Key": key}, ExpiresIn=3600)
     return {"report_url": url, "message": "Report stored in AWS S3"}
 
 

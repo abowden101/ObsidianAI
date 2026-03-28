@@ -10,7 +10,7 @@
     );
     document.querySelectorAll('.fade-in').forEach((el) => io.observe(el));
 
-    /* Smooth scroll — offset by nav height */
+    /* Smooth scroll offset by nav height */
     document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
         anchor.addEventListener('click', (e) => {
             const href = anchor.getAttribute('href');
@@ -25,7 +25,7 @@
         });
     });
 
-    /* AJAX Contact Form with Formspree */
+    /* AJAX Contact Form */
     const contactForm = document.getElementById('contactForm');
     const formToast   = document.getElementById('formToast');
 
@@ -34,7 +34,7 @@
             e.preventDefault();
             const btn  = contactForm.querySelector('[type="submit"]');
             const orig = btn.textContent;
-            btn.textContent = 'Sending…';
+            btn.textContent = 'Sending\u2026';
             btn.disabled = true;
 
             try {
@@ -122,10 +122,10 @@
             if (!res.ok) throw new Error('HTTP ' + res.status);
             const data = await res.json();
             removeTyping();
-            appendMsg(data.reply || 'Processing…', false);
+            appendMsg(data.reply || 'Processing\u2026', false);
         } catch {
             removeTyping();
-            appendMsg('Backend is starting up — please try again in 30 seconds.', false);
+            appendMsg('Backend is starting up \u2014 please try again in 30 seconds.', false);
         } finally {
             chatSend.disabled = false;
         }

@@ -13,7 +13,7 @@ pydantic==2.10.4
 # Rate limiting
 slowapi==0.1.9
 
-# Database (optional — comment out if not using RDS)
+# Database (optional — comment out if not using RDS/Supabase)
 sqlalchemy==2.0.36
 psycopg2-binary==2.9.10
 

@@ -1,99 +1,570 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>ObsidianAI | Orlando Cybersecurity</title>
-<link rel="stylesheet" href="styles.css">
-<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700&display=swap" rel="stylesheet">
-</head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="index, follow">
 
+    <title>ObsidianAI — AI-Powered Security Platform for Orlando Businesses</title>
+    <meta name="description" content="ObsidianAI is the MSP + SaaS security platform built for Orlando hospitality, healthcare, and enterprise. Zero-trust deployment, autonomous threat response, and a client portal — all powered by xAI Grok.">
+    <meta name="keywords" content="zero-trust security Orlando, managed security services Orlando, AI cybersecurity platform, xAI Grok security, MSSP Orlando, network security MSP Florida">
+    <meta name="author" content="Antonio Bowden">
+
+    <link rel="canonical" href="https://obsidianai.org/">
+
+    <meta property="og:type"         content="website">
+    <meta property="og:url"          content="https://obsidianai.org/">
+    <meta property="og:title"        content="ObsidianAI — AI-Powered Security Platform">
+    <meta property="og:description"  content="The MSP + SaaS security platform for Orlando businesses. Zero-trust, autonomous threat response, client portal. Powered by xAI Grok.">
+    <meta property="og:image"        content="https://obsidianai.org/og-image.png">
+    <meta property="og:image:width"  content="1200">
+    <meta property="og:image:height" content="630">
+
+    <meta name="twitter:card"        content="summary_large_image">
+    <meta name="twitter:title"       content="ObsidianAI — AI-Powered Security Platform">
+    <meta name="twitter:description" content="The MSP + SaaS security platform for Orlando businesses. Powered by xAI Grok.">
+    <meta name="twitter:image"       content="https://obsidianai.org/og-image.png">
+
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' fill='%23000'/><text x='50%25' y='54%25' dominant-baseline='middle' text-anchor='middle' font-family='sans-serif' font-weight='900' font-size='20' fill='%23fff'>O</text></svg>">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "ObsidianAI",
+      "description": "AI-powered managed security platform for Orlando businesses and nationwide enterprise.",
+      "url": "https://obsidianai.org",
+      "email": "team@obsidianai.org",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Orlando",
+        "addressRegion": "FL",
+        "addressCountry": "US"
+      },
+      "founder": {
+        "@type": "Person",
+        "name": "Antonio Bowden",
+        "url": "https://www.linkedin.com/in/antonio-bowden"
+      },
+      "sameAs": [
+        "https://www.linkedin.com/in/antonio-bowden",
+        "https://github.com/abowden101"
+      ]
+    }
+    </script>
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-71SYTMY3FL"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-71SYTMY3FL');
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Mono:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
 <body>
 
-<header>
-<div class="container">
-<nav>
-<h2>ObsidianAI</h2>
-<ul class="nav-links">
-<li><a href="index.html">Home</a></li>
-<li><a href="solutions.html">Solutions</a></li>
-<li><a href="pricing.html">Pricing</a></li>
-<li><a href="roadmap.html">Roadmap</a></li>
-<li><a href="dashboard.html">Dashboard</a></li>
-<li><a href="contact.html">Contact</a></li>
-</ul>
-</nav>
-</div>
-</header>
+    <!-- NAV -->
+    <header id="header">
+        <nav>
+            <a href="/" class="logo" aria-label="ObsidianAI Home">
+                <span>ObsidianAI</span>
+                <span class="logo-dot" aria-hidden="true"></span>
+            </a>
+            <ul class="nav-links" role="list">
+                <li><a href="#platform">Platform</a></li>
+                <li><a href="#impact">Results</a></li>
+                <li><a href="#pricing">Pricing</a></li>
+                <li><a href="#roadmap">Roadmap</a></li>
+                <li><a href="#contact-form" class="nav-cta">Get Started</a></li>
+            </ul>
+        </nav>
+    </header>
 
-<!-- HERO -->
-<section class="section">
-<div class="container">
+    <main>
 
-<h1>Secure Your Business Before It Gets Breached</h1>
+        <!-- HERO -->
+        <section class="hero" aria-label="Hero">
+            <div class="hero-badge fade-in">
+                <span class="badge-dot"></span>
+                MSP + SaaS Security Platform &middot; Orlando, FL
+            </div>
+            <h1 class="fade-in">
+                Your Security.<br>
+                <em>Managed.</em><br>
+                <em class="dim">Automated.</em><br>
+                <em class="dimmer">Owned.</em>
+            </h1>
+            <div class="hero-footer fade-in">
+                <p class="hero-desc">
+                    ObsidianAI combines hands-on managed security with a cloud platform &mdash; so you get a dedicated engineer <em>and</em> a live dashboard. Not just a vendor. A security partner with software.
+                </p>
+                <div class="hero-actions">
+                    <a href="#contact-form" class="btn btn-primary">Get Free Assessment</a>
+                    <a href="#platform" class="btn btn-ghost">See the Platform</a>
+                </div>
+            </div>
+        </section>
 
-<p>We protect Orlando businesses with firewalls, endpoint security, and 24/7 monitoring.</p>
+        <!-- PROOF BAR -->
+        <div class="proof-bar fade-in">
+            <div class="proof-inner">
+                <span class="proof-item"><span class="proof-num">$280K+</span> avg. breach cost prevented per client</span>
+                <span class="proof-divider"></span>
+                <span class="proof-item"><span class="proof-num">74%</span> of breaches start with stolen credentials</span>
+                <span class="proof-divider"></span>
+                <span class="proof-item"><span class="proof-num">287 days</span> avg. time to detect a breach without AI</span>
+                <span class="proof-divider"></span>
+                <span class="proof-item"><span class="proof-num">&lt;10ms</span> ObsidianAI detection response</span>
+            </div>
+        </div>
 
-<a href="contact.html" class="btn btn-primary">Get Free Assessment</a>
+        <!-- PLATFORM -->
+        <section class="section" id="platform" aria-labelledby="platform-title">
+            <div class="section-tag" aria-hidden="true">The Platform</div>
+            <div class="platform-header">
+                <h2 id="platform-title" class="section-title fade-in">MSP Service.<br>SaaS Platform.<br><span class="dim-text">One Bill.</span></h2>
+                <div class="platform-header-right fade-in">
+                    <p class="platform-desc">Most MSPs give you a human and a helpdesk ticket. Most SaaS tools give you a dashboard and no one to call. ObsidianAI gives you both &mdash; a dedicated security engineer backed by an AI platform that never sleeps.</p>
+                    <div class="platform-pillars">
+                        <div class="pillar">
+                            <div class="pillar-icon">&#9881;</div>
+                            <div>
+                                <div class="pillar-label">Managed Layer</div>
+                                <div class="pillar-sub">On-site Orlando engineer + remote SOC</div>
+                            </div>
+                        </div>
+                        <div class="pillar">
+                            <div class="pillar-icon">&#9672;</div>
+                            <div>
+                                <div class="pillar-label">Platform Layer</div>
+                                <div class="pillar-sub">Client dashboard, live alerts, audit logs</div>
+                            </div>
+                        </div>
+                        <div class="pillar">
+                            <div class="pillar-icon">&#9678;</div>
+                            <div>
+                                <div class="pillar-label">AI Layer</div>
+                                <div class="pillar-sub">xAI Grok &mdash; real-time threat synthesis</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
-<p>Cisco • Azure • Fortinet • 5+ Years Experience</p>
+            <div class="capabilities-grid">
+                <article class="cap-card fade-in">
+                    <div class="cap-num" aria-hidden="true">01</div>
+                    <h3>Zero-Trust Deployment</h3>
+                    <p>We deploy and manage Palo Alto zero-trust architecture end to end. Microsegmentation, continuous verification, and identity-aware access &mdash; not just configured once but monitored daily.</p>
+                    <div class="cap-impact">
+                        <span class="impact-tag">Prevents lateral movement</span>
+                        <span class="impact-tag">HIPAA / PCI compliant</span>
+                    </div>
+                </article>
+                <article class="cap-card fade-in">
+                    <div class="cap-num" aria-hidden="true">02</div>
+                    <h3>Autonomous Threat Response</h3>
+                    <p>xAI Grok monitors your logs 24/7, correlates threats across your environment, and fires automated responses &mdash; blocking IPs, isolating endpoints, and alerting your team before damage spreads.</p>
+                    <div class="cap-impact">
+                        <span class="impact-tag">From 287-day avg &rarr; &lt;10ms</span>
+                        <span class="impact-tag">No analyst needed</span>
+                    </div>
+                </article>
+                <article class="cap-card fade-in">
+                    <div class="cap-num" aria-hidden="true">03</div>
+                    <h3>Client Security Portal</h3>
+                    <p>Your own branded dashboard &mdash; live threat map, device inventory, compliance score, monthly reports, and direct communication with your assigned engineer. Visibility you can show your board.</p>
+                    <div class="cap-impact">
+                        <span class="impact-tag">Real-time visibility</span>
+                        <span class="impact-tag">Board-ready reporting</span>
+                    </div>
+                </article>
+                <article class="cap-card fade-in">
+                    <div class="cap-num" aria-hidden="true">04</div>
+                    <h3>IaC Network Intelligence</h3>
+                    <p>Ask &ldquo;Where is my bottleneck?&rdquo; in plain English and get a Grok-powered analysis of your topology. Generate BGP, VLAN, and SD-WAN configs in seconds. Turn your network engineer&rsquo;s knowledge into reusable automation.</p>
+                    <div class="cap-impact">
+                        <span class="impact-tag">Natural language &rarr; config</span>
+                        <span class="impact-tag">Cisco &amp; Palo Alto native</span>
+                    </div>
+                </article>
+            </div>
+        </section>
 
-</div>
-</section>
-<section class="video-section">
+        <div class="divider" role="separator"></div>
 
-<video autoplay muted loop>
-  <source src="https://cdn.coverr.co/videos/coverr-server-room-5173/1080p.mp4" type="video/mp4">
-</video>
+        <!-- BUSINESS IMPACT -->
+        <section class="section" id="impact" aria-labelledby="impact-title">
+            <div class="section-tag" aria-hidden="true">Real Business Impact</div>
+            <div class="impact-header">
+                <h2 id="impact-title" class="section-title fade-in">The Cost of<br>Doing Nothing</h2>
+                <p class="impact-sub fade-in">Security isn&rsquo;t an IT expense. It&rsquo;s a business risk you&rsquo;re either managing or absorbing. Here&rsquo;s what the data says.</p>
+            </div>
+            <div class="impact-grid">
+                <div class="impact-card fade-in">
+                    <div class="impact-num">$4.88M</div>
+                    <div class="impact-label">Average data breach cost in 2024</div>
+                    <div class="impact-context">IBM Cost of a Data Breach Report 2024. SMBs average $280K+ per incident &mdash; often enough to force closure.</div>
+                </div>
+                <div class="impact-card fade-in">
+                    <div class="impact-num">60%</div>
+                    <div class="impact-label">of SMBs close within 6 months of a cyberattack</div>
+                    <div class="impact-context">National Cybersecurity Alliance. Your competitors are betting you won&rsquo;t be a target. Attackers are betting you&rsquo;re not protected.</div>
+                </div>
+                <div class="impact-card fade-in">
+                    <div class="impact-num">287</div>
+                    <div class="impact-label">days avg. to identify a breach without AI monitoring</div>
+                    <div class="impact-context">9.5 months of silent damage &mdash; stolen data, corrupted systems, compliance violations &mdash; before most businesses know anything happened.</div>
+                </div>
+                <div class="impact-card fade-in">
+                    <div class="impact-num">74%</div>
+                    <div class="impact-label">of breaches involve the human element</div>
+                    <div class="impact-context">Verizon DBIR 2024. Stolen credentials, phishing, misconfigurations &mdash; these aren&rsquo;t firewall problems. They require continuous behavioral monitoring.</div>
+                </div>
+            </div>
+            <div class="impact-cta fade-in">
+                <div class="impact-cta-text">
+                    <div class="impact-cta-label">ObsidianAI clients get</div>
+                    <div class="impact-cta-headline">Real-time detection. Automated response. A human who answers the phone.</div>
+                </div>
+                <a href="#contact-form" class="btn btn-primary">Get Your Free Risk Assessment</a>
+            </div>
+        </section>
 
-<div class="video-overlay">
-  <h2>Real-Time Threat Detection</h2>
-  <p>We monitor and stop attacks before they impact your business.</p>
-</div>
+        <div class="divider" role="separator"></div>
 
-</section>
-<!-- HOW IT WORKS -->
-<section class="section">
-<div class="container">
+        <!-- INDUSTRIES -->
+        <section class="section" id="industries" aria-labelledby="industries-title">
+            <div class="section-tag" aria-hidden="true">Industries</div>
+            <h2 id="industries-title" class="section-title fade-in">Built for Orlando.<br>Scaled Nationwide.</h2>
+            <div class="industries-grid">
+                <div class="industry-card fade-in">
+                    <div class="industry-icon">&#127968;</div>
+                    <h3>Hospitality &amp; Hotels</h3>
+                    <p>Disney/Universal-adjacent properties, resort chains, and boutique hotels. Guest PII protection, PCI-DSS compliance, and property management system security.</p>
+                    <div class="industry-stakes">Avg. breach cost: $3.4M &middot; Guest data + card data at risk</div>
+                </div>
+                <div class="industry-card fade-in">
+                    <div class="industry-icon">&#127973;</div>
+                    <h3>Healthcare &amp; Medical</h3>
+                    <p>Clinics, medical groups, and health networks across Orlando. HIPAA compliance, EHR security, and ransomware prevention &mdash; the #1 most targeted sector.</p>
+                    <div class="industry-stakes">Avg. breach cost: $9.77M &middot; HIPAA fines up to $1.9M/yr</div>
+                </div>
+                <div class="industry-card fade-in">
+                    <div class="industry-icon">&#9878;</div>
+                    <h3>Legal &amp; Professional Services</h3>
+                    <p>Law firms and financial services handling sensitive client data. Matter-level access controls, communication encryption, and compliance audit trails.</p>
+                    <div class="industry-stakes">Bar association liability &middot; Client confidentiality at stake</div>
+                </div>
+                <div class="industry-card fade-in">
+                    <div class="industry-icon">&#127970;</div>
+                    <h3>SMB &amp; Mid-Market</h3>
+                    <p>Orlando-based businesses that need enterprise-grade security without enterprise-grade headcount. Full managed stack, one monthly invoice, one engineer.</p>
+                    <div class="industry-stakes">60% of attacked SMBs close within 6 months</div>
+                </div>
+            </div>
+        </section>
 
-<h2>How We Secure Your Business</h2>
+        <div class="divider" role="separator"></div>
 
-<div class="grid grid-3">
-<div class="card">1. Assess vulnerabilities</div>
-<div class="card">2. Deploy security stack</div>
-<div class="card">3. Monitor & respond</div>
-</div>
+        <!-- PRICING -->
+        <section class="section" id="pricing" aria-labelledby="pricing-title">
+            <div class="section-tag" aria-hidden="true">Pricing</div>
+            <div class="pricing-header fade-in">
+                <h2 id="pricing-title" class="section-title">Predictable MRR.<br>No Surprise Invoices.</h2>
+                <p class="pricing-sub">All tiers include a dedicated engineer, the ObsidianAI platform, and monthly reporting. You own your security posture &mdash; we run it.</p>
+            </div>
+            <div class="pricing-grid">
 
-</div>
-</section>
+                <article class="price-card fade-in">
+                    <div class="price-tier">Foundation</div>
+                    <div class="price-amount">$1,995<span>/mo</span></div>
+                    <p class="price-desc">For SMBs getting serious about security. Hardware, monitoring, and a dedicated contact &mdash; without the enterprise price tag.</p>
+                    <ul class="price-features" aria-label="Foundation tier features">
+                        <li>Network hardware resale + setup</li>
+                        <li>24/7 automated threat monitoring</li>
+                        <li>Monthly security report</li>
+                        <li>Remote engineer support</li>
+                        <li>ObsidianAI portal (read-only)</li>
+                    </ul>
+                    <a href="#contact-form" class="btn btn-ghost" style="justify-content:center;">Start with Foundation</a>
+                </article>
 
-<!-- PROOF -->
-<section class="section">
-<div class="container">
+                <article class="price-card featured fade-in">
+                    <div class="price-card-top">
+                        <span class="price-badge">Most Popular</span>
+                        <span class="price-badge-mrr">~$42K ARR</span>
+                    </div>
+                    <div class="price-tier">Obsidian Core</div>
+                    <div class="price-amount">$2,995&ndash;6,995<span>/mo</span></div>
+                    <p class="price-desc">The full MSP + SaaS stack. Palo Alto zero-trust, custom Grok AI agent, 24/7 on-site support in Orlando, and a live client portal.</p>
+                    <ul class="price-features" aria-label="Obsidian Core tier features">
+                        <li>Palo Alto ZTNA deployment + management</li>
+                        <li>Custom xAI Grok security agent</li>
+                        <li>24/7 on-site support (Orlando)</li>
+                        <li>Automated incident response</li>
+                        <li>Full ObsidianAI client portal</li>
+                        <li>Quarterly compliance audit</li>
+                        <li>Dedicated account engineer</li>
+                    </ul>
+                    <a href="#contact-form" class="btn btn-primary" style="justify-content:center;">Deploy Obsidian Core</a>
+                </article>
 
-<h2>Why Businesses Choose Us</h2>
+                <article class="price-card fade-in">
+                    <div class="price-tier">Enterprise Nationwide</div>
+                    <div class="price-amount">Custom</div>
+                    <p class="price-desc">Multi-site, remote-first, or white-label deployments. Private LLM hosting, autonomous SOC agents, and MSP partner licensing.</p>
+                    <ul class="price-features" aria-label="Enterprise tier features">
+                        <li>Private LLM hosting (your VPC)</li>
+                        <li>Multi-site deployment</li>
+                        <li>White-label portal for MSP resellers</li>
+                        <li>Autonomous SOC (Obsidian Sentry)</li>
+                        <li>SOC2 / ISO 27001 pathway</li>
+                        <li>SLA-backed uptime guarantee</li>
+                    </ul>
+                    <a href="mailto:team@obsidianai.org" class="btn btn-ghost" style="justify-content:center;">Talk to Sales</a>
+                </article>
 
-<div class="grid grid-3">
-<div class="card">5+ Years Network Engineering</div>
-<div class="card">100+ Deployments</div>
-<div class="card">Improved Network Uptime</div>
-</div>
+            </div>
+            <div class="pricing-footnote fade-in">
+                <span>All tiers: No lock-in contracts on Foundation &middot; Core and Enterprise include annual pricing options &middot; Hardware costs quoted separately</span>
+            </div>
+        </section>
 
-</div>
-</section>
+        <div class="divider" role="separator"></div>
 
-<!-- MID CTA -->
-<section class="section">
-<div class="container">
+        <!-- ROADMAP -->
+        <section class="section" id="roadmap" aria-labelledby="roadmap-title">
+            <div class="section-tag" aria-hidden="true">Platform Roadmap</div>
+            <div class="roadmap-header fade-in">
+                <h2 id="roadmap-title" class="section-title">Website &rarr; Platform<br>&rarr; Scalable Company.</h2>
+                <p class="roadmap-sub">ObsidianAI is actively building the backend infrastructure that turns managed services into a defensible SaaS business. Here&rsquo;s the build sequence.</p>
+            </div>
+            <div class="roadmap-list">
 
-<h2>See Where You're Vulnerable</h2>
+                <div class="roadmap-item fade-in">
+                    <div class="roadmap-period">Q1 2026</div>
+                    <div class="roadmap-line" aria-hidden="true"></div>
+                    <div>
+                        <div class="roadmap-status active">&#10003; Live</div>
+                        <div class="roadmap-title">Foundation</div>
+                        <p class="roadmap-desc">MSP operations running. xAI Grok API integrated. FastAPI backend deployed on Render. Public site live at obsidianai.org.</p>
+                        <div class="roadmap-tags">
+                            <span class="roadmap-tag done">xAI Grok API</span>
+                            <span class="roadmap-tag done">FastAPI Backend</span>
+                            <span class="roadmap-tag done">Formspree Lead Capture</span>
+                            <span class="roadmap-tag done">obsidianai.org Live</span>
+                        </div>
+                    </div>
+                </div>
 
-<a href="contact.html" class="btn btn-primary">
-Get Your Free Security Audit
-</a>
+                <div class="roadmap-item fade-in">
+                    <div class="roadmap-period">Q2 2026</div>
+                    <div class="roadmap-line" aria-hidden="true"></div>
+                    <div>
+                        <div class="roadmap-status building">&#9654; Building</div>
+                        <div class="roadmap-title">Real Backend &mdash; Auth + Database + Client Portal</div>
+                        <p class="roadmap-desc">This is the website &rarr; platform transition. Node.js backend with JWT auth, PostgreSQL client database, and a live portal where clients log in to see their security posture, threat alerts, device inventory, and compliance score in real time.</p>
+                        <div class="roadmap-tags">
+                            <span class="roadmap-tag">Node.js + Express API</span>
+                            <span class="roadmap-tag">JWT Auth + Role-based Access</span>
+                            <span class="roadmap-tag">PostgreSQL Client DB</span>
+                            <span class="roadmap-tag">Client Security Dashboard</span>
+                            <span class="roadmap-tag">Live Threat Feed</span>
+                            <span class="roadmap-tag">Stripe Billing Integration</span>
+                        </div>
+                    </div>
+                </div>
 
-</div>
-</section>
+                <div class="roadmap-item fade-in">
+                    <div class="roadmap-period">Q3 2026</div>
+                    <div class="roadmap-line" aria-hidden="true"></div>
+                    <div>
+                        <div class="roadmap-status">Planned</div>
+                        <div class="roadmap-title">Autonomous SOC &mdash; Obsidian Sentry</div>
+                        <p class="roadmap-desc">Always-on agent monitoring syslogs, SIEM events, and network telemetry. Fires automated responses without human intervention. This is the margin engine &mdash; more clients, same engineer headcount.</p>
+                        <div class="roadmap-tags">
+                            <span class="roadmap-tag">24/7 Syslog Agent</span>
+                            <span class="roadmap-tag">Cisco Catalyst API</span>
+                            <span class="roadmap-tag">Palo Alto Networks API</span>
+                            <span class="roadmap-tag">Auto Firewall Policy</span>
+                            <span class="roadmap-tag">White-label Portal</span>
+                        </div>
+                    </div>
+                </div>
 
-<footer>© 2026 ObsidianAI</footer>
+                <div class="roadmap-item fade-in">
+                    <div class="roadmap-period">Q4 2026</div>
+                    <div class="roadmap-line" aria-hidden="true"></div>
+                    <div>
+                        <div class="roadmap-status">Planned</div>
+                        <div class="roadmap-title">Scale &mdash; MSP Partner Network + Seed Round</div>
+                        <p class="roadmap-desc">White-label the ObsidianAI platform to other MSPs. Each partner brings their own clients. MRR compounds without linear headcount growth. Target: $500K ARR before raise.</p>
+                        <div class="roadmap-tags">
+                            <span class="roadmap-tag">MSP Partner Licensing</span>
+                            <span class="roadmap-tag">SOC2 Type II</span>
+                            <span class="roadmap-tag">$500K ARR Target</span>
+                            <span class="roadmap-tag">Seed Round</span>
+                        </div>
+                    </div>
+                </div>
 
+            </div>
+        </section>
+
+        <div class="divider" role="separator"></div>
+
+        <!-- CONTACT -->
+        <section class="section" id="contact-form" aria-labelledby="contact-title">
+            <div class="section-tag" aria-hidden="true">Get Started</div>
+            <div class="contact-grid">
+
+                <div class="contact-left fade-in">
+                    <h2 id="contact-title">Free Orlando<br>Security Assessment</h2>
+                    <p>30 minutes. We look at your current stack, identify your real exposure, and give you a concrete risk score &mdash; no sales pitch, no fluff.</p>
+                    <div class="assessment-includes">
+                        <div class="assessment-item"><span class="check">&rarr;</span> Network vulnerability scan</div>
+                        <div class="assessment-item"><span class="check">&rarr;</span> Zero-trust gap analysis</div>
+                        <div class="assessment-item"><span class="check">&rarr;</span> Compliance risk rating (HIPAA / PCI / SOC2)</div>
+                        <div class="assessment-item"><span class="check">&rarr;</span> Recommended remediation roadmap</div>
+                    </div>
+                    <div class="contact-details">
+                        <div class="contact-detail">
+                            <span class="contact-label">Email</span>
+                            <span class="contact-value">
+                                <a id="emailLink" href="#" data-u="team" data-d="obsidianai.org">team&#64;obsidianai.org</a>
+                            </span>
+                        </div>
+                        <div class="contact-detail">
+                            <span class="contact-label">Location</span>
+                            <span class="contact-value">Orlando, Florida</span>
+                        </div>
+                        <div class="contact-detail">
+                            <span class="contact-label">LinkedIn</span>
+                            <span class="contact-value">
+                                <a href="https://www.linkedin.com/in/antonio-bowden" target="_blank" rel="noopener noreferrer">Antonio Bowden</a>
+                            </span>
+                        </div>
+                        <div class="contact-detail">
+                            <span class="contact-label">GitHub</span>
+                            <span class="contact-value">
+                                <a href="https://github.com/abowden101" target="_blank" rel="noopener noreferrer">abowden101</a>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="fade-in">
+                    <form id="contactForm" class="form-wrap"
+                          action="https://formspree.io/f/mbdkongb"
+                          method="POST" novalidate>
+                        <div class="form-row">
+                            <div class="form-field">
+                                <label for="f-name">Name</label>
+                                <input id="f-name" type="text" name="name" placeholder="Your name" required autocomplete="name">
+                            </div>
+                            <div class="form-field">
+                                <label for="f-email">Email</label>
+                                <input id="f-email" type="email" name="email" placeholder="your@company.com" required autocomplete="email">
+                            </div>
+                        </div>
+                        <div class="form-field full">
+                            <label for="f-company">Company</label>
+                            <input id="f-company" type="text" name="company" placeholder="Company name" autocomplete="organization">
+                        </div>
+                        <div class="form-field full">
+                            <label for="f-industry">Industry</label>
+                            <select id="f-industry" name="industry">
+                                <option value="" disabled selected>Select your industry</option>
+                                <option>Hospitality / Hotel</option>
+                                <option>Healthcare / Medical</option>
+                                <option>Legal / Professional Services</option>
+                                <option>SMB / General Business</option>
+                                <option>Enterprise / Multi-site</option>
+                                <option>MSP / Reseller</option>
+                                <option>Other</option>
+                            </select>
+                        </div>
+                        <div class="form-field full">
+                            <label for="f-message">Current situation</label>
+                            <textarea id="f-message" name="message" rows="4"
+                                placeholder="What's your current security setup? Any compliance requirements? What keeps you up at night?"
+                                required></textarea>
+                        </div>
+                        <div id="formToast" class="form-toast" role="status" aria-live="polite"></div>
+                        <div class="form-footer">
+                            <span class="form-note">Responds within 24h &middot; Orlando on-site available</span>
+                            <button type="submit" class="btn btn-primary">Book Assessment &rarr;</button>
+                        </div>
+                    </form>
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-left">
+            <div class="footer-brand">ObsidianAI</div>
+            <div class="footer-tagline">MSP + SaaS Security Platform &middot; Orlando, FL</div>
+        </div>
+        <ul class="footer-links" role="list">
+            <li><a href="#platform">Platform</a></li>
+            <li><a href="#impact">Results</a></li>
+            <li><a href="#pricing">Pricing</a></li>
+            <li><a href="#roadmap">Roadmap</a></li>
+            <li><a href="mailto:team@obsidianai.org">Contact</a></li>
+        </ul>
+        <div class="footer-copy">&#169; 2026 ObsidianAI &middot; Orlando, FL</div>
+    </footer>
+
+    <!-- CHAT WIDGET -->
+    <button class="chat-fab" id="chatFab" aria-label="Open Grok AI assistant" title="Chat with Grok">
+        <svg viewBox="0 0 24 24" fill="none" stroke="black" stroke-width="2"
+             stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+        </svg>
+    </button>
+
+    <div class="chat-panel" id="chatPanel" role="dialog" aria-modal="true" aria-label="Grok AI Assistant">
+        <div class="chat-header">
+            <div>
+                <div class="chat-header-title">Grok Assistant</div>
+                <div class="chat-header-sub">Powered by xAI &middot; ObsidianAI</div>
+            </div>
+            <button class="chat-close" id="chatClose" aria-label="Close chat">&#215;</button>
+        </div>
+        <div class="chat-messages" id="chatMessages" role="log" aria-live="polite">
+            <div class="msg bot">I'm Grok, ObsidianAI's security assistant. Ask me about our platform, pricing, or how we protect Orlando businesses from cyber threats.</div>
+        </div>
+        <div class="chat-shortcuts" role="group" aria-label="Quick questions">
+            <button class="shortcut" onclick="quickSend('What makes ObsidianAI different from a regular MSP?')">MSP vs SaaS</button>
+            <button class="shortcut" onclick="quickSend('What does the client portal include?')">Portal</button>
+            <button class="shortcut" onclick="quickSend('What are your pricing options?')">Pricing</button>
+            <button class="shortcut" onclick="quickSend('I want to book a security assessment')">Assessment</button>
+        </div>
+        <div class="chat-input-row">
+            <input class="chat-in" id="chatIn" type="text"
+                   placeholder="Ask anything&#8230;"
+                   aria-label="Type a message"
+                   autocomplete="off">
+            <button class="chat-send" id="chatSend" aria-label="Send message">Send</button>
+        </div>
+    </div>
+
+    <script>
+        (function () {
+            var el = document.getElementById('emailLink');
+            if (el) el.href = 'mailto:' + el.dataset.u + '@' + el.dataset.d;
+        })();
+    </script>
+    <script src="script.js"></script>
 </body>
 </html>
