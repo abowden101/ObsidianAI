@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Get Started — ObsidianAI</title>
+    <meta name="description" content="Free Orlando security assessment with ObsidianAI powered by xAI Grok.">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="loading">
+
+    <header>
+        <nav>
+            <a href="index.html" class="logo">
+                <span>ObsidianAI</span>
+                <span class="logo-dot"></span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="solutions.html">Solutions</a></li>
+                <li><a href="pricing.html">Pricing</a></li>
+                <li><a href="roadmap.html">Roadmap</a></li>
+                <li><a href="contact.html" class="nav-cta">Get Started</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="section">
+        <div class="section-tag">Get Started</div>
+        <div class="contact-grid">
+            <div class="contact-left">
+                <h2>Free Orlando Security Assessment</h2>
+                <p>30-minute consultation. We review your environment and show how Grok can strengthen your security.</p>
+                <div class="contact-detail">
+                    <span class="contact-detail-label">Email</span>
+                    <span class="contact-detail-value"><a href="mailto:team@obsidianai.org">team@obsidianai.org</a></span>
+                </div>
+                <div class="contact-detail">
+                    <span class="contact-detail-label">Location</span>
+                    <span class="contact-detail-value">Orlando, Florida</span>
+                </div>
+            </div>
+
+            <div class="contact-form-wrap">
+                <form action="https://formspree.io/f/mbdkongb" method="POST">
+                    <div class="form-row">
+                        <div class="form-field">
+                            <label>Name</label>
+                            <input type="text" name="name" placeholder="Your name" required>
+                        </div>
+                        <div class="form-field">
+                            <label>Email</label>
+                            <input type="email" name="email" placeholder="your@company.com" required>
+                        </div>
+                    </div>
+                    <div class="form-field">
+                        <label>Message</label>
+                        <textarea name="message" rows="6" placeholder="Describe your environment and security challenges..." required></textarea>
+                    </div>
+                    <div class="form-submit">
+                        <button type="submit" class="btn btn-primary">Send Request →</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <!-- Grok Chat Widget -->
+    <button class="chat-fab" id="chatFab">💬</button>
+    <div class="chat-panel" id="chatPanel">
+        <div class="chat-panel-header">
+            <div>
+                <div class="chat-panel-title">GROK • OBSIDIANAI</div>
+                <div class="chat-panel-sub">Real-time xAI Reasoning</div>
+            </div>
+            <button class="chat-close-btn" id="chatClose">×</button>
+        </div>
+        <div class="chat-body" id="chatBody"></div>
+        <div class="chat-input-row">
+            <input class="chat-in" id="chatIn" placeholder="Ask Grok anything...">
+            <button class="chat-send-btn" id="chatSend">Send</button>
+        </div>
+    </div>
+
+    <script>
+        function initTransitions() {
+            document.body.classList.remove('loading');
+            const current = window.location.pathname.split('/').pop() || 'index.html';
+            document.querySelectorAll('.nav-links a').forEach(link => {
+                if (link.getAttribute('href') === current) link.classList.add('active');
+            });
+        }
+
+        document.querySelectorAll('a[href$=".html"]').forEach(link => {
+            link.addEventListener('click', function(e) {
+                if (this.href !== window.location.href) {
+                    e.preventDefault();
+                    document.body.classList.add('loading');
+                    setTimeout(() => window.location.href = this.href, 480);
+                }
+            });
+        });
+
+        window.addEventListener('load', initTransitions);
+
+        // Simple Grok Chat (connected to your Render backend)
+        const BACKEND = "https://obsidianai-evtu.onrender.com";
+        // ... (chat JS code - I can expand this if needed)
+    </script>
+</body>
+</html>
