@@ -17,7 +17,7 @@ ObsidianAI combines hands-on managed security with a SaaS platform — dedicated
 |---|---|
 | AI | xAI Grok (via OpenAI-compatible API) |
 | Backend | FastAPI + Uvicorn on Render |
-| Frontend | Vanilla HTML/CSS/JS on GitHub Pages |
+| Frontend | Next.js 15 + Tailwind + shadcn-style UI (`web/`) — deploy via Vercel or static export |
 | Database | PostgreSQL (prod) / SQLite (dev) |
 | Storage | AWS S3 (optional) |
 | Domain | obsidianai.org via Cloudflare |
@@ -28,9 +28,10 @@ ObsidianAI combines hands-on managed security with a SaaS platform — dedicated
 
 ```
 ObsidianAI/
-├── index.html              # Single-page frontend (GitHub Pages)
-├── style.css               # All styles
-├── script.js               # Chat widget, form AJAX, scroll animations
+├── web/                    # Next.js 15 marketing site (see web/README.md, DEPLOY.md)
+├── legacy-static/          # Archived vanilla index.html snapshot
+├── styles.css              # Legacy static pages styles
+├── script.js               # Chat widget, form AJAX, scroll animations (legacy pages)
 ├── app.py                  # FastAPI backend — /chat, /health, /clients
 ├── agent.py                # ObsidianAgent — threat analysis, firewall gen, audits
 ├── hospitality_agent.py    # Hotel inventory automation agent
@@ -62,6 +63,16 @@ uvicorn app:app --reload --port 8000
 ```
 
 Backend: `http://localhost:8000`
+
+### Marketing site (Next.js)
+
+```bash
+cd web
+npm install
+npm run dev
+```
+
+See [web/README.md](web/README.md) and [DEPLOY.md](DEPLOY.md) for build and hosting.
 
 ---
 

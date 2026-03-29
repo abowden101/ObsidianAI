@@ -1,0 +1,28 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 222 47% 4%;
+    --foreground: 210 20% 96%;
+    --border: 217 19% 18%;
+    --input: 217 19% 18%;
+    --ring: 188 94% 43%;
+    --radius: 0.625rem;
+  }
+
+  body {
+    @apply bg-[#050608] text-zinc-100 antialiased;
+    background-image:
+      radial-gradient(ellipse 120% 80% at 50% -30%, rgba(34, 211, 238, 0.12), transparent),
+      radial-gradient(ellipse 80% 50% at 100% 50%, rgba(99, 102, 241, 0.06), transparent);
+    min-height: 100vh;
+  }
+}
+
+@layer utilities {
+  .text-gradient-brand {
+    @apply bg-gradient-to-r from-cyan-300 via-cyan-100 to-zinc-300 bg-clip-text text-transparent;
+  }
+}
