@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ObsidianAI — Zero-Trust Security Powered by xAI Grok</title>
+    <meta name="description" content="Orlando-built zero-trust infrastructure intelligence layer powered by xAI Grok. Real-time threat analysis and hospitality operations automation.">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="loading">
+
+    <!-- NAVIGATION -->
+    <header>
+        <nav>
+            <a href="index.html" class="logo">
+                <span>ObsidianAI</span>
+                <span class="logo-dot"></span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="solutions.html">Solutions</a></li>
+                <li><a href="pricing.html">Pricing</a></li>
+                <li><a href="roadmap.html">Roadmap</a></li>
+                <li><a href="contact.html" class="nav-cta">Get Started</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div class="hero">
+            <div class="hero-eyebrow">NETWORK-AWARE INTELLIGENCE LAYER • POWERED BY xAI GROK</div>
+            <h1>
+                ZERO-TRUST.<br>
+                MAXIMUM TRUTH.<br>
+                <em>BUILT IN ORLANDO.</em>
+            </h1>
+            <div class="hero-desc">
+                We bridge xAI Grok directly to your infrastructure. Real-time threat synthesis, natural-language firewall rules, and autonomous inventory optimization for Orlando hospitality and enterprise.
+            </div>
+            <div style="margin-top:60px; display:flex; gap:20px; flex-wrap:wrap;">
+                <a href="solutions.html" class="btn btn-primary">Explore Solutions</a>
+                <a href="contact.html" class="btn btn-ghost">Book Free Assessment</a>
+            </div>
+        </div>
+
+        <div style="background:#111; padding:40px; text-align:center; margin:80px 40px; border:1px solid #222;">
+            <strong>🚀 LIVE GROK DEMO</strong> — The chat widget below is connected to real xAI Grok. Ask anything about your network or hotel inventory.
+        </div>
+    </main>
+
+    <script>
+        function initTransitions() {
+            document.body.classList.remove('loading');
+            const current = window.location.pathname.split('/').pop() || 'index.html';
+            document.querySelectorAll('.nav-links a').forEach(link => {
+                if (link.getAttribute('href') === current) link.classList.add('active');
+            });
+        }
+
+        document.querySelectorAll('a[href$=".html"]').forEach(link => {
+            link.addEventListener('click', function(e) {
+                if (this.href !== window.location.href) {
+                    e.preventDefault();
+                    document.body.classList.add('loading');
+                    setTimeout(() => window.location.href = this.href, 480);
+                }
+            });
+        });
+
+        window.addEventListener('load', initTransitions);
+    </script>
+</body>
+</html>

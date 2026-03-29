@@ -1,6 +1,35 @@
 (function () {
     'use strict';
 
+    /* ── Mobile Nav ── */
+    const hamburger = document.getElementById('navHamburger');
+    const mobileNav = document.getElementById('navMobile');
+
+    if (hamburger && mobileNav) {
+        const openMobileNav = () => {
+            mobileNav.classList.add('open');
+            hamburger.classList.add('open');
+            hamburger.setAttribute('aria-expanded', 'true');
+            mobileNav.setAttribute('aria-hidden', 'false');
+            document.body.style.overflow = 'hidden';
+        };
+        const closeMobileNav = () => {
+            mobileNav.classList.remove('open');
+            hamburger.classList.remove('open');
+            hamburger.setAttribute('aria-expanded', 'false');
+            mobileNav.setAttribute('aria-hidden', 'true');
+            document.body.style.overflow = '';
+        };
+
+        hamburger.addEventListener('click', () => {
+            mobileNav.classList.contains('open') ? closeMobileNav() : openMobileNav();
+        });
+
+        mobileNav.querySelectorAll('a').forEach(a => {
+            a.addEventListener('click', closeMobileNav);
+        });
+    }
+
     /* ── Scroll fade-in ── */
     const io = new IntersectionObserver(
         (entries) => entries.forEach((e) => {

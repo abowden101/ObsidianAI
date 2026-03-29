@@ -30,3 +30,10 @@ Thumbs.db
 
 # Logs
 *.log
+.aider*
+
+# Next.js (web/)
+web/.next/
+web/out/
+web/node_modules/
+web/.env.local
