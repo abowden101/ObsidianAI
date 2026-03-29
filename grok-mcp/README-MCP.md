@@ -1,23 +1,27 @@
-# Grok MCP Server for Claude Desktop
+# ObsidianAI
 
-This folder runs a local MCP (Model Context Protocol) server so you can use **Grok** (xAI) directly inside **Claude Desktop** on Windows.
+**Network-Aware Intelligence Layer for Enterprise Security**  
+*Zero-trust + xAI Grok agents for Orlando hospitality, healthcare, and beyond.*
 
-### Quick Start (Windows)
+[![Live Site](https://img.shields.io/badge/Live-obsidianai.org-black)](https://obsidianai.org)
+[![Backend](https://img.shields.io/badge/Backend-Render-black)](https://obsidianai-evtu.onrender.com)
+![FastAPI](https://img.shields.io/badge/FastAPI-0.115-black)
+![xAI Grok](https://img.shields.io/badge/Powered%20by-xAI%20Grok-black)
 
-1. Copy `.env.example` to `.env`
-2. Paste your real `XAI_API_KEY` into the `.env` file
-3. Double-click `start-grok-mcp.bat`
-4. In Claude Desktop:
-   - Settings → MCP Servers → Add new server
-   - Name: `ObsidianAI Grok`
-   - URL: `http://localhost:3000`
-   - Save and enable
+ObsidianAI bridges **xAI Grok** directly to your network infrastructure and operations. Real-time threat synthesis, natural-language firewall rules, config audits, and autonomous inventory planning for Orlando resorts.
 
-Now you can use Grok with full tool calling inside Claude Desktop.
+Built in Orlando, FL — serving hospitality, healthcare, SMBs, and enterprise clients nationwide.
 
-### Files
-- `start-grok-mcp.bat` — One-click launcher
-- `server.js` — The actual MCP server
-- `.env.example` — Configuration template
+---
 
-Made for ObsidianAI by Antonio Bowden.
+## Quick Start (Local)
+
+```bash
+git clone https://github.com/abowden101/ObsidianAI.git
+cd ObsidianAI
+python -m venv .venv && source .venv/bin/activate
+pip install -r requirements.txt
+cp .env.example .env
+# Add your XAI_API_KEY
+python seed_db.py
+uvicorn app:app --reload --port 8000
