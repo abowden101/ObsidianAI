@@ -24,7 +24,7 @@ export const metadata: Metadata = {
     "hospitality security",
     "xAI",
     "Grok",
-    "obsidianAI",
+    "ObsidianAI",
   ],
   openGraph: {
     title: "ObsidianAI",
