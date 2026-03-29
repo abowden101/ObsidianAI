@@ -36,9 +36,25 @@ const config: Config = {
           "0%, 100%": { opacity: "0.4" },
           "50%": { opacity: "1" },
         },
+        dash: {
+          to: { strokeDashoffset: "-520" },
+        },
+        "pulse-ring": {
+          "0%, 100%": { opacity: "0.35", transform: "scale(1)" },
+          "50%": { opacity: "0.8", transform: "scale(1.04)" },
+        },
+        shimmer: {
+          "0%": { backgroundPosition: "200% 0" },
+          "100%": { backgroundPosition: "-200% 0" },
+        },
       },
       animation: {
         "border-pulse": "border-pulse 3s ease-in-out infinite",
+        "dash-slow": "dash 16s linear infinite",
+        "dash-slower": "dash 22s linear infinite reverse",
+        "dash-crawl": "dash 28s linear infinite",
+        "pulse-ring": "pulse-ring 3.5s ease-in-out infinite",
+        shimmer: "shimmer 8s linear infinite",
       },
     },
   },
