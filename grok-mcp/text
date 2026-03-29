@@ -1,0 +1,13 @@
+
+---
+
+### Step 2: How to Add It to Your Repo (GitHub)
+
+1. In your local repo, create folder `grok-mcp`
+2. Put the 3 files above inside it
+3. Run these commands:
+
+```bash
+git add grok-mcp/
+git commit -m "feat: add Grok MCP server for Claude Desktop integration"
+git push
