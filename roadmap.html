@@ -71,6 +71,23 @@
         </div>
     </main>
 
+    <!-- Grok Chat Widget (on every page) -->
+    <button class="chat-fab" id="chatFab">💬</button>
+    <div class="chat-panel" id="chatPanel">
+        <div class="chat-panel-header">
+            <div>
+                <div class="chat-panel-title">GROK • OBSIDIANAI</div>
+                <div class="chat-panel-sub">Real-time xAI Reasoning</div>
+            </div>
+            <button class="chat-close-btn" id="chatClose">×</button>
+        </div>
+        <div class="chat-body" id="chatBody"></div>
+        <div class="chat-input-row">
+            <input class="chat-in" id="chatIn" placeholder="Ask Grok anything...">
+            <button class="chat-send-btn" id="chatSend">Send</button>
+        </div>
+    </div>
+
     <script>
         function initTransitions() {
             document.body.classList.remove('loading');
@@ -91,6 +108,75 @@
         });
 
         window.addEventListener('load', initTransitions);
+
+        // Grok Chat Widget
+        const BACKEND_URL = "https://obsidianai-evtu.onrender.com";
+
+        const fab = document.getElementById('chatFab');
+        const panel = document.getElementById('chatPanel');
+        const closeBtn = document.getElementById('chatClose');
+        const body = document.getElementById('chatBody');
+        const input = document.getElementById('chatIn');
+        const sendBtn = document.getElementById('chatSend');
+
+        fab.addEventListener('click', () => { panel.classList.add('open'); input.focus(); });
+        closeBtn.addEventListener('click', () => panel.classList.remove('open'));
+
+        function appendMsg(text, isUser) {
+            const d = document.createElement('div');
+            d.className = 'msg ' + (isUser ? 'user' : 'bot');
+            d.textContent = text;
+            body.appendChild(d);
+            body.scrollTop = body.scrollHeight;
+        }
+
+        function showTyping() {
+            const d = document.createElement('div');
+            d.className = 'typing-dots';
+            d.id = 'typing';
+            d.innerHTML = '<span></span><span></span><span></span>';
+            body.appendChild(d);
+            body.scrollTop = body.scrollHeight;
+        }
+
+        function removeTyping() {
+            const el = document.getElementById('typing');
+            if (el) el.remove();
+        }
+
+        async function sendMsg(msg) {
+            if (!msg) return;
+            appendMsg(msg, true);
+            showTyping();
+            try {
+                const res = await fetch(`${BACKEND_URL}/chat`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ message: msg })
+                });
+                if (!res.ok) throw new Error('Backend error');
+                const data = await res.json();
+                removeTyping();
+                appendMsg(data.reply || "Processing...", false);
+            } catch {
+                removeTyping();
+                appendMsg("Backend is waking up — try again in 30 seconds.", false);
+            }
+        }
+
+        sendBtn.addEventListener('click', () => {
+            const v = input.value.trim();
+            input.value = '';
+            sendMsg(v);
+        });
+
+        input.addEventListener('keydown', e => {
+            if (e.key === 'Enter') {
+                const v = input.value.trim();
+                input.value = '';
+                sendMsg(v);
+            }
+        });
     </script>
 </body>
 </html>
