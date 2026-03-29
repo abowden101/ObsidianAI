@@ -1,20 +1,21 @@
 @echo off
-title ObsidianAI Grok MCP Server for Claude Desktop
+title ObsidianAI Grok MCP Server - For Claude Desktop
 
 echo ================================================
-echo  ObsidianAI Grok MCP Server (for Claude Desktop)
+echo   ObsidianAI Grok MCP Server (Claude Desktop)
 echo ================================================
 echo.
 
 if not exist ".env" (
     echo [ERROR] .env file not found!
-    echo Please create .env with your XAI_API_KEY first.
+    echo Please copy .env.example to .env and add your XAI_API_KEY.
     pause
     exit /b
 )
 
-echo Starting Grok MCP server on port 3000...
-echo You can now connect Claude Desktop to: http://localhost:3000
+echo Starting Grok MCP server on http://localhost:3000
+echo Connect Claude Desktop to this URL.
+echo Press Ctrl+C to stop the server.
 echo.
 
 node server.js
