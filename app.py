@@ -60,14 +60,27 @@ class SecurityHeadersMiddleware(BaseHTTPMiddleware):
         return response
 
 
+# Frontend origins: production domains + optional extra (comma-separated, e.g. staging URLs).
+# All *.vercel.app preview/production URLs are allowed via regex so Grok works after deploy
+# without redeploying the API for each new Vercel hostname.
+_cors_extra = [
+    o.strip()
+    for o in os.getenv("CORS_ALLOW_ORIGINS", "").split(",")
+    if o.strip()
+]
+_cors_origins = [
+    "https://obsidianai.org",
+    "https://www.obsidianai.org",
+    "https://abowden101.github.io",
+    "http://localhost:3000",
+    "http://127.0.0.1:3000",
+] + _cors_extra
+
 app.add_middleware(SecurityHeadersMiddleware)
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=[
-        "https://obsidianai.org",
-        "https://abowden101.github.io",
-        "http://localhost:3000",
-    ],
+    allow_origins=_cors_origins,
+    allow_origin_regex=r"https://.*\.vercel\.app",
     allow_methods=["GET", "POST"],
     allow_headers=["Content-Type"],
 )
