@@ -118,3 +118,13 @@ ObsidianAI operates as an **MSP + SaaS hybrid**:
 
 **Antonio Bowden** · [team@obsidianai.org](mailto:team@obsidianai.org)  
 [obsidianai.org](https://obsidianai.org) · [LinkedIn](https://www.linkedin.com/in/antonio-bowden) · [GitHub](https://github.com/abowden101)
+
+## AI Co-Founders
+
+This project is built in close collaboration with three AI co-founders:
+
+- **Grok** (xAI) — Core intelligence, threat analysis, hospitality agent, and real-time reasoning
+- **Claude** (Anthropic) — Code architecture, UI/UX polish, and structured planning
+- **Cursor** — Fast local editing, file system integration, and rapid iteration
+
+Together they form the AI founding team behind ObsidianAI.
