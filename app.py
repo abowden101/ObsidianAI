@@ -11,6 +11,10 @@ from dotenv import load_dotenv
 from slowapi import Limiter, _rate_limit_exceeded_handler
 from slowapi.util import get_remote_address
 from slowapi.errors import RateLimitExceeded
+import stripe as stripe_lib
+import httpx
+
+stripe_lib.api_key = os.getenv("STRIPE_SECRET_KEY", "")
 
 load_dotenv()
 
@@ -110,6 +114,11 @@ class ReportRequest(BaseModel):
     message: str
 
 
+class AuditPaymentRequest(BaseModel):
+    email: str
+    audit_data: dict
+
+
 @app.get("/")
 async def root():
     return {
@@ -147,6 +156,106 @@ async def chat(request: Request, req: ChatRequest):
     except Exception as e:
         traceback.print_exc()
         raise HTTPException(status_code=500, detail=str(e))
+
+
+@app.post("/create-payment-intent")
+@limiter.limit("10/minute")
+async def create_payment_intent(request: Request, req: AuditPaymentRequest):
+    try:
+        intent = stripe_lib.PaymentIntent.create(
+            amount=9700,
+            currency="usd",
+            receipt_email=req.email,
+            metadata={
+                "product": "instant_audit",
+                "company": req.audit_data.get("company", ""),
+                "industry": req.audit_data.get("industry", ""),
+                "size": req.audit_data.get("size", ""),
+            },
+        )
+        return {"client_secret": intent.client_secret}
+    except Exception as e:
+        raise HTTPException(status_code=400, detail=str(e))
+
+
+@app.post("/stripe-webhook")
+async def stripe_webhook(request: Request):
+    payload = await request.body()
+    sig = request.headers.get("stripe-signature", "")
+    webhook_secret = os.getenv("STRIPE_WEBHOOK_SECRET", "")
+    try:
+        event = stripe_lib.Webhook.construct_event(payload, sig, webhook_secret)
+    except (ValueError, stripe_lib.error.SignatureVerificationError):
+        raise HTTPException(status_code=400, detail="Invalid webhook signature")
+
+    if event["type"] == "payment_intent.succeeded":
+        pi = event["data"]["object"]
+        email = pi.get("receipt_email", "")
+        company = pi["metadata"].get("company", "a business")
+        industry = pi["metadata"].get("industry", "general business")
+        size = pi["metadata"].get("size", "unknown size")
+
+        # Generate report via Grok
+        try:
+            report_response = _xai.chat.completions.create(
+                model="grok-beta",
+                max_tokens=2000,
+                messages=[{
+                    "role": "user",
+                    "content": (
+                        f"Generate a professional cybersecurity audit report for {company}, "
+                        f"a {industry} company with {size} employees.\n\n"
+                        "Structure the report exactly as follows:\n"
+                        "1. EXECUTIVE RISK SUMMARY (3 bullet points)\n"
+                        "2. TOP 5 SECURITY VULNERABILITIES (each with severity: CRITICAL/HIGH/MEDIUM)\n"
+                        "3. ZERO-TRUST GAP ANALYSIS (what's missing from their architecture)\n"
+                        "4. COMPLIANCE RISK SCORES (rate HIPAA, PCI-DSS, SOC2 each 1-10 with explanation)\n"
+                        "5. PRIORITY REMEDIATION ROADMAP\n"
+                        "   - 30 Days: Quick wins\n"
+                        "   - 60 Days: Medium-term fixes\n"
+                        "   - 90 Days: Strategic improvements\n"
+                        "6. ESTIMATED ANNUAL BREACH COST EXPOSURE (dollar figure based on industry averages)\n\n"
+                        "Write for a non-technical business owner. Be specific and actionable."
+                    )
+                }],
+            )
+            report_content = report_response.choices[0].message.content
+        except Exception as e:
+            report_content = f"Report generation encountered an issue. Please contact team@obsidianai.org. Error: {str(e)}"
+
+        # Send via Resend
+        resend_key = os.getenv("RESEND_API_KEY", "")
+        if resend_key and email:
+            try:
+                async with httpx.AsyncClient() as client:
+                    await client.post(
+                        "https://api.resend.com/emails",
+                        headers={
+                            "Authorization": f"Bearer {resend_key}",
+                            "Content-Type": "application/json",
+                        },
+                        json={
+                            "from": "ObsidianAI Reports <reports@obsidianai.org>",
+                            "to": [email],
+                            "subject": f"Your ObsidianAI Security Audit — {company}",
+                            "html": f"""
+                               <div style="font-family:monospace;max-width:700px;margin:auto;background:#000;color:#fff;padding:40px;">
+                               <h1 style="color:#fff;font-size:24px;margin-bottom:8px;">ObsidianAI</h1>
+                               <p style="color:#777;font-size:14px;margin-bottom:32px;">Instant AI Security Audit</p>
+                               <pre style="white-space:pre-wrap;font-size:14px;line-height:1.7;color:#e5e5e5;">{report_content}</pre>
+                               <hr style="border-color:#222;margin:32px 0;">
+                               <p style="color:#555;font-size:12px;">Questions? Reply to this email or contact <a href="mailto:team@obsidianai.org" style="color:#4ade80;">team@obsidianai.org</a></p>
+                               <p style="color:#555;font-size:12px;">ObsidianAI · Orlando, Florida · obsidianai.org</p>
+                               </div>
+                               """,
+                        },
+                    )
+            except Exception as e:
+                print(f"Email send error: {e}")
+
+        print(f"✓ Audit completed and sent to {email} for {company}")
+
+    return {"status": "ok"}
 
 
 @app.post("/upload-report")
