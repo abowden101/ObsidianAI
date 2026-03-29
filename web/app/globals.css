@@ -12,37 +12,53 @@
     --radius: 0.625rem;
   }
 
-  body {
-    @apply bg-[#050608] text-zinc-100 antialiased;
-    background-image:
-      radial-gradient(ellipse 120% 80% at 50% -30%, rgba(34, 211, 238, 0.08), transparent),
-      radial-gradient(ellipse 80% 50% at 100% 50%, rgba(99, 102, 241, 0.04), transparent);
-    min-height: 100vh;
+  /* Force dark chrome + solid void background (prevents flash / “white site”) */
+  html {
+    color-scheme: dark;
+    @apply bg-[#020203] text-zinc-100;
   }
 
+  body {
+    @apply min-h-screen bg-[#020203] text-zinc-100 antialiased;
+    background-color: #020203;
+    background-image:
+      radial-gradient(ellipse 100% 80% at 50% -25%, rgba(34, 211, 238, 0.09), transparent 55%),
+      radial-gradient(ellipse 70% 50% at 100% 40%, rgba(59, 130, 246, 0.05), transparent 50%),
+      radial-gradient(ellipse 60% 40% at 0% 60%, rgba(34, 211, 238, 0.04), transparent 45%),
+      linear-gradient(180deg, #020203 0%, #000000 55%, #030304 100%);
+    background-attachment: fixed;
+  }
+
+  /* Subtle horizontal scan texture — dark lines only (no wash-out) */
   body::after {
     content: "";
     pointer-events: none;
     position: fixed;
     inset: 0;
     z-index: 1;
-    opacity: 0.04;
-    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    opacity: 0.35;
+    background: repeating-linear-gradient(
+      180deg,
+      rgba(0, 0, 0, 0) 0px,
+      rgba(0, 0, 0, 0) 2px,
+      rgba(0, 0, 0, 0.35) 2px,
+      rgba(0, 0, 0, 0.35) 3px
+    );
   }
 }
 
 @layer utilities {
   .text-gradient-brand {
-    @apply bg-gradient-to-r from-cyan-300 via-cyan-100 to-zinc-300 bg-clip-text text-transparent;
+    @apply bg-gradient-to-r from-cyan-200 via-cyan-100 to-zinc-200 bg-clip-text text-transparent;
   }
 
   .glass-panel {
-    @apply border border-zinc-800/80 bg-zinc-950/50 shadow-2xl backdrop-blur-xl;
+    @apply border border-zinc-800/90 bg-black/55 text-zinc-100 shadow-2xl backdrop-blur-2xl;
   }
 
   .glow-cyan {
     box-shadow:
-      0 0 60px -15px rgba(34, 211, 238, 0.35),
-      inset 0 1px 0 0 rgba(255, 255, 255, 0.06);
+      0 0 50px -18px rgba(34, 211, 238, 0.28),
+      inset 0 1px 0 0 rgba(255, 255, 255, 0.05);
   }
 }

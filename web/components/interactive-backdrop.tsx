@@ -44,13 +44,14 @@ export function InteractiveBackdrop() {
 
   const spotX = useTransform(mx, [0, 1], [12, 88]);
   const spotY = useTransform(my, [0, 1], [10, 85]);
-  const spotlight = useMotionTemplate`radial-gradient(620px circle at ${spotX}% ${spotY}%, rgba(34,211,238,0.14), transparent 68%)`;
+  const spotlight = useMotionTemplate`radial-gradient(620px circle at ${spotX}% ${spotY}%, rgba(34,211,238,0.06), transparent 65%)`;
 
   return (
     <div
-      className="pointer-events-none fixed inset-0 z-0 overflow-hidden"
+      className="pointer-events-none fixed inset-0 z-0 overflow-hidden bg-[#020203]"
       aria-hidden
     >
+      <div className="absolute inset-0 bg-gradient-to-b from-black via-[#020203] to-black opacity-95" />
       <div
         className="absolute inset-0 opacity-[0.35]"
         style={{
@@ -61,7 +62,7 @@ export function InteractiveBackdrop() {
       />
       {!reduced && (
         <motion.div
-          className="absolute inset-0 mix-blend-screen"
+          className="absolute inset-0 opacity-90"
           style={{ background: spotlight }}
         />
       )}
@@ -90,11 +91,11 @@ export function InteractiveBackdrop() {
       </div>
 
       <motion.div
-        className="absolute left-[6%] top-[14%] h-72 w-72 rounded-full bg-cyan-500/20 blur-[100px]"
+        className="absolute left-[6%] top-[14%] h-72 w-72 rounded-full bg-cyan-600/12 blur-[100px]"
         style={{ x: orbX, y: orb1Y }}
       />
       <motion.div
-        className="absolute right-[4%] top-[28%] h-64 w-64 rounded-full bg-violet-500/15 blur-[90px]"
+        className="absolute right-[4%] top-[28%] h-64 w-64 rounded-full bg-violet-600/10 blur-[90px]"
         style={{ x: orb2X, y: orb2Y }}
       />
 
