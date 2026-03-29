@@ -17,6 +17,15 @@ export const metadata: Metadata = {
   description:
     "Orlando-built zero-trust infrastructure intelligence powered by xAI Grok. Real-time threat analysis and hospitality operations automation.",
   metadataBase: new URL("https://obsidianai.org"),
+  keywords: [
+    "zero trust",
+    "MSP",
+    "Orlando",
+    "hospitality security",
+    "xAI",
+    "Grok",
+    "obsidianAI",
+  ],
   openGraph: {
     title: "ObsidianAI",
     description:
@@ -25,6 +34,12 @@ export const metadata: Metadata = {
     siteName: "ObsidianAI",
     locale: "en_US",
     type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "ObsidianAI — Zero-Trust · xAI Grok",
+    description:
+      "Maximum truth infrastructure intelligence. Built in Orlando.",
   },
 };
 
