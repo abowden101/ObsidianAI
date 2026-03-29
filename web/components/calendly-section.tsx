@@ -3,11 +3,21 @@
 import { motion } from "framer-motion";
 import { CalendarClock } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import { calendlyEmbedSrc } from "@/lib/calendly";
+import { publicConfig } from "@/lib/public-config";
 
-const calUrl = process.env.NEXT_PUBLIC_CALENDLY_URL;
+const calUrl = publicConfig.calendlyUrl;
 
 export function CalendlySection() {
+  const iframeSrc = calUrl ? calendlyEmbedSrc(calUrl) : null;
+
   return (
     <section id="demo" className="scroll-mt-24 px-4 py-20 sm:px-6">
       <div className="mx-auto max-w-6xl">
@@ -21,16 +31,19 @@ export function CalendlySection() {
             Book a live demo
           </h2>
           <p className="mt-3 text-zinc-400">
-            {calUrl ? (
-              <>Your Calendly is embedded below. Adjust branding in the Calendly dashboard.</>
+            {iframeSrc ? (
+              <>
+                Embedded Calendly — theme matches Obsidian (dark / cyan). Adjust
+                copy and availability in the Calendly admin.
+              </>
             ) : (
               <>
                 Set{" "}
                 <code className="rounded bg-zinc-900 px-1.5 py-0.5 font-mono text-sm text-cyan-400/90">
                   NEXT_PUBLIC_CALENDLY_URL
                 </code>{" "}
-                (see <code className="rounded bg-zinc-900 px-1 font-mono text-sm">web/.env.example</code>
-                ) to embed your scheduling page.
+                in Vercel (see <code className="rounded bg-zinc-900 px-1 font-mono text-sm">web/.env.example</code>
+                ).
               </>
             )}
           </p>
@@ -39,12 +52,12 @@ export function CalendlySection() {
           initial={{ opacity: 0, scale: 0.98 }}
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
-          className="overflow-hidden rounded-xl border border-zinc-800 bg-zinc-950 shadow-2xl"
+          className="glass-panel overflow-hidden rounded-xl shadow-2xl"
         >
-          {calUrl ? (
+          {iframeSrc ? (
             <iframe
               title="Schedule a demo with ObsidianAI"
-              src={`${calUrl}?hide_gdpr_banner=1&background_color=09090b&text_color=f4f4f5&primary_color=22d3ee`}
+              src={iframeSrc}
               width="100%"
               height="700"
               frameBorder={0}
@@ -56,8 +69,8 @@ export function CalendlySection() {
                 <CalendarClock className="mx-auto mb-2 h-12 w-12 text-cyan-500/80" />
                 <CardTitle className="text-xl">Calendly embed</CardTitle>
                 <CardDescription className="max-w-md text-zinc-400">
-                  Add your public Calendly URL to the environment so prospects can self-book security
-                  assessments and product walkthroughs.
+                  Add your public Calendly URL to the environment so prospects
+                  can self-book security assessments and product walkthroughs.
                 </CardDescription>
               </CardHeader>
               <CardContent className="flex flex-col items-center gap-4 pb-10">

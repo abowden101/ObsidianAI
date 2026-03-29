@@ -17,7 +17,7 @@ export function SiteHeader() {
       initial={{ opacity: 0, y: -12 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.45 }}
-      className="fixed top-0 z-50 w-full border-b border-zinc-800/80 bg-[#050608]/85 backdrop-blur-md"
+      className="fixed top-0 z-50 w-full border-b border-cyan-500/15 bg-[#050608]/70 shadow-[0_8px_32px_-12px_rgba(0,0,0,0.85)] backdrop-blur-xl backdrop-saturate-150"
     >
       <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-4 sm:px-6">
         <Link href="/" className="flex items-center gap-2 font-semibold tracking-tight text-zinc-100">

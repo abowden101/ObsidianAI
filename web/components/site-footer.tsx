@@ -2,7 +2,7 @@ import Link from "next/link";
 
 export function SiteFooter() {
   return (
-    <footer className="border-t border-zinc-800 px-4 py-12 sm:px-6">
+    <footer className="relative z-10 border-t border-zinc-800 px-4 py-12 sm:px-6">
       <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-6 sm:flex-row">
         <p className="text-center text-sm text-zinc-500 sm:text-left">
           © {new Date().getFullYear()} ObsidianAI. Orlando, FL ·{" "}

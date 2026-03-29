@@ -1,8 +1,16 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Building2, Landmark, Palmtree, ShieldCheck, Lock, Fingerprint } from "lucide-react";
+import {
+  Building2,
+  Landmark,
+  Palmtree,
+  ShieldCheck,
+  Lock,
+  Fingerprint,
+} from "lucide-react";
 import { Badge } from "@/components/ui/badge";
+import { TiltFrame } from "@/components/tilt-frame";
 
 const hospitalityMarks = [
   {
@@ -56,13 +64,24 @@ export function TrustSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.06 }}
-              className="flex flex-col items-center rounded-xl border border-zinc-800 bg-black/30 px-6 py-8 text-center"
             >
-              <div className="mb-4 flex h-16 w-16 items-center justify-center rounded-2xl border border-zinc-700 bg-zinc-900/80">
-                <m.icon className="h-8 w-8 text-zinc-400" strokeWidth={1.25} />
-              </div>
-              <p className="font-semibold text-zinc-200">{m.label}</p>
-              <p className="mt-1 text-xs uppercase tracking-wider text-zinc-500">{m.sub}</p>
+              <TiltFrame
+                intensity={3}
+                className="h-full rounded-xl [transform-style:preserve-3d]"
+              >
+                <div className="glass-panel flex h-full flex-col items-center px-6 py-8 text-center">
+                  <div className="mb-4 flex h-16 w-16 items-center justify-center rounded-2xl border border-zinc-700 bg-zinc-900/80 shadow-inner">
+                    <m.icon
+                      className="h-8 w-8 text-zinc-400"
+                      strokeWidth={1.25}
+                    />
+                  </div>
+                  <p className="font-semibold text-zinc-200">{m.label}</p>
+                  <p className="mt-1 text-xs uppercase tracking-wider text-zinc-500">
+                    {m.sub}
+                  </p>
+                </div>
+              </TiltFrame>
             </motion.div>
           ))}
         </div>
