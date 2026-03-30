@@ -3,9 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Get Started — ObsidianAI</title>
-    <meta name="description" content="Free Orlando security assessment with ObsidianAI powered by xAI Grok.">
+    <title>Free Security Assessment — ObsidianAI Powered by Grok</title>
+    <meta name="description" content="Schedule your free 30-minute Orlando security assessment with Grok-powered threat analysis. Zero commitment.">
     <link rel="stylesheet" href="styles.css">
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-71SYTMY3FL"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        // Google Analytics ID: G-71SYTMY3FL
+        gtag('config', 'G-71SYTMY3FL');
+    </script>
+    <!-- Google Ads Conversion Tracking -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17916804799"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-17916804799');
+    </script>
 </head>
 <body class="loading">
 
@@ -30,43 +47,122 @@
         <div class="contact-grid">
             <div class="contact-left">
                 <h2>Free Orlando Security Assessment</h2>
-                <p>30-minute technical consultation. We review your current stack and show exactly how Grok can strengthen your security and operations.</p>
-                <div class="contact-detail">
-                    <span class="contact-detail-label">Email</span>
-                    <span class="contact-detail-value"><a href="mailto:team@obsidianai.org">team@obsidianai.org</a></span>
+                <p style="margin-bottom:30px;">Schedule a 30-minute technical consultation with our Grok-powered threat team. We'll review your current infrastructure and show exactly how real-time AI reasoning strengthens your security.</p>
+                
+                <div class="contact-highlight">
+                    <div class="highlight-check">✓</div>
+                    <div>
+                        <strong>What's Included</strong>
+                        <ul style="font-size: 0.95rem; margin-top: 10px; color: var(--dim);">
+                            <li>Threat surface analysis (15 min)</li>
+                            <li>Grok live demo + firewall rule generation (10 min)</li>
+                            <li>Pricing & deployment options (5 min)</li>
+                        </ul>
+                    </div>
                 </div>
-                <div class="contact-detail">
-                    <span class="contact-detail-label">Location</span>
-                    <span class="contact-detail-value">Orlando, Florida</span>
+
+                <div class="contact-highlight">
+                    <div class="highlight-check">⏰</div>
+                    <div>
+                        <strong>Limited Slots — Only 2 Available This Month</strong>
+                        <p style="font-size: 0.95rem; margin-top: 8px; color: var(--dim);">We're selective about new clients to ensure quality on-site support. First come, first served.</p>
+                    </div>
+                </div>
+
+                <div class="contact-details">
+                    <div class="contact-detail">
+                        <span class="contact-detail-label">📧 EMAIL</span>
+                        <span class="contact-detail-value"><a href="mailto:team@obsidianai.org">team@obsidianai.org</a></span>
+                    </div>
+                    <div class="contact-detail">
+                        <span class="contact-detail-label">📍 LOCATION</span>
+                        <span class="contact-detail-value">Orlando, Florida</span>
+                    </div>
+                    <div class="contact-detail">
+                        <span class="contact-detail-label">🕐 RESPONSE TIME</span>
+                        <span class="contact-detail-value">Within 24 hours</span>
+                    </div>
+                </div>
+
+                <div class="form-trust-badge">
+                    <div style="font-size: 0.85rem; color: var(--dim); margin-bottom: 8px;">TRUSTED BY</div>
+                    <div style="display:flex; gap:12px; flex-wrap:wrap;">
+                        <span class="trust-badge-item">🏨 Orlando Resorts</span>
+                        <span class="trust-badge-item">🏥 Healthcare Providers</span>
+                        <span class="trust-badge-item">🏦 Enterprise</span>
+                    </div>
                 </div>
             </div>
 
             <div class="contact-form-wrap">
-                <form action="https://formspree.io/f/mbdkongb" method="POST">
+                <form id="assessmentForm" action="https://formspree.io/f/mbdkongb" method="POST">
+                    <div class="form-header">
+                        <h3>Schedule Assessment</h3>
+                        <p>(All fields required)</p>
+                    </div>
+
                     <div class="form-row">
                         <div class="form-field">
-                            <label>Name</label>
-                            <input type="text" name="name" placeholder="Your name" required>
+                            <label for="name">Name *</label>
+                            <input type="text" id="name" name="name" placeholder="Your full name" required>
                         </div>
                         <div class="form-field">
-                            <label>Email</label>
-                            <input type="email" name="email" placeholder="your@company.com" required>
+                            <label for="email">Email *</label>
+                            <input type="email" id="email" name="email" placeholder="your@company.com" required>
                         </div>
                     </div>
-                    <div class="form-field">
-                        <label>Message</label>
-                        <textarea name="message" rows="6" placeholder="Describe your environment and biggest security challenges..." required></textarea>
+
+                    <div class="form-row">
+                        <div class="form-field">
+                            <label for="company">Company *</label>
+                            <input type="text" id="company" name="company" placeholder="Hotel/Enterprise name" required>
+                        </div>
+                        <div class="form-field">
+                            <label for="phone">Phone *</label>
+                            <input type="tel" id="phone" name="phone" placeholder="(555) 000-0000" required>
+                        </div>
                     </div>
+
+                    <div class="form-field">
+                        <label for="challenges">What's your biggest security challenge? *</label>
+                        <textarea id="challenges" name="challenges" rows="4" placeholder="e.g., Guest WiFi breaches, PMS vulnerabilities, compliance audits..." required></textarea>
+                    </div>
+
+                    <div class="form-field">
+                        <label for="deployment">Preferred Deployment *</label>
+                        <select id="deployment" name="deployment" required>
+                            <option value="">Select an option...</option>
+                            <option value="on-site">On-Site (Local Orlando)</option>
+                            <option value="hybrid">Hybrid (On-site + Cloud)</option>
+                            <option value="saas">Full SaaS (Cloud-Only)</option>
+                        </select>
+                    </div>
+
+                    <div class="form-agreement">
+                        <input type="checkbox" id="agree" name="agree" required>
+                        <label for="agree" style="display:inline; font-size:0.9rem; color:var(--dim);">
+                            I agree to a 30-minute assessment call and occasional updates about Grok security releases.
+                        </label>
+                    </div>
+
                     <div class="form-submit">
-                        <button type="submit" class="btn btn-primary">Send Request →</button>
+                        <button type="submit" class="btn btn-primary btn-large">Schedule Assessment →</button>
+                        <p style="font-size: 0.85rem; color: var(--dim); margin-top: 12px;">No credit card required. We'll send calendar link via email within 24 hours.</p>
                     </div>
                 </form>
+
+                <div id="successMessage" class="form-success" style="display:none;">
+                    <div class="success-icon">✓</div>
+                    <h3>Assessment Scheduled!</h3>
+                    <p>Check your email for the calendar invite. We'll review your security challenges before the call.</p>
+                    <p style="margin-top:12px; font-size:0.9rem; color:var(--dim);">Questions? Email <strong>team@obsidianai.org</strong></p>
+                </div>
             </div>
         </div>
     </main>
 
     <!-- Grok Chat Widget (Connected to Your Render Backend) -->
-    <button class="chat-fab" id="chatFab">💬</button>
+    <button class="chat-fab" id="chatFab" title="Open Grok Chat">💬</button>
     <div class="chat-panel" id="chatPanel">
         <div class="chat-panel-header">
             <div>
@@ -77,15 +173,33 @@
         </div>
         <div class="chat-body" id="chatBody"></div>
         <div class="chat-input-row">
-            <input class="chat-in" id="chatIn" placeholder="Ask Grok anything...">
+            <input class="chat-in" id="chatIn" placeholder="Ask Grok a security question...">
             <button class="chat-send-btn" id="chatSend">Send</button>
+        </div>
+    </div>
+
+    <!-- Exit-Intent Popup -->
+    <div id="exitPopup" class="exit-popup">
+        <div class="exit-popup-overlay"></div>
+        <div class="exit-popup-modal">
+            <button class="exit-popup-close" id="exitPopupClose">×</button>
+            <div class="exit-popup-content">
+                <div class="exit-popup-icon">⏰</div>
+                <h2>Don't Miss Limited Slots!</h2>
+                <p>Only 2 available this month for on-site Orlando deployments. Founder pricing locked for 12 months if you sign now.</p>
+                <div style="display:flex; gap:15px; flex-direction:column; margin-top:30px;">
+                    <button id="exitPopupCTA" class="btn btn-primary btn-large" style="width:100%; cursor:pointer;">Schedule Assessment Now</button>
+                    <button id="exitPopupCTA2" class="btn btn-ghost" style="width:100%; cursor:pointer;">View Pricing First</button>
+                </div>
+                <p style="font-size:0.8rem; color:var(--dim); margin-top:20px; text-align:center;">You can always come back to this form.</p>
+            </div>
         </div>
     </div>
 
     <script>
         function initTransitions() {
             document.body.classList.remove('loading');
-            const current = window.location.pathname.split('/').pop() || 'index.html';
+            const current = window.location.pathname.split('/').pop() || 'contact.html';
             document.querySelectorAll('.nav-links a').forEach(link => {
                 if (link.getAttribute('href') === current) link.classList.add('active');
             });
@@ -103,6 +217,115 @@
 
         window.addEventListener('load', initTransitions);
 
+        // Google Analytics Event Tracking for Forms
+        function trackFormEvent(eventName, formData) {
+            if (typeof gtag !== 'undefined') {
+                gtag('event', eventName, {
+                    'company': formData.company || 'N/A',
+                    'deployment_type': formData.deployment || 'N/A',
+                    'page': 'contact'
+                });
+            }
+        }
+
+        // Exit-Intent Popup Manager
+        const exitPopup = document.getElementById('exitPopup');
+        const exitPopupClose = document.getElementById('exitPopupClose');
+        const exitPopupCTA = document.getElementById('exitPopupCTA');
+        const exitPopupCTA2 = document.getElementById('exitPopupCTA2');
+        const form = document.getElementById('assessmentForm');
+        let exitPopupShown = false;
+
+        // Detect mouse leaving top of page (exit intent)
+        document.addEventListener('mouseleave', (e) => {
+            if (e.clientY <= 0 && !exitPopupShown && form) {
+                showExitPopup();
+                exitPopupShown = true;
+                if (typeof gtag !== 'undefined') {
+                    gtag('event', 'exit_intent_popup_shown', { 'page': 'contact' });
+                }
+            }
+        });
+
+        function showExitPopup() {
+            exitPopup.classList.add('show');
+        }
+
+        function hideExitPopup() {
+            exitPopup.classList.remove('show');
+        }
+
+        exitPopupClose.addEventListener('click', hideExitPopup);
+        
+        // Exit popup CTA buttons
+        exitPopupCTA.addEventListener('click', () => {
+            if (typeof gtag !== 'undefined') {
+                gtag('event', 'exit_intent_cta_click', { 'action': 'schedule_now', 'page': 'contact' });
+            }
+            hideExitPopup();
+            // Scroll to form
+            document.querySelector('.contact-form-wrap').scrollIntoView({ behavior: 'smooth' });
+            document.querySelector('.contact-form-wrap input').focus();
+        });
+
+        exitPopupCTA2.addEventListener('click', () => {
+            if (typeof gtag !== 'undefined') {
+                gtag('event', 'exit_intent_cta_click', { 'action': 'view_pricing', 'page': 'contact' });
+            }
+            window.location.href = 'pricing.html';
+        });
+
+        // Close popup if user scrolls back down
+        document.addEventListener('scroll', () => {
+            if (window.scrollY > 0) {
+                hideExitPopup();
+            }
+        });
+
+        // Form Submission with Formspree Webhook
+        if (form) {
+            form.addEventListener('submit', function(e) {
+                const formData = new FormData(form);
+                const data = {
+                    name: formData.get('name'),
+                    email: formData.get('email'),
+                    company: formData.get('company'),
+                    phone: formData.get('phone'),
+                    challenges: formData.get('challenges'),
+                    deployment: formData.get('deployment')
+                };
+
+                // Track form submission
+                trackFormEvent('form_submit', data);
+
+                // Google Ads Conversion Event
+                if (typeof gtag !== 'undefined') {
+                    gtag('event', 'conversion', {
+                        'send_to': 'AW-17916804799/lead_conversion',
+                        'value': 1,
+                        'currency': 'USD',
+                        'transaction_id': 'lead_' + Date.now()
+                    });
+                }
+
+                // Log to console for debugging (Formspree will send to team@obsidianai.org)
+                console.log('Assessment request submitted:', data);
+                
+                // Optional: Send to backend for additional tracking
+                fetch('https://obsidianai-evtu.onrender.com/lead', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        source: 'contact_form',
+                        ...data,
+                        timestamp: new Date().toISOString()
+                    })
+                }).catch(() => {
+                    // Fail silently - Formspree will still work
+                });
+            });
+        }
+
         // Grok Chat Widget
         const BACKEND_URL = "https://obsidianai-evtu.onrender.com";
 
@@ -113,8 +336,76 @@
         const input = document.getElementById('chatIn');
         const sendBtn = document.getElementById('chatSend');
 
-        fab.addEventListener('click', () => { panel.classList.add('open'); input.focus(); });
-        closeBtn.addEventListener('click', () => panel.classList.remove('open'));
+        fab.addEventListener('click', () => { 
+            panel.classList.add('open'); 
+            input.focus(); 
+            fab.style.display = 'none';
+        });
+
+        closeBtn.addEventListener('click', () => { 
+            panel.classList.remove('open');
+            fab.style.display = 'block';
+        });
+
+        function appendMsg(text, isUser) {
+            const d = document.createElement('div');
+            d.className = 'msg ' + (isUser ? 'user' : 'bot');
+            d.textContent = text;
+            body.appendChild(d);
+            body.scrollTop = body.scrollHeight;
+        }
+
+        function showTyping() {
+            const d = document.createElement('div');
+            d.className = 'typing-dots';
+            d.id = 'typing';
+            d.innerHTML = '<span></span><span></span><span></span>';
+            body.appendChild(d);
+            body.scrollTop = body.scrollHeight;
+        }
+
+        function removeTyping() {
+            const el = document.getElementById('typing');
+            if (el) el.remove();
+        }
+
+        async function sendMsg(msg) {
+            if (!msg) return;
+            appendMsg(msg, true);
+            showTyping();
+            try {
+                const res = await fetch(`${BACKEND_URL}/chat`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ message: msg })
+                });
+                if (!res.ok) throw new Error('Backend error');
+                const data = await res.json();
+                removeTyping();
+                appendMsg(data.reply || "Processing...", false);
+            } catch {
+                removeTyping();
+                appendMsg("Backend is waking up — try again in 30 seconds.", false);
+            }
+        }
+
+        sendBtn.addEventListener('click', () => {
+            const v = input.value.trim();
+            if (v) input.value = '';
+            sendMsg(v);
+        });
+
+        input.addEventListener('keydown', e => {
+            if (e.key === 'Enter' && !e.shiftKey) {
+                e.preventDefault();
+                const v = input.value.trim();
+                if (v) input.value = '';
+                sendMsg(v);
+            }
+        });
+    </script>
+</body>
+</html>
 
         function appendMsg(text, isUser) {
             const d = document.createElement('div');
