@@ -1,53 +1,38 @@
-# ObsidianAI — Cursor Project Rules
+# ObsidianAI — Cursor Project Rules (Updated April 2026)
 
-## Repo structure (current state)
-- /legacy-static/index.html  — OLD site, do not touch
-- style.css                  — COMPLETE, has all styles including #audit, .audit-layout, Stripe step styles
-- script.js                  — COMPLETE, has Instant Audit Stripe flow already coded
-- app.py                     — FastAPI backend on Render at https://obsidianai-evtu.onrender.com
-- agent.py                   — ObsidianAgent class wrapping xAI Grok
-- hospitality_agent.py       — Hotel inventory agent
-- init.sql                   — PostgreSQL schema
-- seed_db.py                 — local SQLite seed
-- CNAME                      — obsidianai.org
+## The ONE production site
+- index.html at ROOT = obsidianai.org (GitHub Pages, root branch)
+- style.css = complete design system, do not restructure
+- script.js = complete JS including Stripe audit flow and chat widget
+- legacy-static/ = DELETED, do not reference
+- Old HTML pages (solutions.html, pricing.html, roadmap.html, contact.html) = DELETED
 
-## What needs to be created
-- index.html at repo ROOT    — this is the ONLY missing piece for the site to go live
-  - Must use all section IDs and classes that style.css and script.js already target
-  - GitHub Pages serves from repo root, so root index.html = obsidianai.org
+## Backend
+- app.py = FastAPI on Render at https://obsidianai-evtu.onrender.com
+- Has: /chat, /health, /create-payment-intent, /stripe-webhook, /upload-report, /clients
+- agent.py = ObsidianAgent (xAI Grok)
+- grok-mcp/server.js = MCP server for Cursor, should be connected
 
-## Design system (already in style.css — match it exactly)
-- Background: #000000, Text: #ffffff
-- Borders: #181818 (--border), #222222 (--border-mid), #2c2c2c (--border-light)
-- Green: #4ade80 (--green) — success/live states only
-- Amber: #fbbf24 (--amber) — warning/stakes only
-- Fonts: Syne (display), DM Mono (monospace labels) — loaded via Google Fonts
-- 1px border grid layout, no rounded corners > 3px, no gradients
-- --nav-h: 64px, --max-w: 1440px, --pad-x: 48px
+## Next.js app (/web directory)
+- Status: built, NOT deployed, experimental
+- Design: different aesthetic (zinc/cyan glassmorphism, Geist font, Framer Motion)
+- Decision: keep as v2 experiment for Q2 client portal build
+- Do NOT deploy /web until $97 audit is ported into it
 
-## Sections in order (script.js and style.css target these exact IDs)
-1. header — fixed nav with .logo, .nav-links, .nav-cta
-2. .hero — hero with h1 and CTA buttons
-3. .proof-bar — 4 stat items with .proof-item and .proof-num
-4. #platform — 3 pillars + 4 .cap-card grid
-5. #impact — 4 .impact-card + .impact-cta block
-6. #audit — $97 Instant Audit paid product (auditStep1/2/3 must exist here)
-7. #industries — 4 .industry-card grid
-8. #pricing — 3 .price-card grid
-9. #roadmap — 4 .roadmap-item timeline
-10. #contact-form — 2-col contact + form with id="contactForm"
-11. footer
-12. .chat-fab + .chat-panel (Grok chat widget)
+## Critical pending items
+1. STRIPE KEY — script.js line ~82 has pk_live_YOUR_KEY_HERE, replace with real key
+2. RENDER ENV VARS — add STRIPE_SECRET_KEY, STRIPE_WEBHOOK_SECRET, RESEND_API_KEY
+3. UPTIMEROBOT — ping /health every 5 min to prevent Render cold start
+4. OG IMAGE — run generate_og.py, commit og-image.png
 
-## Script.js element IDs it depends on (must exist in index.html)
-Chat: chatFab, chatPanel, chatClose, chatMessages, chatIn, chatSend
-Contact form: contactForm, formToast
-Audit: auditStep1, auditStep2, auditStep3, auditInputForm, auditPayBtn, 
-       auditBack, auditSummary, stripeCardElement, auditPayError, a-email,
-       a-company, a-industry, a-size, a-stack, a-concerns
-Email obfuscation: emailLink (data-u="team" data-d="obsidianai.org")
-Mobile nav: navHamburger, navMobile
+## Design system (never change)
+- Background #000, text #fff, border #181818
+- Green #4ade80 success only, Amber #fbbf24 warning only
+- Fonts: Syne display, DM Mono mono
+- No gradients, no shadows except chat widget, max border-radius 3px
 
 ## Revenue priority
-1. index.html creation → git push → site live → $97 audits can sell
-2.
+1. Stripe activation → $97 audits → first $97
+2. First Core client signed → $35,940 ARR
+3. Client portal (Node.js, Q2)
+4. Obsidian Sentry autonomous SOC (Q3)

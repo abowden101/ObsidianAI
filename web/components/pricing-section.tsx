@@ -12,147 +12,111 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { TiltFrame } from "@/components/tilt-frame";
 import { publicConfig } from "@/lib/public-config";
 
-const mailFallback =
-  "mailto:team@obsidianai.org?subject=ObsidianAI%20plan%20checkout";
+const mailFallback = "mailto:team@obsidianai.org?subject=ObsidianAI%20pricing";
 
 const tiers = [
   {
     name: "Foundation",
     price: "$1,995",
     period: "/mo",
-    description:
-      "SMBs and single-property operators getting serious about zero-trust.",
+    description: "Zero-trust posture for single-property hospitality operations.",
     features: [
-      "Baseline posture assessment",
-      "Grok-assisted policy drafts",
-      "Email + ticket support",
-      "Monthly executive summary",
+      "Baseline breach assessment",
+      "Grok-assisted remediation playbooks",
+      "Monthly executive report",
+      "Email security operations support",
     ],
     checkoutUrl: publicConfig.stripeFoundation || mailFallback,
-    cta: "Checkout — Foundation",
+    cta: "Activate Foundation",
     highlight: false,
   },
   {
     name: "Obsidian Core",
     price: "$2,995–$6,995",
     period: "/mo",
-    description:
-      "Mid-market multi-site: scaled telemetry, playbooks, and dedicated response windows.",
+    description: "Scaled perimeter, automation, and SOC-aligned surveillance for growing portfolios.",
     features: [
-      "Everything in Foundation",
-      "24/7 alerting pipeline",
-      "Custom integrations (PMS / IDP)",
-      "Named security engineer (Orlando + remote)",
+      "Dedicated alert pipeline",
+      "Custom PMS / IDP integration",
+      "Response runbooks + escalation flow",
+      "Named security engineer support",
     ],
     checkoutUrl: publicConfig.stripeCore || mailFallback,
-    cta: "Checkout — Core",
+    cta: "Activate Core",
     highlight: true,
   },
   {
     name: "Enterprise",
     price: "Custom",
     period: "",
-    description:
-      "Multi-region, MSP resale, white-label portal, and contractual SLAs.",
+    description: "Full portfolio resilience, MSP deployment, and contractual SLAs.",
     features: [
-      "Dedicated vCISO alignment",
-      "SOC workflow + runbooks",
-      "Custom Grok system prompts & data boundaries",
-      "MSA / BAA pathways as required",
+      "vCISO alignment and runbooks",
+      "White-label portal options",
+      "Custom Grok knowledge boundaries",
+      "Compliance-ready engagement",
     ],
-    checkoutUrl: publicConfig.stripeEnterprise,
-    cta: "Talk to sales",
+    checkoutUrl: publicConfig.stripeEnterprise || mailFallback,
+    cta: "Talk to Sales",
     highlight: false,
   },
 ];
 
 export function PricingSection() {
   return (
-    <section id="pricing" className="scroll-mt-24 px-4 py-20 sm:px-6">
-      <div className="mx-auto max-w-6xl">
-        <motion.div
-          initial={{ opacity: 0, y: 12 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="mb-12 text-center"
-        >
-          <h2 className="font-mono text-3xl font-bold text-zinc-50 md:text-4xl">
-            Transparent tiers
+    <section id="pricing" className="scroll-mt-24 px-6 py-24 sm:px-8 lg:px-10">
+      <div className="mx-auto max-w-7xl">
+        <div className="mb-12 max-w-2xl">
+          <p className="text-sm uppercase tracking-[0.32em] text-cyan-300/80">Pricing</p>
+          <h2 className="mt-4 text-4xl font-semibold tracking-tight text-white sm:text-5xl">
+            Transparent enterprise tiers. No soft launch ambiguity.
           </h2>
-          <p className="mt-3 text-zinc-400">
-            Checkout uses Stripe Payment Links or Checkout Sessions via{" "}
-            <code className="rounded bg-zinc-900 px-1.5 py-0.5 font-mono text-xs text-cyan-500/90">
-              NEXT_PUBLIC_STRIPE_CHECKOUT_*
-            </code>
-            . Unset env falls back to email.
+          <p className="mt-6 text-lg leading-8 text-slate-300">
+            ObsidianAI pricing is built around launch-ready security, fast deployment, and a premium support path for hospitality companies that demand executive-grade trust.
           </p>
-        </motion.div>
+        </div>
+
         <div className="grid gap-6 lg:grid-cols-3">
-          {tiers.map((tier, i) => (
+          {tiers.map((tier, index) => (
             <motion.div
               key={tier.name}
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 18 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ delay: i * 0.08 }}
+              transition={{ delay: 0.07 * index }}
             >
-              <TiltFrame
-                intensity={tier.highlight ? 5 : 3}
-                className="h-full rounded-xl [transform-style:preserve-3d]"
-              >
-                <Card
-                  className={`flex h-full flex-col ${
-                    tier.highlight
-                      ? "border-cyan-500/50 shadow-[0_0_40px_-12px_rgba(34,211,238,0.4)]"
-                      : "glass-panel"
-                  }`}
-                >
-                  <CardHeader>
-                    <div className="flex items-center justify-between gap-2">
-                      <CardTitle className="text-xl">{tier.name}</CardTitle>
-                      {tier.highlight && <Badge>Popular</Badge>}
-                    </div>
-                    <CardDescription>{tier.description}</CardDescription>
-                    <div className="pt-4">
-                      <span className="font-mono text-3xl font-bold text-zinc-50">
-                        {tier.price}
-                      </span>
-                      <span className="text-zinc-500">{tier.period}</span>
-                    </div>
-                  </CardHeader>
-                  <CardContent className="flex-1">
-                    <ul className="space-y-3">
-                      {tier.features.map((f) => (
-                        <li
-                          key={f}
-                          className="flex gap-2 text-sm text-zinc-300"
-                        >
-                          <Check className="mt-0.5 h-4 w-4 shrink-0 text-cyan-500" />
-                          {f}
-                        </li>
-                      ))}
-                    </ul>
-                  </CardContent>
-                  <CardFooter>
-                    <Button
-                      asChild
-                      className="w-full"
-                      variant={tier.highlight ? "default" : "secondary"}
-                    >
-                      <a
-                        href={tier.checkoutUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
-                        {tier.cta}
-                      </a>
-                    </Button>
-                  </CardFooter>
-                </Card>
-              </TiltFrame>
+              <Card className={`h-full border ${tier.highlight ? "border-cyan-400/30 shadow-[0_0_80px_-28px_rgba(34,211,238,0.45)]" : "border-white/10"} bg-[#02050f]/90`}>
+                <CardHeader className="space-y-4 p-8">
+                  <div className="flex items-center justify-between gap-4">
+                    <CardTitle className="text-2xl text-white">{tier.name}</CardTitle>
+                    {tier.highlight && <Badge>Recommended</Badge>}
+                  </div>
+                  <CardDescription className="text-slate-400">{tier.description}</CardDescription>
+                  <div className="flex items-end gap-2">
+                    <span className="text-4xl font-semibold text-white">{tier.price}</span>
+                    <span className="pb-1 text-sm text-slate-500">{tier.period}</span>
+                  </div>
+                </CardHeader>
+                <CardContent className="space-y-5 p-8">
+                  <ul className="space-y-3">
+                    {tier.features.map((feature) => (
+                      <li key={feature} className="flex gap-3 text-sm leading-7 text-slate-300">
+                        <Check className="mt-1 h-4 w-4 text-cyan-400" />
+                        {feature}
+                      </li>
+                    ))}
+                  </ul>
+                </CardContent>
+                <CardFooter className="p-8 pt-0">
+                  <Button asChild className="w-full rounded-full bg-cyan-400 px-4 py-3 text-sm font-semibold uppercase tracking-[0.18em] text-slate-950 hover:bg-cyan-300">
+                    <a href={tier.checkoutUrl} target="_blank" rel="noopener noreferrer">
+                      {tier.cta}
+                    </a>
+                  </Button>
+                </CardFooter>
+              </Card>
             </motion.div>
           ))}
         </div>

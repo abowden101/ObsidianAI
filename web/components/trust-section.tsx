@@ -1,135 +1,89 @@
 "use client";
 
 import { motion } from "framer-motion";
-import {
-  Building2,
-  Landmark,
-  Palmtree,
-  ShieldCheck,
-  Lock,
-  Fingerprint,
-} from "lucide-react";
-import { Badge } from "@/components/ui/badge";
-import { TiltFrame } from "@/components/tilt-frame";
+import { ShieldCheck, Lock, Fingerprint } from "lucide-react";
 
-const hospitalityMarks = [
+const trustHighlights = [
   {
-    label: "Convention & events",
-    sub: "Orange County corridor",
-    icon: Landmark,
+    title: "Live Grok signal fusion",
+    description:
+      "Security decisions informed by natural language reasoning, threat telemetry, and operational context.",
   },
   {
-    label: "Resort & lodging",
-    sub: "International Drive",
-    icon: Building2,
+    title: "Hospitality-safe automation",
+    description:
+      "Automated response flows designed to protect guests, preserve service, and reduce false escalation.",
   },
   {
-    label: "Theme & experience",
-    sub: "Central Florida",
-    icon: Palmtree,
+    title: "Audit-grade posture",
+    description:
+      "Built-in observability, compliance logging, and zero-trust control for multi-location deployments.",
   },
-];
-
-const zeroTrustBadges = [
-  { label: "Zero Trust Architecture", detail: "Identity & device context" },
-  { label: "Least-privilege access", detail: "Continuous verification" },
-  { label: "Encrypted in transit", detail: "TLS 1.2+ everywhere" },
-  { label: "Audit-ready posture", detail: "Logging & attestation" },
 ];
 
 export function TrustSection() {
   return (
-    <section className="border-y border-zinc-800/80 bg-zinc-950/40 px-4 py-20 sm:px-6">
-      <div className="mx-auto max-w-6xl">
-        <motion.div
-          initial={{ opacity: 0, y: 10 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="mb-12 text-center"
-        >
-          <h2 className="font-mono text-2xl font-bold text-zinc-50 md:text-3xl">
-            Trusted where hospitality meets scale
-          </h2>
-          <p className="mt-2 text-sm text-zinc-500">
-            Logo marks are representative of Orlando hospitality footprint — swap in your property
-            partners under license when ready.
+    <section id="trust" className="border-y border-white/10 bg-[#02030b] px-6 py-24 sm:px-8 lg:px-10">
+      <div className="mx-auto max-w-7xl">
+        <div className="max-w-2xl">
+          <p className="text-sm uppercase tracking-[0.32em] text-cyan-300/80">
+            Why choose ObsidianAI
           </p>
-        </motion.div>
+          <h2 className="mt-4 text-4xl font-semibold tracking-tight text-white sm:text-5xl">
+            Scalable trust for hospitality operations and enterprise security.
+          </h2>
+          <p className="mt-6 text-lg leading-8 text-slate-300">
+            We deliver an immersive security platform that feels as premium as the experiences it protects.
+          </p>
+        </div>
 
-        <div className="mb-16 grid gap-4 sm:grid-cols-3">
-          {hospitalityMarks.map((m, i) => (
+        <div className="mt-14 grid gap-6 lg:grid-cols-3">
+          {trustHighlights.map((item, index) => (
             <motion.div
-              key={m.label}
-              initial={{ opacity: 0, y: 12 }}
+              key={item.title}
+              initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ delay: i * 0.06 }}
+              transition={{ delay: 0.08 * index }}
+              className="rounded-[2rem] border border-white/10 bg-slate-950/70 p-8 shadow-[0_30px_80px_rgba(0,0,0,0.3)]"
             >
-              <TiltFrame
-                intensity={3}
-                className="h-full rounded-xl [transform-style:preserve-3d]"
-              >
-                <div className="glass-panel flex h-full flex-col items-center px-6 py-8 text-center">
-                  <div className="mb-4 flex h-16 w-16 items-center justify-center rounded-2xl border border-zinc-700 bg-zinc-900/80 shadow-inner">
-                    <m.icon
-                      className="h-8 w-8 text-zinc-400"
-                      strokeWidth={1.25}
-                    />
-                  </div>
-                  <p className="font-semibold text-zinc-200">{m.label}</p>
-                  <p className="mt-1 text-xs uppercase tracking-wider text-zinc-500">
-                    {m.sub}
-                  </p>
-                </div>
-              </TiltFrame>
+              <div className="mb-4 inline-flex h-14 w-14 items-center justify-center rounded-3xl bg-cyan-400/10 text-cyan-300">
+                <ShieldCheck className="h-6 w-6" />
+              </div>
+              <h3 className="text-2xl font-semibold text-white">{item.title}</h3>
+              <p className="mt-4 text-sm leading-7 text-slate-300">{item.description}</p>
             </motion.div>
           ))}
         </div>
 
-        <div className="grid gap-6 md:grid-cols-2">
+        <div className="mt-16 grid gap-6 lg:grid-cols-2">
           <motion.div
-            initial={{ opacity: 0, x: -8 }}
+            initial={{ opacity: 0, x: -10 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            className="rounded-xl border border-cyan-900/40 bg-cyan-950/20 p-6"
+            className="rounded-[2rem] border border-cyan-500/20 bg-[#01101c]/80 p-8"
           >
-            <div className="mb-4 flex items-center gap-2 text-cyan-300">
-              <ShieldCheck className="h-6 w-6" />
-              <span className="font-mono text-sm font-semibold uppercase tracking-wide">
-                Zero-trust signals
-              </span>
+            <div className="mb-4 flex items-center gap-3 text-cyan-300">
+              <Lock className="h-6 w-6" />
+              <span className="font-mono text-sm uppercase tracking-[0.28em] text-cyan-200">Zero-trust posture</span>
             </div>
-            <div className="flex flex-wrap gap-2">
-              {zeroTrustBadges.map((b) => (
-                <Badge key={b.label} variant="secondary" className="py-1.5 pl-2 pr-3">
-                  <span className="flex flex-col items-start gap-0.5">
-                    <span className="flex items-center gap-1 text-[11px] text-zinc-200">
-                      <Lock className="h-3 w-3" />
-                      {b.label}
-                    </span>
-                    <span className="font-normal text-[10px] text-zinc-500">{b.detail}</span>
-                  </span>
-                </Badge>
-              ))}
-            </div>
+            <p className="text-sm leading-7 text-slate-300">
+              Identity-aware access control, micro-segmentation, and continuous verification anchored to live Grok reasoning.
+            </p>
           </motion.div>
 
           <motion.div
-            initial={{ opacity: 0, x: 8 }}
+            initial={{ opacity: 0, x: 10 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            className="rounded-xl border border-zinc-800 bg-zinc-900/40 p-6"
+            className="rounded-[2rem] border border-white/10 bg-[#010a14]/80 p-8"
           >
-            <div className="mb-3 flex items-center gap-2 text-zinc-300">
-              <Fingerprint className="h-6 w-6 text-cyan-500" />
-              <span className="font-mono text-sm font-semibold uppercase tracking-wide">
-                Assurance
-              </span>
+            <div className="mb-4 flex items-center gap-3 text-cyan-300">
+              <Fingerprint className="h-6 w-6" />
+              <span className="font-mono text-sm uppercase tracking-[0.28em] text-cyan-200">Air-tight assurance</span>
             </div>
-            <p className="text-sm leading-relaxed text-zinc-400">
-              Controls map to NIST SP 800-207 zero-trust tenets and are implemented alongside your
-              identity provider, property management stack, and network edge — not as a slide deck,
-              but as enforced policy backed by Grok-assisted runbooks.
+            <p className="text-sm leading-7 text-slate-300">
+              Designed for managed hospitality portfolios with a focus on guest privacy, uptime, and operational legitimacy.
             </p>
           </motion.div>
         </div>

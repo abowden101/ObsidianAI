@@ -1,82 +1,82 @@
 "use client";
 
-import { motion } from "framer-motion";
 import Link from "next/link";
-import { ArrowRight, Cpu, MapPin } from "lucide-react";
-import { Button } from "@/components/ui/button";
-import { XaiGrokChip } from "@/components/xai-chip";
-import { TiltFrame } from "@/components/tilt-frame";
+import { motion } from "framer-motion";
+import { ArrowRight, ShieldCheck, Sparkles } from "lucide-react";
+
+const heroHighlights = [
+  "End-to-end zero-trust orchestration",
+  "Live Grok reasoning for threat context",
+  "Hospitality-safe automation and incident continuity",
+];
 
 export function Hero() {
   return (
-    <section className="relative px-4 pb-16 pt-28 sm:px-6 lg:pt-32">
+    <section id="top" className="relative px-6 pt-24 pb-20 sm:px-8 lg:px-10 lg:pt-28">
       <div className="mx-auto max-w-6xl">
-        <div className="mb-6 flex flex-col items-center gap-4 sm:flex-row sm:flex-wrap sm:items-center sm:justify-start">
-          <motion.p
-            initial={{ opacity: 0, y: 12 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.05 }}
-            className="text-center text-xs font-medium uppercase tracking-[0.25em] text-cyan-400/90 sm:text-left"
-          >
-            Network-aware intelligence
-          </motion.p>
-          <XaiGrokChip />
-          <motion.span
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.22 }}
-            className="inline-flex items-center gap-1.5 rounded-full border border-zinc-700/90 bg-zinc-900/60 px-3 py-1 text-[10px] font-mono uppercase tracking-wider text-zinc-400"
-          >
-            <Cpu className="h-3 w-3 text-cyan-500/80" />
-            Neural routing layer
-          </motion.span>
-        </div>
-        <TiltFrame intensity={2} className="relative">
-          <motion.h1
-            initial={{ opacity: 0, y: 16 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.1, duration: 0.5 }}
-            className="text-center font-mono text-4xl font-bold leading-[1.08] tracking-tight text-zinc-50 sm:text-left sm:text-5xl md:text-6xl"
-            style={{ transform: "translateZ(24px)" }}
-          >
-            <span className="block">ZERO-TRUST.</span>
-            <span className="block">MAXIMUM TRUTH.</span>
-            <span className="mt-2 block text-gradient-brand italic">
-              BUILT IN ORLANDO.
-            </span>
-          </motion.h1>
-        </TiltFrame>
-        <motion.p
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 0.25 }}
-          className="mx-auto mt-8 max-w-2xl text-center text-base leading-relaxed text-zinc-400 sm:mx-0 sm:text-left sm:text-lg"
-        >
-          We bridge xAI Grok directly to your infrastructure. Real-time threat synthesis,
-          natural-language policy, and autonomous operations for Orlando hospitality and
-          nationwide enterprise — with a zero-trust posture from day one.
-        </motion.p>
         <motion.div
-          initial={{ opacity: 0, y: 8 }}
+          initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.35 }}
-          className="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:items-center"
+          transition={{ delay: 0.1, duration: 0.85, ease: "easeOut" }}
+          className="relative overflow-hidden rounded-[2.5rem] border border-white/10 bg-slate-950/75 p-8 shadow-[0_60px_120px_rgba(0,0,0,0.35)] backdrop-blur-2xl"
         >
-          <Button asChild size="lg" className="w-full sm:w-auto">
-            <Link href="#pricing">
-              View plans <ArrowRight className="h-4 w-4" />
-            </Link>
-          </Button>
-          <Button
-            asChild
-            variant="outline"
-            size="lg"
-            className="w-full border-zinc-600 sm:w-auto"
-          >
-            <Link href="#demo">
-              Book a demo <MapPin className="h-4 w-4 text-cyan-400" />
-            </Link>
-          </Button>
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,_rgba(56,189,248,0.12),transparent_26%),radial-gradient(circle_at_bottom_right,_rgba(165,180,252,0.08),transparent_24%)]" />
+          <div className="relative grid gap-10 lg:grid-cols-[1.2fr_0.8fr] lg:items-end">
+            <div className="relative">
+              <div className="mb-6 inline-flex items-center gap-3 rounded-full border border-cyan-400/20 bg-cyan-400/10 px-4 py-2 text-sm uppercase tracking-[0.28em] text-cyan-200">
+                <ShieldCheck className="h-4 w-4" />
+                Mission-critical xAI security
+              </div>
+              <h1 className="text-5xl font-black tracking-tight text-white sm:text-6xl lg:text-7xl">
+                Real-Time Zero-Trust Security. Powered by Grok.
+              </h1>
+              <p className="mt-8 max-w-2xl text-lg leading-8 text-slate-300 sm:text-xl">
+                ObsidianAI is the premium hospitality security platform for teams that need cinematic trust, intelligent automation, and enterprise-grade event response.
+              </p>
+              <div className="mt-10 flex flex-col gap-4 sm:flex-row sm:items-center">
+                <Link
+                  href="#deploy"
+                  className="inline-flex items-center justify-center rounded-full bg-cyan-400 px-6 py-3 text-sm font-semibold uppercase tracking-[0.18em] text-slate-950 transition hover:bg-cyan-300"
+                >
+                  Schedule assessment
+                </Link>
+                <Link
+                  href="#capabilities"
+                  className="inline-flex items-center justify-center rounded-full border border-white/10 bg-slate-950/60 px-6 py-3 text-sm font-semibold uppercase tracking-[0.18em] text-white transition hover:bg-slate-900/60"
+                >
+                  Explore capabilities
+                  <ArrowRight className="ml-2 h-4 w-4" />
+                </Link>
+              </div>
+            </div>
+
+            <div className="relative overflow-hidden rounded-[2rem] border border-white/10 bg-[#06111b]/95 p-7 shadow-[0_30px_90px_rgba(0,0,0,0.38)]">
+              <div className="mb-4 flex items-center justify-between gap-3 rounded-3xl border border-white/10 bg-slate-950/80 px-4 py-3 text-sm text-slate-300">
+                <span>Live reasoning</span>
+                <span className="rounded-full bg-cyan-400/15 px-3 py-1 text-xs uppercase tracking-[0.28em] text-cyan-100">
+                  Active
+                </span>
+              </div>
+              <div className="space-y-4">
+                {heroHighlights.map((highlight) => (
+                  <div key={highlight} className="rounded-3xl border border-white/10 bg-[#02070f]/95 p-5">
+                    <p className="text-sm uppercase tracking-[0.32em] text-cyan-300/80">Live feed</p>
+                    <p className="mt-3 text-lg font-semibold text-white">{highlight}</p>
+                  </div>
+                ))}
+              </div>
+              <div className="mt-8 grid gap-4 sm:grid-cols-2">
+                <div className="rounded-3xl border border-white/10 bg-black/50 p-5">
+                  <p className="text-xs uppercase tracking-[0.32em] text-slate-500">Response time</p>
+                  <p className="mt-3 text-3xl font-semibold text-white">1.2s</p>
+                </div>
+                <div className="rounded-3xl border border-white/10 bg-black/50 p-5">
+                  <p className="text-xs uppercase tracking-[0.32em] text-slate-500">Alert fidelity</p>
+                  <p className="mt-3 text-3xl font-semibold text-white">99.8%</p>
+                </div>
+              </div>
+            </div>
+          </div>
         </motion.div>
       </div>
     </section>

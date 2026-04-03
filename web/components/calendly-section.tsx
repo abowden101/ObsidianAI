@@ -3,86 +3,74 @@
 import { motion } from "framer-motion";
 import { CalendarClock } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
-import { calendlyEmbedSrc } from "@/lib/calendly";
 import { publicConfig } from "@/lib/public-config";
 
-const calUrl = publicConfig.calendlyUrl;
+const calendlyUrl = publicConfig.calendlyUrl;
 
 export function CalendlySection() {
-  const iframeSrc = calUrl ? calendlyEmbedSrc(calUrl) : null;
-
   return (
-    <section id="demo" className="scroll-mt-24 px-4 py-20 sm:px-6">
-      <div className="mx-auto max-w-6xl">
-        <motion.div
-          initial={{ opacity: 0, y: 12 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="mb-8 text-center"
-        >
-          <h2 className="font-mono text-3xl font-bold text-zinc-50 md:text-4xl">
-            Book a live demo
-          </h2>
-          <p className="mt-3 text-zinc-400">
-            {iframeSrc ? (
-              <>
-                Embedded Calendly — theme matches Obsidian (dark / cyan). Adjust
-                copy and availability in the Calendly admin.
-              </>
+    <section id="deploy" className="scroll-mt-24 px-6 py-24 sm:px-8 lg:px-10">
+      <div className="mx-auto max-w-7xl">
+        <div className="grid gap-10 lg:grid-cols-[1.2fr_0.8fr] lg:items-center">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="max-w-2xl"
+          >
+            <p className="text-sm uppercase tracking-[0.32em] text-cyan-300/80">
+              Deployment readiness
+            </p>
+            <h2 className="mt-4 text-4xl font-semibold tracking-tight text-white sm:text-5xl">
+              Start the first $97 audit and deploy premium security fast.
+            </h2>
+            <p className="mt-6 text-lg leading-8 text-slate-300">
+              ObsidianAI is built for fast launch, high-trust visibility, and deep operational automation across hospitality estates.
+            </p>
+            <div className="mt-8 grid gap-4 sm:grid-cols-2">
+              <div className="rounded-[1.75rem] border border-white/10 bg-[#01101b]/90 p-6">
+                <p className="text-xs uppercase tracking-[0.32em] text-cyan-300/80">Fast audit</p>
+                <p className="mt-4 text-xl font-semibold text-white">$97 initial assessment</p>
+              </div>
+              <div className="rounded-[1.75rem] border border-white/10 bg-[#01101b]/90 p-6">
+                <p className="text-xs uppercase tracking-[0.32em] text-cyan-300/80">Live continuity</p>
+                <p className="mt-4 text-xl font-semibold text-white">Grok reasoning + zero-trust automation</p>
+              </div>
+            </div>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="rounded-[2rem] border border-white/10 bg-[#02050d]/95 p-8 shadow-[0_40px_120px_rgba(0,0,0,0.4)]"
+          >
+            <div className="mb-6 flex items-center gap-3 text-cyan-300">
+              <CalendarClock className="h-6 w-6" />
+              <span className="font-mono text-sm uppercase tracking-[0.32em]">Schedule assessment</span>
+            </div>
+            <p className="mb-6 text-sm leading-7 text-slate-400">
+              Book a quick discovery call or launch your first paid audit. If Calendly is not configured, email our team directly.
+            </p>
+            {calendlyUrl ? (
+              <Button
+                asChild
+                className="w-full rounded-full bg-cyan-400 px-5 py-3 text-sm font-semibold uppercase tracking-[0.18em] text-slate-950 hover:bg-cyan-300"
+              >
+                <a href={calendlyUrl} target="_blank" rel="noopener noreferrer">
+                  Book assessment
+                </a>
+              </Button>
             ) : (
-              <>
-                Set{" "}
-                <code className="rounded bg-zinc-900 px-1.5 py-0.5 font-mono text-sm text-cyan-400/90">
-                  NEXT_PUBLIC_CALENDLY_URL
-                </code>{" "}
-                in Vercel (see <code className="rounded bg-zinc-900 px-1 font-mono text-sm">web/.env.example</code>
-                ).
-              </>
+              <Button
+                asChild
+                className="w-full rounded-full bg-slate-950/60 px-5 py-3 text-sm font-semibold uppercase tracking-[0.18em] text-white hover:bg-slate-900/60"
+              >
+                <a href="mailto:team@obsidianai.org?subject=ObsidianAI%20assessment">Email team@obsidianai.org</a>
+              </Button>
             )}
-          </p>
-        </motion.div>
-        <motion.div
-          initial={{ opacity: 0, scale: 0.98 }}
-          whileInView={{ opacity: 1, scale: 1 }}
-          viewport={{ once: true }}
-          className="glass-panel overflow-hidden rounded-xl shadow-2xl"
-        >
-          {iframeSrc ? (
-            <iframe
-              title="Schedule a demo with ObsidianAI"
-              src={iframeSrc}
-              width="100%"
-              height="700"
-              frameBorder={0}
-              className="min-h-[700px] w-full bg-zinc-950"
-            />
-          ) : (
-            <Card className="border-0 bg-transparent shadow-none">
-              <CardHeader className="items-center text-center">
-                <CalendarClock className="mx-auto mb-2 h-12 w-12 text-cyan-500/80" />
-                <CardTitle className="text-xl">Calendly embed</CardTitle>
-                <CardDescription className="max-w-md text-zinc-400">
-                  Add your public Calendly URL to the environment so prospects
-                  can self-book security assessments and product walkthroughs.
-                </CardDescription>
-              </CardHeader>
-              <CardContent className="flex flex-col items-center gap-4 pb-10">
-                <Button asChild variant="secondary">
-                  <a href="mailto:team@obsidianai.org?subject=Demo%20request">
-                    Email team@obsidianai.org for now
-                  </a>
-                </Button>
-              </CardContent>
-            </Card>
-          )}
-        </motion.div>
+          </motion.div>
+        </div>
       </div>
     </section>
   );
