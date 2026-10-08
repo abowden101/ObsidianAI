@@ -193,9 +193,9 @@
     </footer>
 
     <script>
-        // Lead capture: set your Formspree form ID below (free at formspree.io).
-        // Until then, submissions open the visitor's email client addressed to us.
-        const FORMSPREE_ID = "YOUR_FORMSPREE_ID";
+        // Lead capture: Formspree (form ID xljgbogz).
+        // If the endpoint ever fails, submissions fall back to the visitor's email client.
+        const FORMSPREE_ID = "xljgbogz";
         const FALLBACK_EMAIL = "info@obsidianai.org";
 
         // Reveal-on-scroll
@@ -229,6 +229,8 @@
                 return;
             }
             const data = Object.fromEntries(new FormData(form).entries());
+            data.site = "obsidianai.org";
+            data._subject = "New ObsidianAI pilot request \u2014 " + data.company;
 
             if (FORMSPREE_ID === "YOUR_FORMSPREE_ID") {
                 // Fallback: open email client with the details prefilled
