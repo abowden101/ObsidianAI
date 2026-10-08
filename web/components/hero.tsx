@@ -52,27 +52,27 @@ export function Hero() {
 
             <div className="relative overflow-hidden rounded-[2rem] border border-white/10 bg-[#06111b]/95 p-7 shadow-[0_30px_90px_rgba(0,0,0,0.38)]">
               <div className="mb-4 flex items-center justify-between gap-3 rounded-3xl border border-white/10 bg-slate-950/80 px-4 py-3 text-sm text-slate-300">
-                <span>Live reasoning</span>
+                <span>What it does</span>
                 <span className="rounded-full bg-cyan-400/15 px-3 py-1 text-xs uppercase tracking-[0.28em] text-cyan-100">
-                  Active
+                  Pilot
                 </span>
               </div>
               <div className="space-y-4">
                 {heroHighlights.map((highlight) => (
                   <div key={highlight} className="rounded-3xl border border-white/10 bg-[#02070f]/95 p-5">
-                    <p className="text-sm uppercase tracking-[0.32em] text-cyan-300/80">Live feed</p>
+                    <p className="text-sm uppercase tracking-[0.32em] text-cyan-300/80">Capability</p>
                     <p className="mt-3 text-lg font-semibold text-white">{highlight}</p>
                   </div>
                 ))}
               </div>
               <div className="mt-8 grid gap-4 sm:grid-cols-2">
                 <div className="rounded-3xl border border-white/10 bg-black/50 p-5">
-                  <p className="text-xs uppercase tracking-[0.32em] text-slate-500">Response time</p>
-                  <p className="mt-3 text-3xl font-semibold text-white">1.2s</p>
+                  <p className="text-xs uppercase tracking-[0.32em] text-slate-500">Stage</p>
+                  <p className="mt-3 text-xl font-semibold text-white">Pilot program</p>
                 </div>
                 <div className="rounded-3xl border border-white/10 bg-black/50 p-5">
-                  <p className="text-xs uppercase tracking-[0.32em] text-slate-500">Alert fidelity</p>
-                  <p className="mt-3 text-3xl font-semibold text-white">99.8%</p>
+                  <p className="text-xs uppercase tracking-[0.32em] text-slate-500">Built in</p>
+                  <p className="mt-3 text-xl font-semibold text-white">Orlando, FL</p>
                 </div>
               </div>
             </div>

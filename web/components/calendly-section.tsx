@@ -22,10 +22,10 @@ export function CalendlySection() {
               Deployment readiness
             </p>
             <h2 className="mt-4 text-4xl font-semibold tracking-tight text-white sm:text-5xl">
-              Start the first $97 audit and deploy premium security fast.
+              Start with a $97 security audit.
             </h2>
             <p className="mt-6 text-lg leading-8 text-slate-300">
-              ObsidianAI is built for fast launch, high-trust visibility, and deep operational automation across hospitality estates.
+              A focused assessment of your environment: what’s exposed, what to fix first, and whether a pilot is the right next step.
             </p>
             <div className="mt-8 grid gap-4 sm:grid-cols-2">
               <div className="rounded-[1.75rem] border border-white/10 bg-[#01101b]/90 p-6">
@@ -33,8 +33,8 @@ export function CalendlySection() {
                 <p className="mt-4 text-xl font-semibold text-white">$97 initial assessment</p>
               </div>
               <div className="rounded-[1.75rem] border border-white/10 bg-[#01101b]/90 p-6">
-                <p className="text-xs uppercase tracking-[0.32em] text-cyan-300/80">Live continuity</p>
-                <p className="mt-4 text-xl font-semibold text-white">Grok reasoning + zero-trust automation</p>
+                <p className="text-xs uppercase tracking-[0.32em] text-cyan-300/80">Pilot program</p>
+                <p className="mt-4 text-xl font-semibold text-white">Direct access to the engineering team</p>
               </div>
             </div>
           </motion.div>

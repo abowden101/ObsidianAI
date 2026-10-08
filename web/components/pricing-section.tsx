@@ -29,7 +29,7 @@ const tiers = [
       "Email security operations support",
     ],
     checkoutUrl: publicConfig.stripeFoundation || mailFallback,
-    cta: "Activate Foundation",
+    cta: "Request pilot access",
     highlight: false,
   },
   {
@@ -44,14 +44,14 @@ const tiers = [
       "Named security engineer support",
     ],
     checkoutUrl: publicConfig.stripeCore || mailFallback,
-    cta: "Activate Core",
+    cta: "Request pilot access",
     highlight: true,
   },
   {
     name: "Enterprise",
     price: "Custom",
     period: "",
-    description: "Full portfolio resilience, MSP deployment, and contractual SLAs.",
+    description: "Full portfolio resilience, MSP deployment, and a pilot support agreement.",
     features: [
       "vCISO alignment and runbooks",
       "White-label portal options",
@@ -59,7 +59,7 @@ const tiers = [
       "Compliance-ready engagement",
     ],
     checkoutUrl: publicConfig.stripeEnterprise || mailFallback,
-    cta: "Talk to Sales",
+    cta: "Talk to us",
     highlight: false,
   },
 ];
@@ -69,12 +69,12 @@ export function PricingSection() {
     <section id="pricing" className="scroll-mt-24 px-6 py-24 sm:px-8 lg:px-10">
       <div className="mx-auto max-w-7xl">
         <div className="mb-12 max-w-2xl">
-          <p className="text-sm uppercase tracking-[0.32em] text-cyan-300/80">Pricing</p>
+          <p className="text-sm uppercase tracking-[0.32em] text-cyan-300/80">Pilot pricing</p>
           <h2 className="mt-4 text-4xl font-semibold tracking-tight text-white sm:text-5xl">
-            Transparent enterprise tiers. No soft launch ambiguity.
+            Founding pilot tiers. Straight pricing.
           </h2>
           <p className="mt-6 text-lg leading-8 text-slate-300">
-            ObsidianAI pricing is built around launch-ready security, fast deployment, and a premium support path for hospitality companies that demand executive-grade trust.
+            ObsidianAI is onboarding a small group of pilot partners now — direct engineering access, input on the roadmap, and pricing locked before public launch.
           </p>
         </div>
 

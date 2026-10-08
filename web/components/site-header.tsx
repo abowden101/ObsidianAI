@@ -24,7 +24,7 @@ export function SiteHeader() {
           <span className="flex h-10 w-10 items-center justify-center rounded-3xl border border-cyan-400/15 bg-cyan-400/10 text-cyan-200">
             <ShieldCheck className="h-5 w-5" />
           </span>
-          OBSDIANAI
+          OBSIDIANAI
         </Link>
 
         <nav className="hidden items-center gap-8 md:flex">
