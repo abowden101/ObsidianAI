@@ -3,316 +3,261 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ObsidianAI — Zero-Trust Security + Hospitality Automation Powered by xAI Grok</title>
-    <meta name="description" content="Orlando-built zero-trust infrastructure intelligence + hospitality automation powered by xAI Grok. Real-time threat analysis, inventory management, and firewall generation for resorts and enterprises.">
+    <title>ObsidianAI — AI-Powered Cybersecurity Platform</title>
+    <meta name="description" content="ObsidianAI is an AI-powered cybersecurity platform built in Orlando: threat analysis, firewall rule generation, and compliance automation for teams that need enterprise-grade defense. Join the pilot program.">
+    <meta property="og:title" content="ObsidianAI — AI-Powered Cybersecurity Platform">
+    <meta property="og:description" content="Threat analysis, firewall automation, and compliance evidence — powered by AI reasoning. Join the pilot.">
+    <meta property="og:type" content="website">
     <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
     <!-- Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-71SYTMY3FL"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
         gtag('js', new Date());
-        // Google Analytics ID: G-71SYTMY3FL
         gtag('config', 'G-71SYTMY3FL');
     </script>
 </head>
-<body class="loading">
-
-    <header>
-        <nav>
-            <a href="index.html" class="logo">
-                <span>ObsidianAI</span>
-                <span class="logo-dot"></span>
-            </a>
+<body>
+    <header class="site-header">
+        <nav class="nav container">
+            <a href="#" class="logo">Obsidian<span class="logo-accent">AI</span></a>
             <ul class="nav-links">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="#capabilities">Capabilities</a></li>
-                <li><a href="#trust">Trust</a></li>
-                <li><a href="contact.html" class="nav-cta">Book Assessment</a></li>
+                <li><a href="#platform">Platform</a></li>
+                <li><a href="#how">How it works</a></li>
+                <li><a href="#pilot">Pilot</a></li>
             </ul>
+            <a href="#contact" class="btn btn-primary btn-sm">Join the pilot</a>
         </nav>
     </header>
 
     <main>
-        <div class="hero">
-            <div class="hero-badge">ORLANDO-BASED · ZERO-TRUST · ENTERPRISE CINEMA</div>
-            <div class="hero-eyebrow">PREMIUM CYBERSECURITY FOR HOSPITALITY AND CRITICAL INFRASTRUCTURE</div>
-            <h1>
-                Zero-Trust Defense.<br>
-                Live AI Reasoning.<br>
-                Guest Ops, Elevated.
-            </h1>
-            <div class="hero-desc">
-                ObsidianAI blends xAI Grok with hybrid infrastructure to stop threats, automate hospitality workflows, and keep every system audit-ready.
+        <section class="hero container">
+            <p class="eyebrow reveal">AI-Powered Security Platform &middot; Built in Orlando</p>
+            <h1 class="reveal">Security that reasons like an analyst,<br>works like a machine.</h1>
+            <p class="hero-sub reveal">ObsidianAI pairs AI reasoning with your infrastructure to analyze threats, generate firewall rules, and automate compliance evidence — so a small team can defend like a big one.</p>
+            <div class="hero-ctas reveal">
+                <a href="#contact" class="btn btn-primary">Join the pilot program</a>
+                <a href="#platform" class="btn btn-ghost">See the platform</a>
             </div>
-            <div class="hero-value-props">
-                <div class="value-prop">
-                    <div class="value-icon">⚡</div>
-                    <div class="value-text"><strong>Instant Risk Synthesis</strong> — Flag threats and enforce controls from a unified AI control plane.</div>
-                </div>
-                <div class="value-prop">
-                    <div class="value-icon">🧠</div>
-                    <div class="value-text"><strong>Language-Based Security</strong> — Turn intent into firewall rules, segmentation, and incident playbooks.</div>
-                </div>
-                <div class="value-prop">
-                    <div class="value-icon">🏨</div>
-                    <div class="value-text"><strong>Hospitality Automation</strong> — Guest networks, inventory, and compliance workflows connected securely.</div>
-                </div>
-            </div>
-            <div class="hero-cta-group">
-                <a href="contact.html" class="btn btn-primary">Book Private Assessment</a>
-                <a href="#capabilities" class="btn btn-ghost">See Capabilities</a>
-            </div>
-        </div>
+            <p class="hero-note reveal">Currently onboarding a small group of pilot organizations.</p>
+        </section>
 
-        <div id="capabilities" class="demo-banner">
-            <div class="demo-content">
-                <div class="demo-label">HYPER-FOCUSED EXECUTION</div>
-                <div class="demo-headline">Premium cyber defense, hospitality intelligence, and audit automation in one platform.</div>
-                <p>Deploy hybrid security with live AI reasoning, continuous zero-trust enforcement, and automated guest operations.</p>
-                <button class="btn btn-primary btn-sm" onclick="document.getElementById('chatFab').click()">Launch Grok Chat →</button>
+        <section class="stack-strip">
+            <div class="container reveal">
+                <span class="stack-label">Built on</span>
+                <span class="stack-items">xAI Grok &middot; FastAPI &middot; PostgreSQL &middot; Zero-trust principles</span>
             </div>
-        </div>
+        </section>
 
-        <section id="trust" class="trust-section">
-            <h2>Built for real-world resilience</h2>
-            <div class="trust-grid">
-                <div class="trust-card">
-                    <div class="trust-quote">"ObsidianAI turned our resort firewall into an intelligent operations platform. Threats stopped before they reached the guest network."</div>
-                    <div class="trust-author">— Director of Security, Orlando Resort</div>
+        <section id="platform" class="section container">
+            <p class="eyebrow reveal">The platform</p>
+            <h2 class="reveal">One control plane for analysis,<br>enforcement, and evidence.</h2>
+            <div class="cards">
+                <div class="card reveal">
+                    <div class="card-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>
+                    </div>
+                    <h3>Threat analysis</h3>
+                    <p>Describe suspicious activity in plain language. ObsidianAI correlates it against your environment and returns a prioritized assessment — not a raw alert feed.</p>
                 </div>
-                <div class="trust-card">
-                    <div class="trust-quote">"We cut incident response time in half and automated compliance checks across our properties. That’s the premium ROI we wanted."</div>
-                    <div class="trust-author">— VP Operations, Hospitality Group</div>
+                <div class="card reveal">
+                    <div class="card-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2l8 4v6c0 5-3.5 8.5-8 10-4.5-1.5-8-5-8-10V6l8-4z"/><path d="M9 12l2 2 4-4"/></svg>
+                    </div>
+                    <h3>Firewall rule generation</h3>
+                    <p>Turn policy intent into production-ready firewall rules in seconds. Review, approve, and deploy — with every change logged.</p>
                 </div>
-                <div class="trust-card">
-                    <div class="trust-quote">"Grok’s real-time reasoning is the only engine that can keep up with our hybrid infrastructure and guest experience demands."</div>
-                    <div class="trust-author">— Enterprise CTO, National Brand</div>
+                <div class="card reveal">
+                    <div class="card-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><path d="M14 2v6h6M9 15l2 2 4-4"/></svg>
+                    </div>
+                    <h3>Compliance automation</h3>
+                    <p>Audit-ready reports and policy evidence generated from real activity — built for teams operating under SOC 2, HIPAA, or PCI-DSS obligations.</p>
+                </div>
+                <div class="card reveal">
+                    <div class="card-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
+                    </div>
+                    <h3>Natural-language policy</h3>
+                    <p>Write what you want enforced. ObsidianAI translates intent into segmentation, controls, and incident playbooks your team can audit.</p>
                 </div>
             </div>
         </section>
 
-        <section class="value-section">
-            <div class="value-left">
-                <h2>Why choose ObsidianAI?</h2>
-                <div class="value-list">
-                    <div class="value-item">
-                        <div class="value-item-num">1</div>
-                        <div>
-                            <strong>Always-On Zero-Trust</strong>
-                            <p>Every connection is validated and segmented. No permissive defaults, no blind spots.</p>
-                        </div>
+        <section id="how" class="section section-alt">
+            <div class="container">
+                <p class="eyebrow reveal">How it works</p>
+                <h2 class="reveal">From intent to enforcement<br>in three steps.</h2>
+                <div class="steps">
+                    <div class="step reveal">
+                        <div class="step-num">1</div>
+                        <h3>Connect</h3>
+                        <p>Point ObsidianAI at your firewall, logs, and asset inventory. Read-only to start — nothing changes without your approval.</p>
                     </div>
-                    <div class="value-item">
-                        <div class="value-item-num">2</div>
-                        <div>
-                            <strong>AI-Powered Rule Automation</strong>
-                            <p>Translate policy intent into production-ready firewall rules in seconds.</p>
-                        </div>
+                    <div class="step reveal">
+                        <div class="step-num">2</div>
+                        <h3>Analyze</h3>
+                        <p>AI reasoning works your data continuously: flagging threats, finding gaps, and drafting the rules and reports to close them.</p>
                     </div>
-                    <div class="value-item">
-                        <div class="value-item-num">3</div>
-                        <div>
-                            <strong>Hospitality Workflow Intelligence</strong>
-                            <p>Automate inventory, guest systems, and team coordination with one secure control plane.</p>
-                        </div>
+                    <div class="step reveal">
+                        <div class="step-num">3</div>
+                        <h3>Act</h3>
+                        <p>You review and approve. Enforcement and evidence generation happen with a full audit trail behind every action.</p>
                     </div>
-                    <div class="value-item">
-                        <div class="value-item-num">4</div>
-                        <div>
-                            <strong>Compliance Without Busywork</strong>
-                            <p>Audit-ready reports, SOC controls, and policy evidence generated automatically.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="value-right">
-                <div class="value-visual">
-                    <div class="value-visual-item">
-                        <div class="value-visual-icon">🧠</div>
-                        <div class="value-visual-label">LIVE ANALYSIS</div>
-                        <div class="value-visual-sub">Real-time context</div>
-                    </div>
-                    <div class="value-visual-arrow">→</div>
-                    <div class="value-visual-item">
-                        <div class="value-visual-icon">🔐</div>
-                        <div class="value-visual-label">ENFORCED POLICIES</div>
-                        <div class="value-visual-sub">Zero-trust control</div>
-                    </div>
-                    <div class="value-visual-arrow">→</div>
-                    <div class="value-visual-item">
-                        <div class="value-visual-icon">⏱️</div>
-                        <div class="value-visual-label">AUTOMATED OPERATIONS</div>
-                        <div class="value-visual-sub">Guest and team workflows</div>
-                    </div>
-                </div>
-                <div class="security-badges">
-                    <div class="badge">🔐 Zero-Trust Certified</div>
-                    <div class="badge">🛡️ SOC 2 Type II</div>
-                    <div class="badge">✅ HIPAA Ready</div>
-                    <div class="badge">💳 PCI-DSS Ready</div>
                 </div>
             </div>
         </section>
 
-        <section class="final-cta-section">
-            <h2>Start your premium security transformation</h2>
-            <p>Schedule a private assessment and see how ObsidianAI delivers fast, reliable defenses for hospitality, enterprise, and hybrid infrastructure.</p>
-            <div class="final-cta-buttons">
-                <a href="contact.html" class="btn btn-primary btn-large">Book Assessment</a>
-                <a href="#capabilities" class="btn btn-ghost btn-large">Explore the Platform</a>
+        <section id="pilot" class="section container">
+            <p class="eyebrow reveal">Pilot program</p>
+            <h2 class="reveal">Help shape the platform.<br>Get defended in the process.</h2>
+            <p class="section-lead reveal">We're onboarding a small group of pilot organizations now. Pilots get direct access to the engineering team, input on the roadmap, and preferred pricing when we launch.</p>
+            <div class="cards">
+                <div class="card reveal">
+                    <h3>Direct engineering access</h3>
+                    <p>Work directly with the people building the platform — not a support queue.</p>
+                </div>
+                <div class="card reveal">
+                    <h3>Roadmap influence</h3>
+                    <p>Pilot feedback drives what gets built next. Your environment, your priorities.</p>
+                </div>
+                <div class="card reveal">
+                    <h3>Preferred pricing</h3>
+                    <p>Lock in pilot pricing before public launch. No surprises later.</p>
+                </div>
+            </div>
+            <div class="center reveal">
+                <a href="#contact" class="btn btn-primary btn-lg">Request pilot access</a>
+            </div>
+        </section>
+
+        <section id="contact" class="section section-alt">
+            <div class="container narrow">
+                <p class="eyebrow reveal">Get in touch</p>
+                <h2 class="reveal">Request pilot access</h2>
+                <p class="section-lead reveal">Tell us about your environment. We'll reply within one business day.</p>
+                <form id="lead-form" class="lead-form reveal" novalidate>
+                    <div class="form-row">
+                        <div class="form-field">
+                            <label for="f-name">Full name</label>
+                            <input id="f-name" name="name" type="text" required autocomplete="name" placeholder="Jane Smith">
+                        </div>
+                        <div class="form-field">
+                            <label for="f-email">Work email</label>
+                            <input id="f-email" name="email" type="email" required autocomplete="email" placeholder="jane@company.com">
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-field">
+                            <label for="f-company">Company</label>
+                            <input id="f-company" name="company" type="text" required autocomplete="organization" placeholder="Company, Inc.">
+                        </div>
+                        <div class="form-field">
+                            <label for="f-size">Team size</label>
+                            <select id="f-size" name="team_size">
+                                <option value="">Select…</option>
+                                <option>1–10</option>
+                                <option>11–50</option>
+                                <option>51–200</option>
+                                <option>200+</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-field">
+                        <label for="f-msg">What are you trying to defend?</label>
+                        <textarea id="f-msg" name="message" rows="4" placeholder="Tell us about your infrastructure and security challenges…"></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-lg btn-block" id="form-submit">Request pilot access</button>
+                    <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
+                </form>
             </div>
         </section>
     </main>
 
-    <!-- Grok Chat Widget (Connected to Your Render Backend) -->
-    <button class="chat-fab" id="chatFab" title="Open Grok Chat">💬</button>
-    <div class="chat-panel" id="chatPanel">
-        <div class="chat-panel-header">
-            <div>
-                <div class="chat-panel-title">GROK • OBSIDIANAI</div>
-                <div class="chat-panel-sub">Real-time xAI Reasoning Engine</div>
-            </div>
-            <button class="chat-close-btn" id="chatClose">×</button>
+    <footer class="site-footer">
+        <div class="container footer-inner">
+            <a href="#" class="logo">Obsidian<span class="logo-accent">AI</span></a>
+            <p>&copy; 2026 ObsidianAI. Built in Orlando, Florida.</p>
         </div>
-        <div class="chat-body" id="chatBody"></div>
-        <div class="chat-input-row">
-            <input class="chat-in" id="chatIn" placeholder="Ask Grok anything...">
-            <button class="chat-send-btn" id="chatSend">Send</button>
-        </div>
-    </div>
+    </footer>
 
     <script>
-        function initTransitions() {
-            document.body.classList.remove('loading');
-            const current = window.location.pathname.split('/').pop() || 'index.html';
-            document.querySelectorAll('.nav-links a').forEach(link => {
-                if (link.getAttribute('href') === current) link.classList.add('active');
-            });
-        }
+        // Lead capture: set your Formspree form ID below (free at formspree.io).
+        // Until then, submissions open the visitor's email client addressed to us.
+        const FORMSPREE_ID = "YOUR_FORMSPREE_ID";
+        const FALLBACK_EMAIL = "info@obsidianai.org";
 
-        document.querySelectorAll('a[href$=".html"]').forEach(link => {
-            link.addEventListener('click', function(e) {
-                if (this.href !== window.location.href) {
-                    e.preventDefault();
-                    document.body.classList.add('loading');
-                    setTimeout(() => window.location.href = this.href, 480);
-                }
-            });
-        });
+        // Reveal-on-scroll
+        const io = new IntersectionObserver((entries) => {
+            entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+        }, { threshold: 0.12 });
+        document.querySelectorAll('.reveal').forEach(el => io.observe(el));
 
-        window.addEventListener('load', initTransitions);
+        // Header shadow on scroll
+        const header = document.querySelector('.site-header');
+        addEventListener('scroll', () => header.classList.toggle('scrolled', scrollY > 10), { passive: true });
 
-        // Google Analytics Event Tracking
-        function trackCTA(buttonText, section) {
-            if (typeof gtag !== 'undefined') {
-                gtag('event', 'cta_click', {
-                    'cta_text': buttonText,
-                    'section': section,
-                    'page': 'home'
-                });
+        // Lead form
+        const form = document.getElementById('lead-form');
+        const status = document.getElementById('form-status');
+        const submitBtn = document.getElementById('form-submit');
+
+        form.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const name = document.getElementById('f-name').value.trim();
+            const email = document.getElementById('f-email').value.trim();
+            const company = document.getElementById('f-company').value.trim();
+            if (!name || !email || !company) {
+                status.textContent = 'Please fill in your name, work email, and company.';
+                status.className = 'form-status error';
+                return;
             }
-        }
+            if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+                status.textContent = 'That email address doesn\u2019t look right — mind checking it?';
+                status.className = 'form-status error';
+                return;
+            }
+            const data = Object.fromEntries(new FormData(form).entries());
 
-        // Track all CTA buttons on home page
-        document.querySelectorAll('.btn').forEach(btn => {
-            btn.addEventListener('click', function() {
-                let section = 'unknown';
-                const closest = this.closest('section') || this.closest('.hero');
-                if (closest && closest.className) {
-                    section = closest.className.split(' ')[0];
-                }
-                trackCTA(this.textContent.trim(), section);
-            });
-        });
+            if (FORMSPREE_ID === "YOUR_FORMSPREE_ID") {
+                // Fallback: open email client with the details prefilled
+                const subject = encodeURIComponent('Pilot access request — ' + company);
+                const body = encodeURIComponent(
+                    'Name: ' + data.name + '\nEmail: ' + data.email + '\nCompany: ' + data.company +
+                    '\nTeam size: ' + (data.team_size || '—') + '\n\n' + (data.message || '')
+                );
+                window.location.href = 'mailto:' + FALLBACK_EMAIL + '?subject=' + subject + '&body=' + body;
+                status.textContent = 'Opening your email client to send the request…';
+                status.className = 'form-status ok';
+                if (typeof gtag !== 'undefined') gtag('event', 'lead_form_mailto_fallback', { page: 'home' });
+                return;
+            }
 
-        // Grok Chat Widget
-        const BACKEND_URL = "https://obsidianai-evtu.onrender.com";
-
-        const fab = document.getElementById('chatFab');
-        const panel = document.getElementById('chatPanel');
-        const closeBtn = document.getElementById('chatClose');
-        const body = document.getElementById('chatBody');
-        const input = document.getElementById('chatIn');
-        const sendBtn = document.getElementById('chatSend');
-
-        fab.addEventListener('click', () => { 
-            panel.classList.add('open'); 
-            input.focus(); 
-            fab.style.display = 'none';
-        });
-
-        closeBtn.addEventListener('click', () => { 
-            panel.classList.remove('open');
-            fab.style.display = 'block';
-        });
-
-        function appendMsg(text, isUser) {
-            const d = document.createElement('div');
-            d.className = 'msg ' + (isUser ? 'user' : 'bot');
-            d.textContent = text;
-            body.appendChild(d);
-            body.scrollTop = body.scrollHeight;
-        }
-
-        function showTyping() {
-            const d = document.createElement('div');
-            d.className = 'typing-dots';
-            d.id = 'typing';
-            d.innerHTML = '<span></span><span></span><span></span>';
-            body.appendChild(d);
-            body.scrollTop = body.scrollHeight;
-        }
-
-        function removeTyping() {
-            const el = document.getElementById('typing');
-            if (el) el.remove();
-        }
-
-        async function sendMsg(msg) {
-            if (!msg) return;
-            appendMsg(msg, true);
-            showTyping();
+            submitBtn.disabled = true;
+            submitBtn.textContent = 'Sending…';
             try {
-                const res = await fetch(`${BACKEND_URL}/chat`, {
+                const res = await fetch('https://formspree.io/f/' + FORMSPREE_ID, {
                     method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({ message: msg })
+                    headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+                    body: JSON.stringify(data)
                 });
-                if (!res.ok) throw new Error('Backend error');
-                const data = await res.json();
-                removeTyping();
-                appendMsg(data.reply || "Processing...", false);
+                if (!res.ok) throw new Error('send failed');
+                status.textContent = 'Thanks — your request is in. We\u2019ll reply within one business day.';
+                status.className = 'form-status ok';
+                form.reset();
+                if (typeof gtag !== 'undefined') gtag('event', 'lead_form_submit', { page: 'home' });
             } catch {
-                removeTyping();
-                appendMsg("Backend is waking up — try again in 30 seconds.", false);
+                status.textContent = 'Something went wrong sending that. Please email us directly at ' + FALLBACK_EMAIL + '.';
+                status.className = 'form-status error';
+            } finally {
+                submitBtn.disabled = false;
+                submitBtn.textContent = 'Request pilot access';
             }
-        }
-
-        sendBtn.addEventListener('click', () => {
-            const v = input.value.trim();
-            if (v) input.value = '';
-            sendMsg(v);
-        });
-
-        input.addEventListener('keydown', e => {
-            if (e.key === 'Enter' && !e.shiftKey) {
-                e.preventDefault();
-                const v = input.value.trim();
-                if (v) input.value = '';
-                sendMsg(v);
-            }
-        });
-
-        // Track demo button clicks
-        document.querySelectorAll('.btn').forEach(btn => {
-            btn.addEventListener('click', function() {
-                if (this.textContent.includes('Assessment')) {
-                    console.log('Assessment CTA clicked');
-                }
-            });
         });
     </script>
 </body>
 </html>
-
