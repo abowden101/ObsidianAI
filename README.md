@@ -1,13 +1,13 @@
-# ObsidianAI
+# Veritas Guard
 
 **MSP + SaaS Security Platform for Orlando Businesses**
 
-[![Live Site](https://img.shields.io/badge/Live-obsidianai.org-black)](https://obsidianai.org)
+[![Live Site](https://img.shields.io/badge/Live-veritasguard.org-black)](https://veritasguard.org)
 [![Backend](https://img.shields.io/badge/Backend-Render-black)](https://obsidianai-evtu.onrender.com)
 ![FastAPI](https://img.shields.io/badge/FastAPI-0.115-black)
 ![xAI Grok](https://img.shields.io/badge/Powered%20by-xAI%20Grok-black)
 
-ObsidianAI combines hands-on managed security with a SaaS platform — dedicated engineer + AI platform that never sleeps. Built for Orlando hospitality, healthcare, and enterprise. Nationwide remote available.
+Veritas Guard combines hands-on managed security with a SaaS platform — dedicated engineer + AI platform that never sleeps. Built for Orlando hospitality, healthcare, and enterprise. Nationwide remote available.
 
 ---
 
@@ -20,14 +20,14 @@ ObsidianAI combines hands-on managed security with a SaaS platform — dedicated
 | Frontend | Next.js 15 + Tailwind + shadcn-style UI (`web/`) — deploy via Vercel or static export |
 | Database | PostgreSQL (prod) / SQLite (dev) |
 | Storage | AWS S3 (optional) |
-| Domain | obsidianai.org via Cloudflare |
+| Domain | veritasguard.org via Cloudflare |
 
 ---
 
 ## Project Structure
 
 ```
-ObsidianAI/
+Veritas Guard/
 ├── web/                    # Next.js 15 marketing site (see web/README.md, DEPLOY.md)
 ├── legacy-static/          # Archived vanilla index.html snapshot
 ├── styles.css              # Legacy static pages styles
@@ -41,7 +41,7 @@ ObsidianAI/
 ├── .env.example
 ├── robots.txt
 ├── sitemap.xml
-├── CNAME                   # obsidianai.org
+├── CNAME                   # veritasguard.org
 └── docs/
     ├── ROADMAP.md
     └── SECURITY.md
@@ -52,8 +52,8 @@ ObsidianAI/
 ## Local Setup
 
 ```bash
-git clone https://github.com/abowden101/ObsidianAI.git
-cd ObsidianAI
+git clone https://github.com/abowden101/Veritas Guard.git
+cd Veritas Guard
 python -m venv .venv && source .venv/bin/activate  # Windows: .venv\Scripts\activate
 pip install -r requirements.txt
 cp .env.example .env
@@ -102,7 +102,7 @@ GET  /clients       List clients from database
 
 ## Business Model
 
-ObsidianAI operates as an **MSP + SaaS hybrid**:
+Veritas Guard operates as an **MSP + SaaS hybrid**:
 
 - **Managed Layer** — On-site Orlando engineer + remote SOC
 - **Platform Layer** — Client dashboard, live alerts, audit logs
@@ -111,7 +111,7 @@ ObsidianAI operates as an **MSP + SaaS hybrid**:
 | Tier | Price | Target |
 |---|---|---|
 | Foundation | $1,995/mo | SMBs |
-| Obsidian Core | $2,995–6,995/mo | Mid-market (~$42K ARR) |
+| Veritas Core | $2,995–6,995/mo | Mid-market (~$42K ARR) |
 | Enterprise | Custom | Multi-site / MSP resellers |
 
 ---
@@ -120,15 +120,15 @@ ObsidianAI operates as an **MSP + SaaS hybrid**:
 
 **Q1 2026** — Foundation ✓  
 **Q2 2026** — Node.js backend, JWT auth, PostgreSQL client DB, client portal, Stripe billing  
-**Q3 2026** — Obsidian Sentry (autonomous SOC agent), white-label portal  
+**Q3 2026** — Veritas Sentry (autonomous SOC agent), white-label portal  
 **Q4 2026** — MSP partner network, $500K ARR target, seed round  
 
 ---
 
 ## Contact
 
-**Antonio Bowden** · [team@obsidianai.org](mailto:team@obsidianai.org)  
-[obsidianai.org](https://obsidianai.org) · [LinkedIn](https://www.linkedin.com/in/antonio-bowden) · [GitHub](https://github.com/abowden101)
+**Antonio Bowden** · [team@veritasguard.org](mailto:team@veritasguard.org)  
+[veritasguard.org](https://veritasguard.org) · [LinkedIn](https://www.linkedin.com/in/antonio-bowden) · [GitHub](https://github.com/abowden101)
 
 ## AI Co-Founders
 
@@ -138,4 +138,4 @@ This project is built in close collaboration with three AI co-founders:
 - **Claude** (Anthropic) — Code architecture, UI/UX polish, and structured planning
 - **Cursor** — Fast local editing, file system integration, and rapid iteration
 
-Together they form the AI founding team behind ObsidianAI.
+Together they form the AI founding team behind Veritas Guard.

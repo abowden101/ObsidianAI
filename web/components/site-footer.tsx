@@ -5,9 +5,9 @@ export function SiteFooter() {
     <footer className="relative z-10 border-t border-zinc-800 px-4 py-12 sm:px-6">
       <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-6 sm:flex-row">
         <p className="text-center text-sm text-zinc-500 sm:text-left">
-          © {new Date().getFullYear()} ObsidianAI. Orlando, FL ·{" "}
-          <a href="mailto:team@obsidianai.org" className="text-cyan-500 hover:underline">
-            team@obsidianai.org
+          © {new Date().getFullYear()} Veritas Guard. Orlando, FL ·{" "}
+          <a href="mailto:team@veritasguard.org" className="text-cyan-500 hover:underline">
+            team@veritasguard.org
           </a>
         </p>
         <div className="flex flex-wrap justify-center gap-6 text-sm text-zinc-400">
@@ -15,7 +15,7 @@ export function SiteFooter() {
             Pricing
           </Link>
           <a
-            href="https://github.com/abowden101/ObsidianAI"
+            href="https://github.com/abowden101/Veritas Guard"
             className="hover:text-cyan-300"
             target="_blank"
             rel="noopener noreferrer"

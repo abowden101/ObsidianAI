@@ -6,7 +6,7 @@ All pages now include Google Analytics tracking. To activate:
 
 ### 1. Get Your Google Analytics ID
 - Go to: https://analytics.google.com
-- Create a property for ObsidianAI
+- Create a property for Veritas Guard
 - Copy your Measurement ID (format: `G-XXXXXXXXXX`)
 
 ### 2. Update All HTML Files
@@ -97,7 +97,7 @@ When a form is submitted, data is also sent to your backend (if running):
   "company": "Acme Corp",
   "phone": "(555) 123-4567",
   "challenges": "User description of needs",
-  "deployment": "Obsidian Core",
+  "deployment": "Veritas Core",
   "timestamp": "2026-03-29T18:00:00Z"
 }
 ```
@@ -185,7 +185,7 @@ After form submission, redirect to success page:
 
 In `contact.html`, update form action:
 ```html
-<form action="https://formspree.io/f/mbdkongb?redirectTo=https://obsidianai.org/thank-you.html" method="POST">
+<form action="https://formspree.io/f/mbdkongb?redirectTo=https://veritasguard.org/thank-you.html" method="POST">
 ```
 
 Then create `thank-you.html` with success message.
@@ -195,8 +195,8 @@ Then create `thank-you.html` with success message.
 Add UTM parameters to track campaigns:
 
 ```
-https://obsidianai.org/?utm_source=email&utm_medium=newsletter&utm_campaign=limited_slots
-https://obsidianai.org/pricing.html?utm_source=twitter&utm_campaign=founder_pricing
+https://veritasguard.org/?utm_source=email&utm_medium=newsletter&utm_campaign=limited_slots
+https://veritasguard.org/pricing.html?utm_source=twitter&utm_campaign=founder_pricing
 ```
 
 ## Testing
@@ -253,4 +253,4 @@ This site uses Google Analytics. <a href="#" style="color: var(--accent);">Learn
 For questions:
 - GA Issues: https://support.google.com/analytics
 - Formspree Issues: https://help.formspree.io
-- ObsidianAI: team@obsidianai.org
+- Veritas Guard: team@veritasguard.org

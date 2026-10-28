@@ -20,12 +20,12 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-  title: "ObsidianAI — Cinematic Zero-Trust Security Powered by Grok",
+  title: "Veritas Guard — Cinematic Zero-Trust Security Powered by Grok",
   description:
-    "ObsidianAI delivers premium hospitality security with xAI Grok reasoning, autonomous response, and zero-trust posture orchestration.",
-  metadataBase: new URL("https://obsidianai.org"),
+    "Veritas Guard delivers premium hospitality security with xAI Grok reasoning, autonomous response, and zero-trust posture orchestration.",
+  metadataBase: new URL("https://veritasguard.org"),
   keywords: [
-    "ObsidianAI",
+    "Veritas Guard",
     "zero trust",
     "xAI",
     "Grok",
@@ -34,27 +34,27 @@ export const metadata: Metadata = {
     "cyber resilience",
   ],
   openGraph: {
-    title: "ObsidianAI — Mission-Critical xAI Security",
+    title: "Veritas Guard — Mission-Critical xAI Security",
     description:
       "A premium security platform for hospitality and enterprise, blending live Grok reasoning with zero-trust automation.",
-    url: "https://obsidianai.org",
-    siteName: "ObsidianAI",
+    url: "https://veritasguard.org",
+    siteName: "Veritas Guard",
     locale: "en_US",
     type: "website",
     images: [
       {
-        url: "https://obsidianai.org/og-image.png",
+        url: "https://veritasguard.org/og-image.png",
         width: 1200,
         height: 630,
-        alt: "ObsidianAI cinematic platform",
+        alt: "Veritas Guard cinematic platform",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "ObsidianAI — Cinematic Zero-Trust Security",
+    title: "Veritas Guard — Cinematic Zero-Trust Security",
     description:
-      "ObsidianAI blends xAI Grok reasoning with hospitality automation and enterprise-grade security.",
+      "Veritas Guard blends xAI Grok reasoning with hospitality automation and enterprise-grade security.",
   },
 };
 

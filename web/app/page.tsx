@@ -105,7 +105,7 @@ export default function Home() {
                 Cinematic detection, trusted automation.
               </h2>
               <p className="mt-6 text-lg leading-8 text-slate-300">
-                ObsidianAI delivers intelligent security workflows with a premium hospitality-first design system, built for high-stakes enterprise operations.
+                Veritas Guard delivers intelligent security workflows with a premium hospitality-first design system, built for high-stakes enterprise operations.
               </p>
             </div>
 
@@ -127,7 +127,7 @@ export default function Home() {
                 Use cases that earn trust without sacrifice.
               </h2>
               <p className="mt-6 text-lg leading-8 text-slate-300">
-                From resort venues to managed enterprise portfolios, ObsidianAI applies zero-trust reasoning where guest safety and business continuity matter most.
+                From resort venues to managed enterprise portfolios, Veritas Guard applies zero-trust reasoning where guest safety and business continuity matter most.
               </p>
             </div>
 

@@ -1,5 +1,5 @@
 """
-ObsidianAI Hospitality Agent
+Veritas Guard Hospitality Agent
 xAI Grok-powered inventory automation for Orlando hotels and resorts.
 """
 import json
@@ -9,7 +9,7 @@ from openai import OpenAI
 
 _client = OpenAI(api_key=os.getenv("XAI_API_KEY"), base_url="https://api.x.ai/v1")
 
-AGENT_SYSTEM_PROMPT = """You are ObsidianAI's hospitality operations specialist powered by xAI Grok.
+AGENT_SYSTEM_PROMPT = """You are Veritas Guard's hospitality operations specialist powered by xAI Grok.
 You serve Orlando-area hotels, resorts, and theme park properties.
 
 Response format:

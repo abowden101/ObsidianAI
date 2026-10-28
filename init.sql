@@ -1,11 +1,11 @@
--- ObsidianAI PostgreSQL schema
+-- Veritas Guard PostgreSQL schema
 -- Safe to run on every startup — all tables are idempotent.
 
 CREATE TABLE IF NOT EXISTS clients (
     client_id     SERIAL PRIMARY KEY,
     company_name  TEXT NOT NULL,
     contact_email TEXT UNIQUE,
-    service_tier  TEXT CHECK (service_tier IN ('Foundation', 'Obsidian Core', 'Enterprise')),
+    service_tier  TEXT CHECK (service_tier IN ('Foundation', 'Veritas Core', 'Enterprise')),
     location      TEXT DEFAULT 'Orlando, FL',
     created_at    TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
@@ -32,7 +32,7 @@ CREATE TABLE IF NOT EXISTS ai_logs (
 
 INSERT INTO clients (client_id, company_name, contact_email, service_tier)
 VALUES
-    (1, 'Grand Orlando Resort & Spa',      'it@grandorlando.example',  'Obsidian Core'),
+    (1, 'Grand Orlando Resort & Spa',      'it@grandorlando.example',  'Veritas Core'),
     (2, 'Universal Theme Park Operations', 'netops@universal.example', 'Enterprise'),
     (3, 'Downtown Orlando Medical Group',  'it@oomg.example',          'Foundation')
 ON CONFLICT (client_id) DO NOTHING;

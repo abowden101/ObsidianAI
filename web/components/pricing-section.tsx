@@ -14,7 +14,7 @@ import {
 import { Badge } from "@/components/ui/badge";
 import { publicConfig } from "@/lib/public-config";
 
-const mailFallback = "mailto:team@obsidianai.org?subject=ObsidianAI%20pricing";
+const mailFallback = "mailto:team@veritasguard.org?subject=Veritas%20Guard%20pricing";
 
 const tiers = [
   {
@@ -33,7 +33,7 @@ const tiers = [
     highlight: false,
   },
   {
-    name: "Obsidian Core",
+    name: "Veritas Core",
     price: "$2,995–$6,995",
     period: "/mo",
     description: "Scaled perimeter, automation, and SOC-aligned surveillance for growing portfolios.",
@@ -74,7 +74,7 @@ export function PricingSection() {
             Founding pilot tiers. Straight pricing.
           </h2>
           <p className="mt-6 text-lg leading-8 text-slate-300">
-            ObsidianAI is onboarding a small group of pilot partners now — direct engineering access, input on the roadmap, and pricing locked before public launch.
+            Veritas Guard is onboarding a small group of pilot partners now — direct engineering access, input on the roadmap, and pricing locked before public launch.
           </p>
         </div>
 
