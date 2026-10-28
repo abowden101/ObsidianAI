@@ -1,5 +1,5 @@
 """
-ObsidianAI Core Agent
+Veritas Guard Core Agent
 Wraps xAI Grok for network security analysis and automation.
 """
 import os
@@ -10,7 +10,7 @@ class ObsidianAgent:
     BASE_URL = "https://api.x.ai/v1/chat/completions"
 
     SYSTEM_PROMPT = (
-        "You are ObsidianAI — a specialized cybersecurity and network engineering expert. "
+        "You are Veritas Guard — a specialized cybersecurity and network engineering expert. "
         "Analyze network logs, identify vulnerabilities, and suggest infrastructure optimizations. "
         "Always flag findings: [CRITICAL], [HIGH], [MEDIUM], [INFO]."
     )

@@ -31,7 +31,7 @@ export function Hero() {
                 Real-Time Zero-Trust Security. Powered by Grok.
               </h1>
               <p className="mt-8 max-w-2xl text-lg leading-8 text-slate-300 sm:text-xl">
-                ObsidianAI is the premium hospitality security platform for teams that need cinematic trust, intelligent automation, and enterprise-grade event response.
+                Veritas Guard is the premium hospitality security platform for teams that need cinematic trust, intelligent automation, and enterprise-grade event response.
               </p>
               <div className="mt-10 flex flex-col gap-4 sm:flex-row sm:items-center">
                 <Link

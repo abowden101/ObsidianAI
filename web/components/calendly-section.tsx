@@ -66,7 +66,7 @@ export function CalendlySection() {
                 asChild
                 className="w-full rounded-full bg-slate-950/60 px-5 py-3 text-sm font-semibold uppercase tracking-[0.18em] text-white hover:bg-slate-900/60"
               >
-                <a href="mailto:team@obsidianai.org?subject=ObsidianAI%20assessment">Email team@obsidianai.org</a>
+                <a href="mailto:team@veritasguard.org?subject=Veritas%20Guard%20assessment">Email team@veritasguard.org</a>
               </Button>
             )}
           </motion.div>

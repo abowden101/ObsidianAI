@@ -1,4 +1,4 @@
-# ObsidianAI marketing site (Next.js 15)
+# Veritas Guard marketing site (Next.js 15)
 
 Stack: **Next.js 15** (App Router, static export), **Tailwind CSS**, **shadcn-style** UI primitives, **Framer Motion**.
 
@@ -33,4 +33,4 @@ Static output is written to `out/`. Use this folder for GitHub Pages or any stat
 | `NEXT_PUBLIC_STRIPE_CHECKOUT_CORE` | Stripe URL for Core tier. |
 | `NEXT_PUBLIC_STRIPE_CHECKOUT_ENTERPRISE` | Optional; defaults to `mailto:` in `lib/public-config.ts` if unset. |
 
-Empty Stripe env vars fall back to **email** (`team@obsidianai.org`).
+Empty Stripe env vars fall back to **email** (`team@veritasguard.org`).

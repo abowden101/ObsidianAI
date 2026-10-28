@@ -11,5 +11,5 @@ export const publicConfig = {
   /** Optional Payment Link or contact page for enterprise */
   stripeEnterprise:
     process.env.NEXT_PUBLIC_STRIPE_CHECKOUT_ENTERPRISE ??
-    "mailto:team@obsidianai.org?subject=Enterprise%20pricing",
+    "mailto:team@veritasguard.org?subject=Enterprise%20pricing",
 } as const;

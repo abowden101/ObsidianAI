@@ -43,7 +43,7 @@ except Exception:
     _engine = None
 
 # App setup
-app = FastAPI(title="ObsidianAI Backend", version="1.0.0")
+app = FastAPI(title="Veritas Guard Backend", version="1.0.0")
 
 limiter = Limiter(key_func=get_remote_address)
 app.state.limiter = limiter
@@ -73,8 +73,8 @@ _cors_extra = [
     if o.strip()
 ]
 _cors_origins = [
-    "https://obsidianai.org",
-    "https://www.obsidianai.org",
+    "https://veritasguard.org",
+    "https://www.veritasguard.org",
     "https://abowden101.github.io",
     "http://localhost:3000",
     "http://127.0.0.1:3000",
@@ -96,13 +96,13 @@ _xai = OpenAI(
 )
 
 SYSTEM_PROMPT = (
-    "You are ObsidianAI's expert assistant — a zero-trust security and xAI Grok "
+    "You are Veritas Guard's expert assistant — a zero-trust security and xAI Grok "
     "automation specialist serving Orlando businesses and nationwide enterprise clients. "
-    "ObsidianAI is an MSP + SaaS hybrid: we provide both hands-on managed security "
+    "Veritas Guard is an MSP + SaaS hybrid: we provide both hands-on managed security "
     "AND a cloud platform with a client portal. "
-    "Service tiers: Foundation ($1,995/mo), Obsidian Core ($2,995-$6,995/mo), Enterprise (custom). "
+    "Service tiers: Foundation ($1,995/mo), Veritas Core ($2,995-$6,995/mo), Enterprise (custom). "
     "Be concise, precise, and action-oriented. Always encourage scheduling a free "
-    "security assessment at team@obsidianai.org."
+    "security assessment at team@veritasguard.org."
 )
 
 
@@ -122,7 +122,7 @@ class AuditPaymentRequest(BaseModel):
 @app.get("/")
 async def root():
     return {
-        "status": "ObsidianAI backend online",
+        "status": "Veritas Guard backend online",
         "model": "grok-beta",
         "db": _engine is not None,
         "s3": _s3 is not None,
@@ -221,7 +221,7 @@ async def stripe_webhook(request: Request):
             )
             report_content = report_response.choices[0].message.content
         except Exception as e:
-            report_content = f"Report generation encountered an issue. Please contact team@obsidianai.org. Error: {str(e)}"
+            report_content = f"Report generation encountered an issue. Please contact team@veritasguard.org. Error: {str(e)}"
 
         # Send via Resend
         resend_key = os.getenv("RESEND_API_KEY", "")
@@ -235,17 +235,17 @@ async def stripe_webhook(request: Request):
                             "Content-Type": "application/json",
                         },
                         json={
-                            "from": "ObsidianAI Reports <reports@obsidianai.org>",
+                            "from": "Veritas Guard Reports <reports@veritasguard.org>",
                             "to": [email],
-                            "subject": f"Your ObsidianAI Security Audit — {company}",
+                            "subject": f"Your Veritas Guard Security Audit — {company}",
                             "html": f"""
                                <div style="font-family:monospace;max-width:700px;margin:auto;background:#000;color:#fff;padding:40px;">
-                               <h1 style="color:#fff;font-size:24px;margin-bottom:8px;">ObsidianAI</h1>
+                               <h1 style="color:#fff;font-size:24px;margin-bottom:8px;">Veritas Guard</h1>
                                <p style="color:#777;font-size:14px;margin-bottom:32px;">Instant AI Security Audit</p>
                                <pre style="white-space:pre-wrap;font-size:14px;line-height:1.7;color:#e5e5e5;">{report_content}</pre>
                                <hr style="border-color:#222;margin:32px 0;">
-                               <p style="color:#555;font-size:12px;">Questions? Reply to this email or contact <a href="mailto:team@obsidianai.org" style="color:#4ade80;">team@obsidianai.org</a></p>
-                               <p style="color:#555;font-size:12px;">ObsidianAI · Orlando, Florida · obsidianai.org</p>
+                               <p style="color:#555;font-size:12px;">Questions? Reply to this email or contact <a href="mailto:team@veritasguard.org" style="color:#4ade80;">team@veritasguard.org</a></p>
+                               <p style="color:#555;font-size:12px;">Veritas Guard · Orlando, Florida · veritasguard.org</p>
                                </div>
                                """,
                         },

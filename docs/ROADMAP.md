@@ -1,4 +1,4 @@
-# ObsidianAI Product Roadmap
+# Veritas Guard Product Roadmap
 
 ---
 
@@ -7,7 +7,7 @@
 - [x] xAI Grok API integration
 - [x] FastAPI backend deployed on Render
 - [x] Single-page frontend on GitHub Pages
-- [x] obsidianai.org live with SSL
+- [x] veritasguard.org live with SSL
 - [x] Formspree lead capture + AJAX form
 - [x] Grok chat widget
 
@@ -27,11 +27,11 @@ This is the **website → platform** transition.
 
 ---
 
-## Q3 2026 — Autonomous SOC: Obsidian Sentry
+## Q3 2026 — Autonomous SOC: Veritas Sentry
 
 The **margin engine** — more clients, same headcount.
 
-- [ ] Obsidian Sentry: always-on syslog + SIEM monitoring agent
+- [ ] Veritas Sentry: always-on syslog + SIEM monitoring agent
 - [ ] Cisco Catalyst Center API integration
 - [ ] Palo Alto Networks PAN-OS API integration
 - [ ] Automated firewall policy generation from natural language

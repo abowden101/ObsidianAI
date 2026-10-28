@@ -1,8 +1,8 @@
 @echo off
-title ObsidianAI Grok MCP Server - For Claude Desktop
+title Veritas Guard Grok MCP Server - For Claude Desktop
 
 echo ================================================
-echo   ObsidianAI Grok MCP Server (Claude Desktop)
+echo   Veritas Guard Grok MCP Server (Claude Desktop)
 echo ================================================
 echo.
 

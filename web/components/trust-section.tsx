@@ -27,7 +27,7 @@ export function TrustSection() {
       <div className="mx-auto max-w-7xl">
         <div className="max-w-2xl">
           <p className="text-sm uppercase tracking-[0.32em] text-cyan-300/80">
-            Why choose ObsidianAI
+            Why choose Veritas Guard
           </p>
           <h2 className="mt-4 text-4xl font-semibold tracking-tight text-white sm:text-5xl">
             Scalable trust for hospitality operations and enterprise security.

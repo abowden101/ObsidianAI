@@ -1,10 +1,10 @@
-# ObsidianAI Security & Privacy Framework
+# Veritas Guard Security & Privacy Framework
 
 ---
 
 ## Data Handling
 
-ObsidianAI acts as an orchestration layer. Client network data is not stored by default.
+Veritas Guard acts as an orchestration layer. Client network data is not stored by default.
 
 - **Transit encryption** — All data in transit uses TLS 1.3
 - **Model privacy** — xAI Enterprise API queries are stateless; no client data enters the global Grok training set
@@ -16,7 +16,7 @@ ObsidianAI acts as an orchestration layer. Client network data is not stored by 
 
 - **Rate limiting** — All endpoints rate-limited (10 req/min on /chat, 5/min on /upload-report)
 - **Security headers** — X-Content-Type-Options, X-Frame-Options, X-XSS-Protection, Content-Security-Policy on every response
-- **CORS** — Restricted to obsidianai.org and abowden101.github.io
+- **CORS** — Restricted to veritasguard.org and abowden101.github.io
 - **Secrets** — All credentials loaded from environment variables; never hardcoded
 
 ---
@@ -34,4 +34,4 @@ ObsidianAI acts as an orchestration layer. Client network data is not stored by 
 
 ## Responsible Disclosure
 
-Found a vulnerability? Email [team@obsidianai.org](mailto:team@obsidianai.org) with subject `[SECURITY]`. We respond within 48 hours.
+Found a vulnerability? Email [team@veritasguard.org](mailto:team@veritasguard.org) with subject `[SECURITY]`. We respond within 48 hours.

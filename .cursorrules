@@ -1,7 +1,7 @@
-# ObsidianAI — Cursor Project Rules (Updated April 2026)
+# Veritas Guard — Cursor Project Rules (Updated April 2026)
 
 ## The ONE production site
-- index.html at ROOT = obsidianai.org (GitHub Pages, root branch)
+- index.html at ROOT = veritasguard.org (GitHub Pages, root branch)
 - style.css = complete design system, do not restructure
 - script.js = complete JS including Stripe audit flow and chat widget
 - legacy-static/ = DELETED, do not reference
@@ -35,4 +35,4 @@
 1. Stripe activation → $97 audits → first $97
 2. First Core client signed → $35,940 ARR
 3. Client portal (Node.js, Q2)
-4. Obsidian Sentry autonomous SOC (Q3)
+4. Veritas Sentry autonomous SOC (Q3)
