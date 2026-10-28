@@ -1,4 +1,6 @@
-import { motion } from "framer-motion";
+"use client";
+
+import { motion, type Variants } from "framer-motion";
 import { ArrowRight, ShieldCheck, Sparkles, Layers, Globe, Cpu, Zap } from "lucide-react";
 import { Hero } from "@/components/hero";
 import { SiteHeader } from "@/components/site-header";
@@ -50,7 +52,7 @@ const useCases = [
   },
 ];
 
-const sectionVariants = {
+const sectionVariants: Variants = {
   hidden: { opacity: 0, y: 22 },
   visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut" } },
 };
